@@ -48,7 +48,7 @@ In `.eslintec.json`:
 
 ## Extends
 
-- [airbnb](https://github.com/airbnb/javascript)
-- [airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript)
-- [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
 - [@angular-eslint](https://github.com/angular-eslint/angular-eslint)
+- [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
+- [airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript)
+- [airbnb](https://github.com/airbnb/javascript)
