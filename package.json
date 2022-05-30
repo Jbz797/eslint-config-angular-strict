@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Stricts rules to enforce a consistent code style for Angular development",
   "repository": {
     "type": "git",
@@ -9,6 +9,7 @@
   "keywords": [
     "angular",
     "eslint",
+    "eslint-plugin",
     "linting-rules",
     "stricts-rules",
     "typescript"

@@ -40,9 +40,5 @@ module.exports = {
     ],
     'padded-blocks': 'off',
     radix: ['error', 'as-needed'],
-  },
-  settings: {
-    'import/parsers': { '@typescript-eslint/parser': ['.ts'] },
-    'import/resolver': { typescript: {} },
-  },
+  }
 };
