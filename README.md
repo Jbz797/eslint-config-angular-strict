@@ -1,4 +1,4 @@
-# angular-strict-eslint-rules
+# eslint-config-angular-strict
 
 Stricts rules to enforce a consistent code style for **Angular** development
 
@@ -25,13 +25,13 @@ For better consistency, please add this options to your `tsconfig.json` :
 ## Installation
 
 ```sh
-npm install angular-strict-eslint-rules --save-dev
+npm install eslint-config-angular-strict --save-dev
 ```
 
 or
 
 ```sh
-yarn add angular-strict-eslint-rules --dev
+yarn add eslint-config-angular-strict --dev
 ```
 
 ## Usage
@@ -40,7 +40,7 @@ In `.eslintec.json`:
 
 ```json
 {
-  "extends": ["angular-strict-eslint-rules"]
+  "extends": ["eslint-config-angular-strict"]
 }
 ```
 
