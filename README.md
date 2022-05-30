@@ -34,7 +34,7 @@ or
 yarn add eslint-config-angular-strict --dev
 ```
 
-## Usage
+## Configure ESLint
 
 In `.eslintec.json`:
 
