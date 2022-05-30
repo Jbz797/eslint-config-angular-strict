@@ -6,7 +6,7 @@ Stricts rules to enforce a consistent code style for **Angular** development
 
 For better consistency, please add this options to your `tsconfig.json` :
 
-```json
+```javascript
 {
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true, // Ensure that casing is correct in imports

@@ -1,0 +1,37 @@
+{
+  "name": "angular-strict-eslint-rules",
+  "version": "0.0.1",
+  "description": "Stricts rules to enforce a consistent code style for Angular development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jbz797/angular-strict-eslint-rules"
+  },
+  "keywords": [
+    "angular",
+    "eslint",
+    "linting-rules",
+    "stricts-rules",
+    "typescript"
+  ],
+  "author": {
+    "name": "Jean-benoit Gautier"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jbz797/angular-strict-eslint-rules/issues"
+  },
+  "homepage": "https://github.com/Jbz797/angular-strict-eslint-rules",
+  "main": "./.eslintrc.json",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "5.26.0",
+    "@typescript-eslint/parser": "5.26.0",
+    "eslint": "8.16.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-import-resolver-typescript": "2.7.1",
+    "eslint-plugin-import": "2.26.0"
+  },
+  "devDependencies": {
+    "typescript": "~4.6.4"
+  }
+}
