@@ -1,6 +1,6 @@
 {
   "name": "angular-strict-eslint-rules",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stricts rules to enforce a consistent code style for Angular development",
   "repository": {
     "type": "git",
@@ -23,6 +23,10 @@
   "homepage": "https://github.com/Jbz797/angular-strict-eslint-rules",
   "main": "./.eslintrc.json",
   "dependencies": {
+    "@angular-eslint/builder": "13.2.1",
+    "@angular-eslint/eslint-plugin": "13.2.1",
+    "@angular-eslint/eslint-plugin-template": "13.2.1",
+    "@angular-eslint/template-parser": "13.2.1",
     "@typescript-eslint/eslint-plugin": "5.26.0",
     "@typescript-eslint/parser": "5.26.0",
     "eslint": "8.16.0",
