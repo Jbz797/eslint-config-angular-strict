@@ -24,7 +24,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
 
     'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
-    'class-methods-use-this': ['error', { exceptMethods: ['transform'] }],
+    'class-methods-use-this': ['error', { exceptMethods: ['get', 'transform'] }],
     'max-len': ['error', 180],
     'no-param-reassign': ['error', { props: false }],
     'no-plusplus': 'off',
