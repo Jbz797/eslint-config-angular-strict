@@ -29,6 +29,7 @@ module.exports = {
     'max-len': ['error', 180],
     'no-param-reassign': ['error', { props: false }],
     'no-plusplus': 'off',
+    'no-restricted-globals': 'off',
     'no-return-assign': 'off',
     'no-underscore-dangle': 'off',
     'object-curly-newline': [
