@@ -20,6 +20,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
+    'import/no-cycle': ['error', { maxDepth: 2 }],
     'import/no-import-module-exports': 'off',
     'import/prefer-default-export': 'off',
 
@@ -41,5 +42,5 @@ module.exports = {
     ],
     'padded-blocks': 'off',
     radix: ['error', 'as-needed'],
-  }
+  },
 };
