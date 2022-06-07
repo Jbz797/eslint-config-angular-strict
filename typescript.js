@@ -20,6 +20,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
+    'import/no-import-module-exports': 'off',
     'import/prefer-default-export': 'off',
 
     'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
