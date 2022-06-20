@@ -10,6 +10,7 @@ module.exports = {
   ],
   rules: {
     '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Modal', 'Page'] }],
+    '@angular-eslint/component-max-inline-declarations': ['error'],
     '@angular-eslint/component-selector': ['error', { type: 'element', prefix: 'app', style: 'kebab-case' }],
     '@angular-eslint/directive-selector': ['error', { type: 'attribute', prefix: 'app', style: 'camelCase' }],
 
