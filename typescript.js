@@ -11,8 +11,9 @@ module.exports = {
   rules: {
     '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Modal', 'Page'] }],
     '@angular-eslint/component-max-inline-declarations': ['error'],
-    '@angular-eslint/component-selector': ['error', { type: 'element', prefix: 'app', style: 'kebab-case' }],
-    '@angular-eslint/directive-selector': ['error', { type: 'attribute', prefix: 'app', style: 'camelCase' }],
+    '@angular-eslint/component-selector': ['error', { type: 'element', style: 'kebab-case' }],
+    '@angular-eslint/contextual-decorator': ['error'],
+    '@angular-eslint/directive-selector': ['error', { type: 'attribute', style: 'camelCase' }],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
