@@ -13,6 +13,7 @@ module.exports = {
     '@angular-eslint/component-max-inline-declarations': ['error'],
     '@angular-eslint/component-selector': ['error', { type: 'element', style: 'kebab-case' }],
     '@angular-eslint/contextual-decorator': ['error'],
+    '@angular-eslint/contextual-lifecycle': ['error'],
     '@angular-eslint/directive-selector': ['error', { type: 'attribute', style: 'camelCase' }],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
