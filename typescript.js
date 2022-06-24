@@ -15,6 +15,7 @@ module.exports = {
     '@angular-eslint/contextual-decorator': ['error'],
     '@angular-eslint/contextual-lifecycle': ['error'],
     '@angular-eslint/directive-selector': ['error', { type: 'attribute', style: 'camelCase' }],
+    '@angular-eslint/directive-selector': ['error', { type: 'element', prefix: 'app', style: 'kebab-case' }],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
