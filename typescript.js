@@ -19,6 +19,8 @@ module.exports = {
     '@angular-eslint/no-conflicting-lifecycle': ['error'],
     '@angular-eslint/no-empty-lifecycle-method': ['error'],
     '@angular-eslint/no-forward-ref': ['error'],
+    '@angular-eslint/no-host-metadata-property': ['error'],
+    '@angular-eslint/no-input-prefix': ['error', { prefixes: ['on'] }],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
