@@ -22,6 +22,7 @@ module.exports = {
     '@angular-eslint/no-host-metadata-property': ['error'],
     '@angular-eslint/no-input-prefix': ['error', { prefixes: ['on'] }],
     '@angular-eslint/no-input-rename': ['error'],
+    '@angular-eslint/no-inputs-metadata-property': ['error'],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
