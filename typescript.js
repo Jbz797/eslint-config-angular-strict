@@ -24,6 +24,7 @@ module.exports = {
     '@angular-eslint/no-input-rename': ['error'],
     '@angular-eslint/no-inputs-metadata-property': ['error'],
     '@angular-eslint/no-lifecycle-call': ['error'],
+    '@angular-eslint/no-forward-ref': ['error'],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
