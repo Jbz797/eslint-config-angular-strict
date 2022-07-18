@@ -27,6 +27,7 @@ module.exports = {
     '@angular-eslint/no-lifecycle-call': ['error'],
     '@angular-eslint/no-output-native': ['error'],
     '@angular-eslint/no-output-on-prefix': ['error'],
+    '@angular-eslint/no-output-rename': ['error'],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
