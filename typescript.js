@@ -29,6 +29,7 @@ module.exports = {
     '@angular-eslint/no-output-on-prefix': ['error'],
     '@angular-eslint/no-output-rename': ['error'],
     '@angular-eslint/no-outputs-metadata-property': ['error'],
+    '@angular-eslint/no-pipe-impure': ['error'],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
