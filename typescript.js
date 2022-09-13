@@ -33,6 +33,7 @@ module.exports = {
     '@angular-eslint/no-queries-metadata-property': ['error'],
     '@angular-eslint/pipe-prefix': ['error'],
     '@angular-eslint/prefer-output-readonly': ['error'],
+    '@angular-eslint/relative-url-prefix': ['error'],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
