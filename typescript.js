@@ -34,6 +34,7 @@ module.exports = {
     '@angular-eslint/pipe-prefix': ['error'],
     '@angular-eslint/prefer-output-readonly': ['error'],
     '@angular-eslint/relative-url-prefix': ['error'],
+    '@angular-eslint/require-localize-metadata': ['error'],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
