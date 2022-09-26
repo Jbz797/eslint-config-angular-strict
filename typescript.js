@@ -35,6 +35,7 @@ module.exports = {
     '@angular-eslint/prefer-output-readonly': ['error'],
     '@angular-eslint/relative-url-prefix': ['error'],
     '@angular-eslint/sort-ngmodule-metadata-arrays': ['error'],
+    '@angular-eslint/use-component-selector': ['error'],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
