@@ -36,6 +36,7 @@ module.exports = {
     '@angular-eslint/relative-url-prefix': ['error'],
     '@angular-eslint/sort-ngmodule-metadata-arrays': ['error'],
     '@angular-eslint/use-component-view-encapsulation': ['error'],
+    '@angular-eslint/use-injectable-provided-in': ['error'],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
