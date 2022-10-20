@@ -38,6 +38,7 @@ module.exports = {
     '@angular-eslint/use-component-view-encapsulation': ['error'],
     '@angular-eslint/use-injectable-provided-in': ['error'],
     '@angular-eslint/use-lifecycle-interface': ['error'],
+    '@angular-eslint/use-pipe-transform-interface': ['error'],
 
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
