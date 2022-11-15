@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "Stricts rules to enforce a consistent code style for Angular development",
   "repository": {
     "type": "git",
@@ -24,12 +24,12 @@
   "homepage": "https://github.com/Jbz797/eslint-config-angular-strict",
   "main": "./index.js",
   "dependencies": {
-    "@angular-eslint/builder": "14.1.2",
-    "@angular-eslint/eslint-plugin": "14.1.2",
-    "@angular-eslint/eslint-plugin-template": "14.1.2",
-    "@angular-eslint/template-parser": "14.1.2",
-    "@typescript-eslint/eslint-plugin": "5.42.1",
-    "@typescript-eslint/parser": "5.42.1",
+    "@angular-eslint/builder": "14.2.0",
+    "@angular-eslint/eslint-plugin": "14.2.0",
+    "@angular-eslint/eslint-plugin-template": "14.2.0",
+    "@angular-eslint/template-parser": "14.2.0",
+    "@typescript-eslint/eslint-plugin": "5.43.0",
+    "@typescript-eslint/parser": "5.43.0",
     "eslint": "8.27.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-airbnb-typescript": "17.0.0",
