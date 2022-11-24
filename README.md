@@ -18,13 +18,16 @@ yarn add eslint-config-angular-strict --dev
 
 Within your **ESLint** config file:
 
-```json
+```javascript
 {
   "root": true,
   "overrides": [
     {
       "extends": ["angular-strict/typescript"],
-      "files": ["*.ts"]
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"] // Specify your tsconfig relative path
+      }
     },
     {
       "extends": ["angular-strict/template"],
@@ -38,7 +41,7 @@ Within your **ESLint** config file:
 
 Within your **ESLint** config file:
 
-```json
+```javascript
 {
   "root": true,
   "overrides": [
