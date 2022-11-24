@@ -6,5 +6,6 @@ module.exports = {
     '@angular-eslint/template/accessibility-label-has-associated-control': 'error',
     '@angular-eslint/template/accessibility-role-has-required-aria': 'error',
     '@angular-eslint/template/accessibility-table-scope': 'error',
+    '@angular-eslint/template/accessibility-valid-aria': 'error',
   },
 };
