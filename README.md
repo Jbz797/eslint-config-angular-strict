@@ -34,6 +34,25 @@ Within your **ESLint** config file:
 }
 ```
 
+## Configuring Eslint for Typescript only projects
+
+Within your **ESLint** config file:
+
+```json
+{
+  "root": true,
+  "overrides": [
+    {
+      "extends": ["angular-strict/typescript"],
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"] // Specify your tsconfig relative path
+      }
+    }
+  ]
+}
+```
+
 ℹ️ `eslint` dependencies are included, so you can remove all `eslint` related dependencies from your project.
 
 ## Tsconfig
