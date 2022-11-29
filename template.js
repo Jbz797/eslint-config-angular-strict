@@ -6,5 +6,6 @@ module.exports = {
     '@angular-eslint/template/accessibility-role-has-required-aria': 'error',
     '@angular-eslint/template/accessibility-table-scope': 'error',
     '@angular-eslint/template/accessibility-valid-aria': 'error',
+    '@angular-eslint/template/attributes-order': ['error', { alphabetical: true }],
   },
 };
