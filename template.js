@@ -7,5 +7,6 @@ module.exports = {
     '@angular-eslint/template/accessibility-table-scope': 'error',
     '@angular-eslint/template/accessibility-valid-aria': 'error',
     '@angular-eslint/template/attributes-order': ['error', { alphabetical: true }],
+    '@angular-eslint/template/banana-in-box': 'error',
   },
 };
