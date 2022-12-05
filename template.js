@@ -9,5 +9,6 @@ module.exports = {
     '@angular-eslint/template/attributes-order': ['error', { alphabetical: true }],
     '@angular-eslint/template/banana-in-box': 'error',
     '@angular-eslint/template/conditional-complexity': 'error',
+    '@angular-eslint/template/cyclomatic-complexity': ['error', { maxComplexity: 10 }],
   },
 };
