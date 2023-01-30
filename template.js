@@ -10,5 +10,6 @@ module.exports = {
     '@angular-eslint/template/banana-in-box': 'error',
     '@angular-eslint/template/conditional-complexity': 'error',
     '@angular-eslint/template/cyclomatic-complexity': ['error', { maxComplexity: 10 }],
+    '@angular-eslint/template/eqeqeq': 'error',
   },
 };
