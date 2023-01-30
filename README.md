@@ -4,6 +4,8 @@ Stricts rules to enforce a consistent code style for **Angular** development
 
 ## Installation
 
+ℹ️ `eslint` dependencies are included, so you can remove all `eslint` related dependencies from your project.
+
 ```sh
 npm install eslint-config-angular-strict --save-dev
 ```
@@ -55,8 +57,6 @@ Within your **ESLint** config file:
   ]
 }
 ```
-
-ℹ️ `eslint` dependencies are included, so you can remove all `eslint` related dependencies from your project.
 
 ## Tsconfig
 

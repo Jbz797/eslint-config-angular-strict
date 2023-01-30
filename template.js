@@ -11,5 +11,6 @@ module.exports = {
     '@angular-eslint/template/conditional-complexity': 'error',
     '@angular-eslint/template/cyclomatic-complexity': ['error', { maxComplexity: 10 }],
     '@angular-eslint/template/eqeqeq': 'error',
+    '@angular-eslint/template/mouse-events-have-key-events': 'error',
   },
 };
