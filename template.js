@@ -13,5 +13,6 @@ module.exports = {
     '@angular-eslint/template/eqeqeq': 'error',
     '@angular-eslint/template/mouse-events-have-key-events': 'error',
     '@angular-eslint/template/no-any': 'error',
+    '@angular-eslint/template/no-autofocus': 'error',
   },
 };
