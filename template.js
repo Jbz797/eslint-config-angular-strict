@@ -14,5 +14,6 @@ module.exports = {
     '@angular-eslint/template/mouse-events-have-key-events': 'error',
     '@angular-eslint/template/no-any': 'error',
     '@angular-eslint/template/no-autofocus': 'error',
+    '@angular-eslint/template/no-call-expression': 'error',
   },
 };
