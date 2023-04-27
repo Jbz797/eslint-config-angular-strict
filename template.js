@@ -15,5 +15,6 @@ module.exports = {
     '@angular-eslint/template/no-any': 'error',
     '@angular-eslint/template/no-autofocus': 'error',
     '@angular-eslint/template/no-call-expression': 'error',
+    '@angular-eslint/template/no-distracting-elements': 'error',
   },
 };
