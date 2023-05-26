@@ -17,5 +17,6 @@ module.exports = {
     '@angular-eslint/template/role-has-required-aria': 'error',
     '@angular-eslint/template/table-scope': 'error',
     '@angular-eslint/template/valid-aria': 'error',
+    '@angular-eslint/template/no-inline-styles': 'error',
   },
 };
