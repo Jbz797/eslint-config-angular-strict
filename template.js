@@ -15,6 +15,7 @@ module.exports = {
     '@angular-eslint/template/no-distracting-elements': 'error',
     '@angular-eslint/template/no-duplicate-attributes': 'error',
     '@angular-eslint/template/no-interpolation-in-attributes': 'error',
+    '@angular-eslint/template/no-negated-async': 'error',
     '@angular-eslint/template/role-has-required-aria': 'error',
     '@angular-eslint/template/table-scope': 'error',
     '@angular-eslint/template/valid-aria': 'error',
