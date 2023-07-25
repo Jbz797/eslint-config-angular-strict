@@ -31,7 +31,6 @@ module.exports = {
     '@angular-eslint/no-outputs-metadata-property': 'error',
     '@angular-eslint/no-pipe-impure': 'error',
     '@angular-eslint/no-queries-metadata-property': 'error',
-    '@angular-eslint/pipe-prefix': 'error',
     '@angular-eslint/prefer-output-readonly': 'error',
     '@angular-eslint/relative-url-prefix': 'error',
     '@angular-eslint/sort-ngmodule-metadata-arrays': 'error',
