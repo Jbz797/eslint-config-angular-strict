@@ -32,6 +32,7 @@ module.exports = {
     '@angular-eslint/no-pipe-impure': 'error',
     '@angular-eslint/no-queries-metadata-property': 'error',
     '@angular-eslint/prefer-output-readonly': 'error',
+    '@angular-eslint/prefer-standalone-component': 'error',
     '@angular-eslint/relative-url-prefix': 'error',
     '@angular-eslint/sort-ngmodule-metadata-arrays': 'error',
     '@angular-eslint/use-component-view-encapsulation': 'error',
