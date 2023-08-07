@@ -1,6 +1,16 @@
-# eslint-config-angular-strict
+<br>
 
-Stricts rules to enforce a consistent code style for **Angular** development
+<h1 align="center">Angular Strict ESLint</h1>
+
+<p align="center">Stricts rules to enforce a consistent code style for <strong>Angular</strong> development</p>
+
+<p align="center">
+    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://img.shields.io/npm/v/eslint-config-angular-strict/latest.svg" alt="NPM Version" /></a>
+    <a href="https://github.com/Jbz797/eslint-config-angular-strict/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/eslint-config-angular-strict.svg" alt="GitHub license" /></a>
+    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://img.shields.io/npm/dm/eslint-config-angular-strict.svg" alt="NPM Downloads" /></a>
+</p>
+
+<br>
 
 ## Installation
 
