@@ -48,6 +48,7 @@ module.exports = {
     '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
     'import/extensions': ['error', 'ignorePackages', { ts: 'never' }],
+    'import/no-anonymous-default-export': 'error',
     'import/no-cycle': ['error', { maxDepth: 2 }],
     'import/no-import-module-exports': 'off',
     'import/prefer-default-export': 'off',
