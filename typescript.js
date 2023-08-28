@@ -51,6 +51,7 @@ module.exports = {
     'import/no-anonymous-default-export': 'error',
     'import/no-commonjs': 'error',
     'import/no-cycle': ['error', { maxDepth: 2 }],
+    'import/no-deprecated': 'error',
     'import/no-import-module-exports': 'off',
     'import/prefer-default-export': 'off',
 
