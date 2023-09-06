@@ -54,6 +54,7 @@ module.exports = {
     'import/no-deprecated': 'error',
     'import/no-empty-named-blocks': 'error',
     'import/no-import-module-exports': 'off',
+    'import/no-named-as-default-member': 'error',
     'import/prefer-default-export': 'off',
 
     'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
