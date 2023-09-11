@@ -55,6 +55,20 @@ module.exports = {
     'import/no-empty-named-blocks': 'error',
     'import/no-import-module-exports': 'off',
     'import/no-named-as-default-member': 'error',
+    'import/order': [
+      'error',
+      {
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        'newlines-between': 'always-and-inside-groups',
+        pathGroups: [
+          { pattern: '@angular/**', group: 'external', position: 'before' },
+          { pattern: 'firebase*', group: 'external', position: 'before' },
+          { pattern: 'ng-zorro-antd/**', group: 'external', position: 'before' },
+        ],
+        pathGroupsExcludedImportTypes: ['@angular'],
+        warnOnUnassignedImports: true,
+      },
+    ],
     'import/prefer-default-export': 'off',
 
     'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
