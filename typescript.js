@@ -59,10 +59,10 @@ module.exports = {
       'error',
       {
         alphabetize: { order: 'asc', caseInsensitive: true },
-        'newlines-between': 'always-and-inside-groups',
+        'newlines-between': 'always',
         pathGroups: [
           { pattern: '@angular/**', group: 'external', position: 'before' },
-          { pattern: 'firebase*', group: 'external', position: 'before' },
+          { pattern: 'firebase*/**', group: 'external', position: 'before', patternOptions: { partial: true } },
           { pattern: 'ng-zorro-antd/**', group: 'external', position: 'before' },
         ],
         pathGroupsExcludedImportTypes: ['@angular'],
