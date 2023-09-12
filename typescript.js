@@ -62,10 +62,11 @@ module.exports = {
         'newlines-between': 'always',
         pathGroups: [
           { pattern: '@angular/**', group: 'external', position: 'before' },
+          { pattern: '@nestjs/**', group: 'external', position: 'before' },
           { pattern: 'firebase*/**', group: 'external', position: 'before', patternOptions: { partial: true } },
           { pattern: 'ng-zorro-antd/**', group: 'external', position: 'before' },
         ],
-        pathGroupsExcludedImportTypes: ['@angular'],
+        pathGroupsExcludedImportTypes: [],
         warnOnUnassignedImports: true,
       },
     ],

@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Stricts rules to enforce a consistent code style for Angular development",
   "repository": {
     "type": "git",
