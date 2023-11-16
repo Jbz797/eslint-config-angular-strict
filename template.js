@@ -20,7 +20,7 @@ module.exports = {
     '@angular-eslint/template/prefer-self-closing-tags': 'error',
     '@angular-eslint/template/role-has-required-aria': 'error',
     '@angular-eslint/template/table-scope': 'error',
-    '@angular-eslint/template/use-track-by-function': ['error', { alias: ['ngForTrackByIndex', 'ngForTrackByProprty'] }],
+    '@angular-eslint/template/use-track-by-function': ['error', { alias: ['ngForTrackByIndex', 'ngForTrackByProperty'] }],
     '@angular-eslint/template/valid-aria': 'error',
   },
 };
