@@ -41,7 +41,8 @@ module.exports = {
     '@angular-eslint/use-lifecycle-interface': 'error',
     '@angular-eslint/use-pipe-transform-interface': 'error',
 
-    "@typescript-eslint/member-ordering": "error",
+    '@typescript-eslint/member-ordering': 'error',
+    '@typescript-eslint/prefer-destructuring': 'error',
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
@@ -93,6 +94,7 @@ module.exports = {
       },
     ],
     'padded-blocks': 'off',
+    'prefer-destructuring': 'off',
     radix: ['error', 'as-needed'],
   },
 };
