@@ -41,13 +41,14 @@ module.exports = {
     '@angular-eslint/use-lifecycle-interface': 'error',
     '@angular-eslint/use-pipe-transform-interface': 'error',
 
-    '@typescript-eslint/member-ordering': 'error',
-    '@typescript-eslint/prefer-destructuring': 'error',
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+    '@typescript-eslint/member-ordering': 'error',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
     '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
     '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/prefer-destructuring': 'error',
+    '@typescript-eslint/sort-type-constituents': 'error',
     '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
     'import/extensions': ['error', 'ignorePackages', { ts: 'never' }],
