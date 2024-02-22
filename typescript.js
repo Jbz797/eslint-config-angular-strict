@@ -98,5 +98,6 @@ module.exports = {
     'padded-blocks': 'off',
     'prefer-destructuring': 'off',
     radix: ['error', 'as-needed'],
+    "sort-keys": ["error"]
   },
 };
