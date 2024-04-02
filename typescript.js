@@ -12,6 +12,7 @@ module.exports = {
     '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Modal', 'Page'] }],
     '@angular-eslint/component-max-inline-declarations': 'error',
     '@angular-eslint/component-selector': ['error', { type: 'element', style: 'kebab-case' }],
+    '@angular-eslint/consistent-component-styles': 'error',
     '@angular-eslint/contextual-decorator': 'error',
     '@angular-eslint/contextual-lifecycle': 'error',
     '@angular-eslint/directive-class-suffix': 'error',
@@ -33,7 +34,7 @@ module.exports = {
     '@angular-eslint/no-pipe-impure': 'error',
     '@angular-eslint/no-queries-metadata-property': 'error',
     '@angular-eslint/prefer-output-readonly': 'error',
-    '@angular-eslint/prefer-standalone-component': 'error',
+    '@angular-eslint/prefer-standalone': 'error',
     '@angular-eslint/relative-url-prefix': 'error',
     '@angular-eslint/sort-lifecycle-methods': 'error',
     '@angular-eslint/sort-ngmodule-metadata-arrays': 'error',
@@ -97,7 +98,7 @@ module.exports = {
     ],
     'padded-blocks': 'off',
     'prefer-destructuring': 'off',
+    'sort-keys': ['error'],
     radix: ['error', 'as-needed'],
-    "sort-keys": ["error"]
   },
 };
