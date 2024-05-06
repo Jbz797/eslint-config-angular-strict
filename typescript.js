@@ -50,6 +50,7 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/prefer-destructuring': 'error',
+    '@typescript-eslint/prefer-optional-chain': 'error',
     '@typescript-eslint/sort-type-constituents': 'error',
     '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
