@@ -66,6 +66,7 @@ module.exports = {
       'error',
       {
         alphabetize: { order: 'asc', caseInsensitive: true },
+        named: true,
         'newlines-between': 'always',
         pathGroups: [
           { pattern: '@angular/**', group: 'external', position: 'before' },
