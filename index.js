@@ -79,6 +79,7 @@ export default [
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
       // Stylistic rules
+      '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
       '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/comma-spacing': ['error', { before: false, after: true }],
@@ -123,7 +124,6 @@ export default [
       'import-x/prefer-default-export': 'off',
 
       // General rules
-      'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
       'class-methods-use-this': ['error', { exceptMethods: ['beforeUnloadHander', 'trackBy', 'transform', 'windowRef'] }],
       'max-lines': ['error', 500],
       'no-param-reassign': ['error', { props: false }],

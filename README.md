@@ -30,7 +30,7 @@ This package includes **ESLint 9** and uses the new **flat configuration format*
 
 - **Angular 18+**
 - **Node.js 18+**
-- **TypeScript 5.0+**
+- **TypeScript 5+**
 
 ## Installation
 
