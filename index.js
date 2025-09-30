@@ -84,15 +84,14 @@ export default [
       '@stylistic/space-infix-ops': 'error',
 
       // Import rules
-      'import/extensions': ['error', 'ignorePackages', { ts: 'never' }],
-      'import/no-anonymous-default-export': 'error',
-      'import/no-commonjs': 'error',
-      'import/no-cycle': ['error', { maxDepth: 2 }],
-      'import/no-deprecated': 'error',
-      'import/no-empty-named-blocks': 'error',
-      'import/no-import-module-exports': 'off',
-      'import/no-named-as-default-member': 'error',
-      'import/order': [
+      'import-x/no-anonymous-default-export': 'error',
+      'import-x/no-commonjs': 'error',
+      'import-x/no-cycle': ['error', { maxDepth: 2 }],
+      'import-x/no-deprecated': 'error',
+      'import-x/no-empty-named-blocks': 'error',
+      'import-x/no-import-module-exports': 'off',
+      'import-x/no-named-as-default-member': 'error',
+      'import-x/order': [
         'error',
         {
           alphabetize: { order: 'asc', caseInsensitive: true },
@@ -108,7 +107,7 @@ export default [
           warnOnUnassignedImports: true,
         },
       ],
-      'import/prefer-default-export': 'off',
+      'import-x/prefer-default-export': 'off',
 
       // General rules
       'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
