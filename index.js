@@ -1,29 +1,24 @@
-// ESLint 9 flat configuration export
 import angular from '@angular-eslint/eslint-plugin';
 import angularTemplate from '@angular-eslint/eslint-plugin-template';
 import angularTemplateParser from '@angular-eslint/template-parser';
-import importPlugin from 'eslint-plugin-import-x';
+import importX from 'eslint-plugin-import-x'
 import stylistic from '@stylistic/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
 
 export default [
-  // TypeScript files configuration
   {
+    // TypeScript files configuration
     files: ['**/*.ts'],
     languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        ecmaVersion: 2022,
-        project: './tsconfig.json',
-        sourceType: 'module',
-      },
+      parser: tsParser,
+      parserOptions: { ecmaVersion: 'latest', project: './tsconfig.json', sourceType: 'module' },
     },
     plugins: {
       '@angular-eslint': angular,
       '@stylistic': stylistic,
       '@typescript-eslint': typescriptEslint,
-      import: importPlugin,
+      'import-x': importX,
     },
     rules: {
       // Angular ESLint rules
@@ -145,8 +140,8 @@ export default [
     },
   },
 
-  // HTML Template files configuration
   {
+    // HTML Template files configuration
     files: ['**/*.html'],
     languageOptions: {
       parser: angularTemplateParser,
