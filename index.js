@@ -8,6 +8,15 @@ import tsParser from '@typescript-eslint/parser';
 import { configs, rules } from 'eslint-config-airbnb-extended';
 
 export default [
+  // Global plugins configuration for all files
+  {
+    plugins: {
+      'import-x': importX,
+      '@stylistic': stylistic,
+      '@typescript-eslint': tsEslint,
+    },
+  },
+
   // Airbnb strict rules
   ...configs.base.all,
   rules.base.strict,
@@ -21,9 +30,6 @@ export default [
     },
     plugins: {
       '@angular-eslint': angular,
-      '@stylistic': stylistic,
-      '@typescript-eslint': tsEslint,
-      'import-x': importX,
     },
     rules: {
       // Angular ESLint rules

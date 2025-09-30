@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Modern ESLint configuration with strict rules for Angular development.",
   "keywords": [
     "angular",
@@ -30,6 +30,9 @@
   "main": "./index.js",
   "exports": {
     ".": "./index.js"
+  },
+  "scripts": {
+    "test": "cd tests && yarn install && eslint . --format=stylish"
   },
   "dependencies": {
     "@angular-eslint/builder": "20.3.0",
