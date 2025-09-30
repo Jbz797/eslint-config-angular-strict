@@ -12,7 +12,7 @@
 
 <br>
 
-## ⚠️ Version 2.0.0 - Complete ESLint Bundle
+## ⚠️ Version 2.0.0 - Flat Config
 
 This package includes **ESLint 9** and uses the new **flat configuration format** : [ESLint 9 Migration Guide](https://eslint.org/docs/latest/use/configure/migration-guide).
 
@@ -22,7 +22,7 @@ This package includes **ESLint 9** and uses the new **flat configuration format*
 
 - ✅ **Airbnb Extended** (strict coding standards)
 - ✅ **Angular ESLint** (Angular 18+ support)
-- ✅ **ESLint 9** (bundled - no separate installation needed)
+- ✅ **ESLint 9** (bundled)
 - ✅ **Stylistic** (modern formatting rules)
 - ✅ **TypeScript ESLint** (latest rules)
 
@@ -34,7 +34,7 @@ This package includes **ESLint 9** and uses the new **flat configuration format*
 
 ## Installation
 
-**One command setup** - ESLint is included!
+One command setup
 
 ```sh
 npm install eslint-config-angular-strict --save-dev
@@ -99,24 +99,31 @@ Make sure your `tsconfig.json` is properly configured:
 
 ### Angular Rules
 
-- ✅ Accessibility enforcement
-- ✅ Angular 18+ standalone components support
-- ✅ Component/Directive naming conventions
-- ✅ Lifecycle method validation
-- ✅ Template best practices
+- ✅ **Best practices**: Standalone components, view encapsulation, injectable provided-in
+- ✅ **Component standards**: Class suffixes (Component, Modal, Page), kebab-case selectors
+- ✅ **Directive standards**: CamelCase selectors, proper class suffixes
+- ✅ **Lifecycle enforcement**: Interface usage, method ordering, async restrictions
+- ✅ **Template validation**: Accessibility, attributes ordering, trackBy functions
 
 ### TypeScript Rules
 
-- ✅ Code style consistency
-- ✅ Import/export management
-- ✅ Modern ES2020+ features
-- ✅ Strict type checking
+- ✅ **Code organization**: Import/export management, consistent type definitions
+- ✅ **Modern patterns**: Optional chaining, destructuring, proper error handling
+- ✅ **Performance**: Unbound method checking, proper async/await usage
+- ✅ **Strict typing**: Member ordering, type safety, no explicit any allowed
 
-### Performance
+### Style & Formatting (via @stylistic)
 
-- ✅ Better caching and incremental linting
-- ✅ Fast linting with ESLint 9 improvements
-- ✅ Optimized for large Angular projects
+- ✅ **Airbnb compliance**: 531 strict rules from eslint-config-airbnb-extended
+- ✅ **Code structure**: Max line length (180), object key sorting, proper spacing
+- ✅ **Consistent formatting**: 2-space indentation, single quotes, trailing commas
+- ✅ **Import organization**: Alphabetical ordering with framework prioritization
+
+### Quality Assurance
+
+- ✅ **Browser globals**: Explicit window usage for 58+ global variables
+- ✅ **Modern ES features**: Arrow functions, const/let usage, template literals
+- ✅ **Variable safety**: No shadowing, unused variable warnings, no undefined usage
 
 ## Contributing
 

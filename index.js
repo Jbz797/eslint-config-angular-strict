@@ -11,16 +11,16 @@ export default [
   // Global plugins configuration for all files
   {
     plugins: {
-      'import-x': importX,
       '@stylistic': stylistic,
       '@typescript-eslint': tsEslint,
+      'import-x': importX,
     },
   },
 
   // Airbnb strict rules
   ...configs.base.all,
-  rules.base.strict,
   rules.base.importsStrict,
+  rules.typescript.typescriptEslintStrict,
   {
     // TypeScript files configuration
     files: ['**/*.ts'],
@@ -28,9 +28,7 @@ export default [
       parser: tsParser,
       parserOptions: { ecmaVersion: 'latest', project: './tsconfig.json', sourceType: 'module' },
     },
-    plugins: {
-      '@angular-eslint': angular,
-    },
+    plugins: { '@angular-eslint': angular },
     rules: {
       // Angular ESLint rules
       '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Modal', 'Page'] }],
@@ -153,12 +151,8 @@ export default [
   {
     // HTML Template files configuration
     files: ['**/*.html'],
-    languageOptions: {
-      parser: angularTemplateParser,
-    },
-    plugins: {
-      '@angular-eslint/template': angularTemplate,
-    },
+    languageOptions: { parser: angularTemplateParser },
+    plugins: { '@angular-eslint/template': angularTemplate },
     rules: {
       '@angular-eslint/template/attributes-order': ['error', { alphabetical: true }],
       '@angular-eslint/template/banana-in-box': 'error',
