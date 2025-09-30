@@ -1,14 +1,15 @@
 import angular from '@angular-eslint/eslint-plugin';
 import angularTemplate from '@angular-eslint/eslint-plugin-template';
 import angularTemplateParser from '@angular-eslint/template-parser';
-import { rules } from 'eslint-config-airbnb-extended';
-import importX from 'eslint-plugin-import-x'
+import importX from 'eslint-plugin-import-x';
 import stylistic from '@stylistic/eslint-plugin';
+import tsEslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import { configs, rules } from 'eslint-config-airbnb-extended';
 
 export default [
   // Airbnb strict rules
+  ...configs.base.all,
   rules.base.strict,
   rules.base.importsStrict,
   {
@@ -21,7 +22,7 @@ export default [
     plugins: {
       '@angular-eslint': angular,
       '@stylistic': stylistic,
-      '@typescript-eslint': typescriptEslint,
+      '@typescript-eslint': tsEslint,
       'import-x': importX,
     },
     rules: {
