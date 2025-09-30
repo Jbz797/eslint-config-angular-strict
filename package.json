@@ -1,43 +1,51 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "1.1.5",
-  "description": "Stricts rules to enforce a consistent code style for Angular development",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Jbz797/eslint-config-angular-strict"
-  },
+  "version": "2.0.0",
+  "description": "Modern ESLint configuration with strict rules for Angular development.",
   "keywords": [
     "angular",
     "eslint",
+    "eslint-config",
     "eslint-plugin",
+    "eslint9",
+    "flat-config",
     "linting-rules",
-    "stricts-rules",
-    "typescript"
+    "strict-rules",
+    "stylistic",
+    "typescript",
+    "typescript5"
   ],
   "author": {
     "name": "Jean-benoit Gautier"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jbz797/eslint-config-angular-strict"
+  },
   "bugs": {
     "url": "https://github.com/Jbz797/eslint-config-angular-strict/issues"
   },
-  "homepage": "https://github.com/Jbz797/eslint-config-angular-strict",
+  "type": "module",
   "main": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
   "dependencies": {
-    "@angular-eslint/builder": "18.4.1",
-    "@angular-eslint/eslint-plugin": "18.4.1",
-    "@angular-eslint/eslint-plugin-template": "18.4.1",
-    "@angular-eslint/template-parser": "18.4.1",
-    "@typescript-eslint/eslint-plugin": "7.18.0",
-    "@typescript-eslint/parser": "7.18.0",
-    "eslint": "8.57.1",
-    "eslint-config-airbnb-base": "15.0.0",
-    "eslint-config-airbnb-typescript": "18.0.0",
-    "eslint-import-resolver-typescript": "3.6.3",
-    "eslint-plugin-import": "2.31.0"
+    "@angular-eslint/eslint-plugin": "20.3.0",
+    "@angular-eslint/eslint-plugin-template": "20.3.0",
+    "@angular-eslint/template-parser": "20.3.0",
+    "@stylistic/eslint-plugin": "5.4.0",
+    "@typescript-eslint/eslint-plugin": "8.45.0",
+    "@typescript-eslint/parser": "8.45.0",
+    "eslint-plugin-import-x": "4.16.1"
   },
   "devDependencies": {
-    "typescript": "5.5.4"
+    "@angular-eslint/builder": "20.3.0",
+    "@typescript-eslint/types": "8.45.0",
+    "@typescript-eslint/utils": "8.45.0",
+    "eslint": "9.36.0",
+    "typescript": "5.9.2"
   },
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }

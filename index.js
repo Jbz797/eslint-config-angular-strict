@@ -1,0 +1,181 @@
+// ESLint 9 flat configuration export
+import angular from '@angular-eslint/eslint-plugin';
+import angularTemplate from '@angular-eslint/eslint-plugin-template';
+import angularTemplateParser from '@angular-eslint/template-parser';
+import importPlugin from 'eslint-plugin-import-x';
+import stylistic from '@stylistic/eslint-plugin';
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import typescriptParser from '@typescript-eslint/parser';
+
+export default [
+  // TypeScript files configuration
+  {
+    files: ['**/*.ts'],
+    languageOptions: {
+      parser: typescriptParser,
+      parserOptions: {
+        ecmaVersion: 2022,
+        project: './tsconfig.json',
+        sourceType: 'module',
+      },
+    },
+    plugins: {
+      '@angular-eslint': angular,
+      '@stylistic': stylistic,
+      '@typescript-eslint': typescriptEslint,
+      import: importPlugin,
+    },
+    rules: {
+      // Angular ESLint rules
+      '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Modal', 'Page'] }],
+      '@angular-eslint/component-max-inline-declarations': 'error',
+      '@angular-eslint/component-selector': ['error', { type: 'element', style: 'kebab-case' }],
+      '@angular-eslint/consistent-component-styles': 'error',
+      '@angular-eslint/contextual-decorator': 'error',
+      '@angular-eslint/contextual-lifecycle': 'error',
+      '@angular-eslint/directive-class-suffix': 'error',
+      '@angular-eslint/directive-selector': ['error', { type: 'attribute', style: 'camelCase' }],
+      '@angular-eslint/no-async-lifecycle-method': 'error',
+      '@angular-eslint/no-attribute-decorator': 'error',
+      '@angular-eslint/no-conflicting-lifecycle': 'error',
+      '@angular-eslint/no-empty-lifecycle-method': 'error',
+      '@angular-eslint/no-forward-ref': 'error',
+      '@angular-eslint/no-input-prefix': ['error', { prefixes: ['on'] }],
+      '@angular-eslint/no-input-rename': 'error',
+      '@angular-eslint/no-inputs-metadata-property': 'error',
+      '@angular-eslint/no-lifecycle-call': 'error',
+      '@angular-eslint/no-output-native': 'error',
+      '@angular-eslint/no-output-on-prefix': 'error',
+      '@angular-eslint/no-output-rename': 'error',
+      '@angular-eslint/no-outputs-metadata-property': 'error',
+      '@angular-eslint/no-pipe-impure': 'error',
+      '@angular-eslint/no-queries-metadata-property': 'error',
+      '@angular-eslint/prefer-output-readonly': 'error',
+      '@angular-eslint/prefer-standalone': 'error',
+      '@angular-eslint/relative-url-prefix': 'error',
+      '@angular-eslint/sort-lifecycle-methods': 'error',
+      '@angular-eslint/use-component-view-encapsulation': 'error',
+      '@angular-eslint/use-injectable-provided-in': 'error',
+      '@angular-eslint/use-lifecycle-interface': 'error',
+      '@angular-eslint/use-pipe-transform-interface': 'error',
+
+      // TypeScript ESLint rules
+      '@typescript-eslint/member-ordering': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
+      '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/only-throw-error': 'error',
+      '@typescript-eslint/prefer-destructuring': 'error',
+      '@typescript-eslint/prefer-optional-chain': 'error',
+      '@typescript-eslint/return-await': 'error',
+      '@typescript-eslint/sort-type-constituents': 'error',
+      '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
+
+      // Style rules handled by @stylistic/eslint-plugin
+      '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+      '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/comma-spacing': ['error', { before: false, after: true }],
+      '@stylistic/function-call-spacing': ['error', 'never'],
+      '@stylistic/indent': ['error', 2],
+      '@stylistic/keyword-spacing': ['error', { before: true, after: true }],
+      '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+      '@stylistic/no-extra-semi': 'error',
+      '@stylistic/object-curly-spacing': ['error', 'always'],
+      '@stylistic/quotes': ['error', 'single'],
+      '@stylistic/semi': ['error', 'always'],
+      '@stylistic/space-before-blocks': 'error',
+      '@stylistic/space-before-function-paren': ['error', { anonymous: 'always', named: 'never', asyncArrow: 'always' }],
+      '@stylistic/space-infix-ops': 'error',
+
+      // Import rules
+      'import/extensions': ['error', 'ignorePackages', { ts: 'never' }],
+      'import/no-anonymous-default-export': 'error',
+      'import/no-commonjs': 'error',
+      'import/no-cycle': ['error', { maxDepth: 2 }],
+      'import/no-deprecated': 'error',
+      'import/no-empty-named-blocks': 'error',
+      'import/no-import-module-exports': 'off',
+      'import/no-named-as-default-member': 'error',
+      'import/order': [
+        'error',
+        {
+          alphabetize: { order: 'asc', caseInsensitive: true },
+          named: true,
+          'newlines-between': 'always',
+          pathGroups: [
+            { pattern: '@angular/**', group: 'external', position: 'before' },
+            { pattern: '@nestjs/**', group: 'external', position: 'before' },
+            { pattern: 'firebase*/**', group: 'external', position: 'before', patternOptions: { partial: true } },
+            { pattern: 'ng-zorro-antd/**', group: 'external', position: 'before' },
+          ],
+          pathGroupsExcludedImportTypes: [],
+          warnOnUnassignedImports: true,
+        },
+      ],
+      'import/prefer-default-export': 'off',
+
+      // General rules
+      'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+      'class-methods-use-this': ['error', { exceptMethods: ['beforeUnloadHander', 'trackBy', 'transform', 'windowRef'] }],
+      'max-len': ['error', 180],
+      'max-lines': ['error', 500],
+      'no-param-reassign': ['error', { props: false }],
+      'no-plusplus': 'off',
+      'no-restricted-globals': 'off',
+      'no-return-assign': 'off',
+      'no-underscore-dangle': 'off',
+      'object-curly-newline': [
+        'error',
+        {
+          ExportDeclaration: { multiline: true },
+          ImportDeclaration: { multiline: true },
+          ObjectExpression: { minProperties: 4, multiline: true },
+          ObjectPattern: { minProperties: 4, multiline: true },
+        },
+      ],
+      'padded-blocks': 'off',
+      'prefer-destructuring': 'off',
+      'sort-keys': ['error'],
+      radix: ['error', 'as-needed'],
+
+      // Disable base ESLint rule that conflicts with @typescript-eslint/only-throw-error
+      '@typescript-eslint/no-throw-literal': 'off',
+      'no-throw-literal': 'off',
+    },
+  },
+
+  // HTML Template files configuration
+  {
+    files: ['**/*.html'],
+    languageOptions: {
+      parser: angularTemplateParser,
+    },
+    plugins: {
+      '@angular-eslint/template': angularTemplate,
+    },
+    rules: {
+      '@angular-eslint/template/attributes-order': ['error', { alphabetical: true }],
+      '@angular-eslint/template/banana-in-box': 'error',
+      '@angular-eslint/template/conditional-complexity': 'error',
+      '@angular-eslint/template/cyclomatic-complexity': ['error', { maxComplexity: 10 }],
+      '@angular-eslint/template/elements-content': 'error',
+      '@angular-eslint/template/eqeqeq': 'error',
+      '@angular-eslint/template/label-has-associated-control': 'error',
+      '@angular-eslint/template/mouse-events-have-key-events': 'error',
+      '@angular-eslint/template/no-any': 'error',
+      '@angular-eslint/template/no-autofocus': 'error',
+      '@angular-eslint/template/no-call-expression': 'error',
+      '@angular-eslint/template/no-distracting-elements': 'error',
+      '@angular-eslint/template/no-duplicate-attributes': 'error',
+      '@angular-eslint/template/no-interpolation-in-attributes': 'error',
+      '@angular-eslint/template/no-negated-async': 'error',
+      '@angular-eslint/template/no-positive-tabindex': 'error',
+      '@angular-eslint/template/prefer-self-closing-tags': 'error',
+      '@angular-eslint/template/role-has-required-aria': 'error',
+      '@angular-eslint/template/table-scope': 'error',
+      '@angular-eslint/template/use-track-by-function': ['error', { alias: ['ngForTrackByIndex', 'ngForTrackByProperty'] }],
+      '@angular-eslint/template/valid-aria': 'error',
+    },
+  },
+];
