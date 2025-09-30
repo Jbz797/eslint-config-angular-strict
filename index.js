@@ -1,12 +1,16 @@
 import angular from '@angular-eslint/eslint-plugin';
 import angularTemplate from '@angular-eslint/eslint-plugin-template';
 import angularTemplateParser from '@angular-eslint/template-parser';
+import { rules } from 'eslint-config-airbnb-extended';
 import importX from 'eslint-plugin-import-x'
 import stylistic from '@stylistic/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 
 export default [
+  // Airbnb strict rules
+  rules.base.strict,
+  rules.base.importsStrict,
   {
     // TypeScript files configuration
     files: ['**/*.ts'],
@@ -67,7 +71,7 @@ export default [
       '@typescript-eslint/sort-type-constituents': 'error',
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
-      // Style rules handled by @stylistic/eslint-plugin
+      // Stylistic rules
       '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/comma-spacing': ['error', { before: false, after: true }],

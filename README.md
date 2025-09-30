@@ -20,7 +20,7 @@ This package includes **ESLint 9** and uses the new **flat configuration format*
 
 #### ✨ **No additional ESLint installation needed!** Everything is bundled.
 
-- ✅ **All plugins and parsers** (complete setup)
+- ✅ **Airbnb Extended** (strict coding standards)
 - ✅ **Angular ESLint** (Angular 18+ support)
 - ✅ **ESLint 9** (bundled - no separate installation needed)
 - ✅ **Stylistic** (modern formatting rules)
