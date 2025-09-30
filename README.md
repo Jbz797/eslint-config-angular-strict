@@ -48,6 +48,18 @@ yarn add eslint-config-angular-strict --dev
 
 **⚠️ Important**: Remove any existing `eslint` dependency from your project - it's included!
 
+## Package.json Configuration
+
+**Required**: Add to your `package.json`:
+
+```json
+{
+  "type": "module"
+}
+```
+
+This is mandatory because eslint-config-angular-strict uses ES modules.
+
 ## Configure ESLint
 
 Create an `eslint.config.js` file (ESLint 9 flat config format):
