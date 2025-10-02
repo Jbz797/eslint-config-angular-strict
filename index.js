@@ -64,6 +64,7 @@ export default [
       '@angular-eslint/use-pipe-transform-interface': 'error',
 
       // TypeScript ESLint rules
+      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
       '@typescript-eslint/member-ordering': 'error',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
