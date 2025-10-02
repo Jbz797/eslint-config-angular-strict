@@ -81,6 +81,15 @@ export default [
       '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/comma-spacing': ['error', { before: false, after: true }],
+      '@stylistic/object-curly-newline': [
+        'error',
+        {
+          ExportDeclaration: { multiline: true },
+          ImportDeclaration: { multiline: true },
+          ObjectExpression: { minProperties: 4, multiline: true },
+          ObjectPattern: { minProperties: 4, multiline: true },
+        },
+      ],
       '@stylistic/function-call-spacing': ['error', 'never'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/keyword-spacing': ['error', { before: true, after: true }],
@@ -129,15 +138,6 @@ export default [
       'no-restricted-globals': 'off',
       'no-return-assign': 'off',
       'no-underscore-dangle': 'off',
-      'object-curly-newline': [
-        'error',
-        {
-          ExportDeclaration: { multiline: true },
-          ImportDeclaration: { multiline: true },
-          ObjectExpression: { minProperties: 4, multiline: true },
-          ObjectPattern: { minProperties: 4, multiline: true },
-        },
-      ],
       'prefer-destructuring': 'off',
       'sort-keys': ['error'],
       radix: ['error', 'as-needed'],
