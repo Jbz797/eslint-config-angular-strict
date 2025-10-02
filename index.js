@@ -142,10 +142,6 @@ export default [
       'prefer-destructuring': 'off',
       'sort-keys': ['error'],
       radix: ['error', 'as-needed'],
-
-      // Disable base ESLint rule that conflicts with @typescript-eslint/only-throw-error
-      '@typescript-eslint/no-throw-literal': 'off',
-      'no-throw-literal': 'off',
     },
   },
 
