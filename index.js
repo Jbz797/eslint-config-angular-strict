@@ -140,8 +140,8 @@ export default [
       'no-return-assign': 'off',
       'no-underscore-dangle': 'off',
       'prefer-destructuring': 'off',
-      'sort-keys': ['error'],
-      radix: ['error', 'as-needed'],
+      'radix': ['error', 'as-needed'],
+      'sort-keys': ['error', 'asc', { allowLineSeparatedGroups: true, natural: true }]
     },
   },
 
