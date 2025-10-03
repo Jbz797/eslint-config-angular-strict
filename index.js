@@ -110,7 +110,6 @@ export default [
       'import-x/no-commonjs': 'error',
       'import-x/no-cycle': ['error', { maxDepth: 2 }],
       'import-x/no-deprecated': 'error',
-      'import-x/no-empty-named-blocks': 'error',
       'import-x/no-import-module-exports': 'off',
       'import-x/order': [
         'error',
