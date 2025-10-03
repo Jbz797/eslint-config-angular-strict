@@ -71,7 +71,6 @@ export default [
       '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/only-throw-error': 'error',
-      '@typescript-eslint/prefer-destructuring': 'error',
       '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
       '@typescript-eslint/sort-type-constituents': 'error',
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
@@ -136,7 +135,7 @@ export default [
       'no-return-assign': 'off',
       'no-underscore-dangle': ['error', { allowAfterThis: true }],
       'radix': ['error', 'as-needed'],
-      'sort-keys': ['error', 'asc', { allowLineSeparatedGroups: true, natural: true }]
+      'sort-keys': ['error', 'asc', { allowLineSeparatedGroups: true, natural: true }],
     },
   },
 
