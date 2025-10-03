@@ -136,7 +136,6 @@ export default [
       'max-lines': ['error', 500],
       'no-param-reassign': ['error', { props: false }],
       'no-plusplus': 'off',
-      'no-restricted-globals': 'off',
       'no-return-assign': 'off',
       'no-underscore-dangle': ['error', { allowAfterThis: true }],
       'radix': ['error', 'as-needed'],
