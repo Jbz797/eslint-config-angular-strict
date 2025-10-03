@@ -68,7 +68,6 @@ export default [
       '@typescript-eslint/member-ordering': 'error',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
-      '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
       '@typescript-eslint/sort-type-constituents': 'error',
