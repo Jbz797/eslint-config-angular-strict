@@ -112,7 +112,6 @@ export default [
       'import-x/no-deprecated': 'error',
       'import-x/no-empty-named-blocks': 'error',
       'import-x/no-import-module-exports': 'off',
-      'import-x/no-named-as-default-member': 'error',
       'import-x/order': [
         'error',
         {
