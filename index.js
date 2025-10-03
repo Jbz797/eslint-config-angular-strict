@@ -98,7 +98,6 @@ export default [
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/space-before-blocks': 'error',
       '@stylistic/space-before-function-paren': ['error', { anonymous: 'always', named: 'never', asyncArrow: 'always' }],
-      '@stylistic/space-infix-ops': 'error',
 
       // Import rules
       'import-x/no-anonymous-default-export': 'error',
