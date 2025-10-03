@@ -139,7 +139,6 @@ export default [
       'no-restricted-globals': 'off',
       'no-return-assign': 'off',
       'no-underscore-dangle': 'off',
-      'prefer-destructuring': 'off',
       'radix': ['error', 'as-needed'],
       'sort-keys': ['error', 'asc', { allowLineSeparatedGroups: true, natural: true }]
     },
