@@ -20,5 +20,6 @@ export class SampleComponent {
     let test = 0;
     test++;
     this._items = ['one', 'two', 'three'];
+    const { qux } = object;
   }
 }
