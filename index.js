@@ -133,7 +133,7 @@ export default [
 
       // General rules
       'class-methods-use-this': ['error', { exceptMethods: ['beforeUnloadHander', 'trackBy', 'transform', 'windowRef'] }],
-      'max-lines': ['error', 500],
+      'max-lines': ['error', { max: 400, skipBlankLines: true, skipComments: true }],
       'no-param-reassign': ['error', { props: false }],
       'no-plusplus': 'off',
       'no-return-assign': 'off',

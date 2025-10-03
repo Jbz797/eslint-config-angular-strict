@@ -17,6 +17,8 @@ export class SampleComponent {
   }
 
   private _test() {
+    let test = 0;
+    test++;
     this._items = ['one', 'two', 'three'];
   }
 }
