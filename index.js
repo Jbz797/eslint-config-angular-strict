@@ -73,7 +73,7 @@ export default [
       '@typescript-eslint/only-throw-error': 'error',
       '@typescript-eslint/prefer-destructuring': 'error',
       '@typescript-eslint/prefer-optional-chain': 'error',
-      '@typescript-eslint/return-await': 'error',
+      '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
       '@typescript-eslint/sort-type-constituents': 'error',
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
