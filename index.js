@@ -132,7 +132,7 @@ export default [
       'import-x/prefer-default-export': 'off',
 
       // General rules
-      'class-methods-use-this': ['error', { exceptMethods: ['beforeUnloadHander', 'trackBy', 'transform', 'windowRef'] }],
+      'class-methods-use-this': 'off',
       'max-lines': ['error', { max: 400, skipBlankLines: true, skipComments: true }],
       'no-param-reassign': ['error', { props: false }],
       'no-plusplus': 'off',
