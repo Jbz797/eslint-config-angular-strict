@@ -138,7 +138,7 @@ export default [
       'no-plusplus': 'off',
       'no-restricted-globals': 'off',
       'no-return-assign': 'off',
-      'no-underscore-dangle': 'off',
+      'no-underscore-dangle': ['error', { allowAfterThis: true }],
       'radix': ['error', 'as-needed'],
       'sort-keys': ['error', 'asc', { allowLineSeparatedGroups: true, natural: true }]
     },
