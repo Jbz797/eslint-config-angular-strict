@@ -96,7 +96,6 @@ export default [
       '@stylistic/padded-blocks': 'off',
       '@stylistic/quotes': ['error', 'single'],
       '@stylistic/semi': ['error', 'always'],
-      '@stylistic/space-before-blocks': 'error',
 
       // Import rules
       'import-x/no-anonymous-default-export': 'error',
