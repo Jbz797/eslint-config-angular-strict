@@ -1,4 +1,6 @@
-<br>
+<p align="center">
+  <img src="logo.svg" alt="Angular Strict ESLint Logo" width="120" height="120">
+</p>
 
 <h1 align="center">Angular Strict ESLint</h1>
 
@@ -20,17 +22,17 @@ This package includes **ESLint 9** and uses the new **flat configuration format*
 
 #### ✨ **No additional ESLint installation needed!** Everything is bundled.
 
-- ✅ **Airbnb Extended** (strict coding standards)
-- ✅ **Angular ESLint** (Angular 18+ support)
-- ✅ **ESLint 9** (bundled)
-- ✅ **Stylistic** (modern formatting rules)
-- ✅ **TypeScript ESLint** (latest rules)
+- <img src="https://camo.githubusercontent.com/2501ca240c0fa1cba5b8c881ff560d96f993984d7cbd867a6dfd0ba044ba3e1b/68747470733a2f2f65736c696e742d616972626e622d657874656e6465642e6e697368617267736861682e6465762f6c6f676f2e706e67" width="16" height="16" style="vertical-align: middle"> [**Airbnb Extended**](https://github.com/nishargshah/eslint-config-airbnb-extended)
+- <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="16" height="16" style="vertical-align: middle"> [**Angular ESLint**](https://github.com/angular-eslint/angular-eslint)
+- <img src="https://eslint.org/icon.svg" width="16" height="16" style="vertical-align: middle"> [**ESLint 9**](https://github.com/eslint/eslint)
+- <img src="https://github.com/eslint-stylistic/eslint-stylistic/raw/main/docs/public/logo.svg" width="16" height="16" style="vertical-align: middle"> [**Stylistic**](https://github.com/eslint-stylistic/eslint-stylistic)
+- <img src="https://typescript-eslint.io/img/logo.svg" width="16" height="16" style="vertical-align: middle"> [**TypeScript ESLint**](https://github.com/typescript-eslint/typescript-eslint)
 
 ## Requirements
 
-- **Angular 18+**
-- **Node.js 18+**
-- **TypeScript 5+**
+- <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="16" height="16" style="vertical-align: middle"> **Angular 18+**
+- <img src="https://nodejs.org/static/images/logo.svg" width="16" height="16" style="vertical-align: middle"> **Node.js 18+**
+- <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" width="16" height="16" style="vertical-align: middle"> **TypeScript 5+**
 
 ## Installation
 
@@ -97,33 +99,23 @@ Make sure your `tsconfig.json` is properly configured:
 
 ## Features
 
-### Angular Rules
+### <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="16" height="16" style="vertical-align: middle"> Angular Rules
 
-- ✅ **Best practices**: Standalone components, view encapsulation, injectable provided-in
-- ✅ **Component standards**: Class suffixes (Component, Modal, Page), kebab-case selectors
-- ✅ **Directive standards**: CamelCase selectors, proper class suffixes
-- ✅ **Lifecycle enforcement**: Interface usage, method ordering, async restrictions
-- ✅ **Template validation**: Accessibility, attributes ordering, trackBy functions
+- 🏗️ **Best practices**: Standalone components, view encapsulation
+- 🎯 **Component standards**: Class suffixes, kebab-case selectors
+- 🔄 **Lifecycle enforcement**: Interface usage, method ordering
 
-### TypeScript Rules
+### <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" width="16" height="16" style="vertical-align: middle"> TypeScript Rules
 
-- ✅ **Code organization**: Import/export management, consistent type definitions
-- ✅ **Modern patterns**: Optional chaining, destructuring, proper error handling
-- ✅ **Performance**: Unbound method checking, proper async/await usage
-- ✅ **Strict typing**: Member ordering, type safety, no explicit any allowed
+- 📦 **Code organization**: Import/export management, type definitions
+- ⚡ **Modern patterns**: Optional chaining, destructuring, async/await
+- 🛡️ **Strict typing**: Member ordering, type safety, no explicit any
 
-### Style & Formatting (via @stylistic)
+### 🎨 Style & Formatting
 
-- ✅ **Airbnb compliance**: 531 strict rules from eslint-config-airbnb-extended
-- ✅ **Code structure**: Max line length (180), object key sorting, proper spacing
-- ✅ **Consistent formatting**: 2-space indentation, single quotes, trailing commas
-- ✅ **Import organization**: Alphabetical ordering with framework prioritization
-
-### Quality Assurance
-
-- ✅ **Browser globals**: Explicit window usage for 58+ global variables
-- ✅ **Modern ES features**: Arrow functions, const/let usage, template literals
-- ✅ **Variable safety**: No shadowing, unused variable warnings, no undefined usage
+- 📋 **Airbnb compliance**: 531 strict rules from eslint-config-airbnb-extended
+- 📏 **Code structure**: Max line length (180), proper spacing
+- 🔤 **Import organization**: Alphabetical ordering with framework prioritization
 
 ## Contributing
 
