@@ -70,7 +70,6 @@ export default [
       '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
       '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
-      '@stylistic/comma-spacing': ['error', { before: false, after: true }],
       '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
       '@stylistic/max-len': ['error', { code: 180, tabWidth: 2 }],
       '@stylistic/object-curly-newline': [
