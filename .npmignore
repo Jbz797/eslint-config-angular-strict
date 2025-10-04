@@ -1,1 +1,4 @@
+*.log
+.claude/
+.nx/
 tests/
