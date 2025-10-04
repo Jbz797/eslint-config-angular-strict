@@ -10,11 +10,8 @@ import { configs, rules } from 'eslint-config-airbnb-extended';
 export default [
   // Global plugins configuration for all files
   {
-    plugins: {
-      '@stylistic': stylistic,
-      '@typescript-eslint': tsEslint,
-      'import-x': importX,
-    },
+    ignores: ['dist/**', 'node_modules/**'],
+    plugins: { '@stylistic': stylistic, '@typescript-eslint': tsEslint, 'import-x': importX },
   },
 
   // Airbnb strict rules
@@ -24,10 +21,7 @@ export default [
   {
     // TypeScript files configuration
     files: ['**/*.ts'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: { ecmaVersion: 'latest', project: './tsconfig.json', sourceType: 'module' },
-    },
+    languageOptions: { parser: tsParser, parserOptions: { ecmaVersion: 'latest', project: './tsconfig.json', sourceType: 'module' } },
     plugins: { '@angular-eslint': angular },
     rules: {
       // Angular ESLint rules
@@ -94,7 +88,6 @@ export default [
       '@stylistic/no-extra-semi': 'error',
       '@stylistic/object-curly-spacing': ['error', 'always'],
       '@stylistic/padded-blocks': 'off',
-      '@stylistic/quotes': ['error', 'single'],
 
       // Import rules
       'import-x/no-anonymous-default-export': 'error',
