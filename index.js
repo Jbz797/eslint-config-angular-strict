@@ -71,17 +71,20 @@ export default [
       '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/comma-spacing': ['error', { before: false, after: true }],
+      '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+      '@stylistic/max-len': ['error', { code: 180, tabWidth: 2 }],
       '@stylistic/object-curly-newline': [
         'error',
         {
-          ExportDeclaration: { multiline: true },
-          ImportDeclaration: { multiline: true },
-          ObjectExpression: { minProperties: 4, multiline: true },
-          ObjectPattern: { minProperties: 4, multiline: true },
+          ExportDeclaration: 'never',
+          ImportDeclaration: 'never',
+          ObjectExpression: { consistent: true, minProperties: 4, multiline: true },
+          ObjectPattern: { consistent: true, minProperties: 4, multiline: true },
+          TSEnumBody: { consistent: true, minProperties: 4, multiline: true },
+          TSInterfaceBody: { consistent: true, minProperties: 4, multiline: true },
+          TSTypeLiteral: { consistent: true, minProperties: 4, multiline: true },
         },
       ],
-      '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
-      '@stylistic/max-len': ['error', { code: 180, tabWidth: 2 }],
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
 
       // Import rules
