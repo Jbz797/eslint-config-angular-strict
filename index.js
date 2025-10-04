@@ -80,7 +80,6 @@ export default [
           ObjectPattern: { minProperties: 4, multiline: true },
         },
       ],
-      '@stylistic/function-call-spacing': ['error', 'never'],
       '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
       '@stylistic/max-len': ['error', { code: 180, tabWidth: 2 }],
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
