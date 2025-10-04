@@ -12,7 +12,7 @@
 
 <br>
 
-## ⚠️ Version 2.0.0 - Flat Config
+## ⚠️ V2 - Flat Config
 
 This package includes **ESLint 9** and uses the new **flat configuration format** : [ESLint 9 Migration Guide](https://eslint.org/docs/latest/use/configure/migration-guide).
 
