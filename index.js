@@ -73,8 +73,8 @@ export default [
       '@stylistic/object-curly-newline': [
         'error',
         {
-          ExportDeclaration: 'never',
-          ImportDeclaration: 'never',
+          ExportDeclaration: { consistent: true, minProperties: 10, multiline: true },
+          ImportDeclaration: { consistent: true, minProperties: 10, multiline: true },
           ObjectExpression: { consistent: true, minProperties: 4, multiline: true },
           ObjectPattern: { consistent: true, minProperties: 4, multiline: true },
           TSEnumBody: { consistent: true, minProperties: 4, multiline: true },
