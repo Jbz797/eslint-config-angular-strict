@@ -87,7 +87,7 @@ export default [
       '@stylistic/max-len': ['error', 180],
       '@stylistic/no-extra-semi': 'error',
       '@stylistic/object-curly-spacing': ['error', 'always'],
-      '@stylistic/padded-blocks': 'off',
+      '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
 
       // Import rules
       'import-x/no-anonymous-default-export': 'error',
