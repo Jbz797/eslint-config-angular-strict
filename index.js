@@ -86,7 +86,6 @@ export default [
       '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
       '@stylistic/max-len': ['error', 180],
       '@stylistic/no-extra-semi': 'error',
-      '@stylistic/object-curly-spacing': ['error', 'always'],
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
 
       // Import rules
