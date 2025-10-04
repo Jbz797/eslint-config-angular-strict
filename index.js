@@ -95,7 +95,6 @@ export default [
       '@stylistic/object-curly-spacing': ['error', 'always'],
       '@stylistic/padded-blocks': 'off',
       '@stylistic/quotes': ['error', 'single'],
-      '@stylistic/semi': ['error', 'always'],
 
       // Import rules
       'import-x/no-anonymous-default-export': 'error',
