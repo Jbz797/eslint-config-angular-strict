@@ -82,7 +82,6 @@ export default [
       ],
       '@stylistic/function-call-spacing': ['error', 'never'],
       '@stylistic/indent': ['error', 2],
-      '@stylistic/keyword-spacing': ['error', { before: true, after: true }],
       '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
       '@stylistic/max-len': ['error', { code: 180, tabWidth: 2 }],
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
