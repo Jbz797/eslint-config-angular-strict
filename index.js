@@ -125,6 +125,7 @@ export default [
 
       // Unicorn rules
       'unicorn/no-array-for-each': 'off',
+      'unicorn/no-useless-promise-resolve-reject': 'off',
       'unicorn/switch-case-braces': 'off',
     },
   },
