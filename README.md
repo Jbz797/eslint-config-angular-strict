@@ -20,10 +20,10 @@ This package includes **ESLint 9** and uses the new **flat configuration format*
 
 ## Features
 
-- 🅰️ **Angular**: Standalone components, lifecycle enforcement, component standards, and more...
-- 📘 **TypeScript**: Strict typing, member ordering, modern patterns, and more...
-- 🎨 **Style**: Airbnb compliance, max length, import organization, and more...
-- 🦄 **Quality**: Modern JavaScript, anti-patterns prevention, performance optimization, and more...
+- **Angular**: Standalone components, lifecycle enforcement, component standards, and more...
+- **TypeScript**: Strict typing, member ordering, modern patterns, and more...
+- **Quality**: Modern JavaScript, anti-patterns prevention, performance optimization, and more...
+- **Style**: Airbnb compliance, max length, import organization, and more...
 
 ## What's Included
 
@@ -38,9 +38,9 @@ This package includes **ESLint 9** and uses the new **flat configuration format*
 
 ## Requirements
 
-- <img src="https://avatars.githubusercontent.com/u/139426?s=48&" width="16" height="16"> **Angular 18+**
-- <img src="https://avatars.githubusercontent.com/u/9950313?s=48&v=4" width="16" height="16"> **Node.js 18+**
-- <img src="https://avatars.githubusercontent.com/u/46634674?s=48&" width="16" height="16"> **TypeScript 5+**
+- **Angular 18+**
+- **Node.js 18+**
+- **TypeScript 5+**
 
 ## Installation
 
