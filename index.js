@@ -124,6 +124,7 @@ export default [
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
       // Unicorn rules
+      'unicorn/no-abusive-eslint-disable': 'off',
       'unicorn/no-array-for-each': 'off',
       'unicorn/no-useless-promise-resolve-reject': 'off',
       'unicorn/switch-case-braces': 'off',
