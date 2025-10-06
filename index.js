@@ -74,7 +74,7 @@ export default [
       // Stylistic rules
       '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
       '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
-      '@stylistic/max-len': ['error', { code: 180, tabWidth: 2 }],
+      '@stylistic/max-len': ['error', { code: 170, tabWidth: 2 }],
       '@stylistic/object-curly-newline': [
         'error',
         {

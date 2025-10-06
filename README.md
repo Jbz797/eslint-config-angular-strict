@@ -97,21 +97,21 @@ Make sure your `tsconfig.json` is properly configured:
 
 ### <img src="https://avatars.githubusercontent.com/u/139426?s=48&" width="20" height="20"> Angular Rules
 
-- 🏗️ **Best practices**: Standalone components, view encapsulation
-- 🎯 **Component standards**: Class suffixes, kebab-case selectors
-- 🔄 **Lifecycle enforcement**: Interface usage, method ordering
+- 🏗️ **Best practices**: Standalone components, view encapsulation, and more...
+- 🎯 **Component standards**: Class suffixes, kebab-case selectors, and more...
+- 🔄 **Lifecycle enforcement**: Interface usage, method ordering, and more...
 
 ### <img src="https://avatars.githubusercontent.com/u/46634674?s=48&" width="20" height="20"> TypeScript Rules
 
-- 📦 **Code organization**: Import/export management, type definitions
-- ⚡ **Modern patterns**: Optional chaining, destructuring, async/await
-- 🛡️ **Strict typing**: Member ordering, type safety, no explicit any
+- 📦 **Code organization**: Import/export management, type definitions, and more...
+- ⚡ **Modern patterns**: Optional chaining, destructuring, async/await, and more...
+- 🛡️ **Strict typing**: Member ordering, type safety, no explicit any, and more...
 
 ### 🎨 Style & Formatting
 
-- 📋 **Airbnb compliance**: 531 strict rules from eslint-config-airbnb-extended
-- 📏 **Code structure**: Max line length (180), proper spacing
-- 🔤 **Import organization**: Alphabetical ordering with framework prioritization
+- 📋 **Airbnb compliance**: more than 500 rules from eslint-config-airbnb-extended
+- 📏 **Code structure**: Max line length, proper spacing, and more...
+- 🔤 **Import organization**: Alphabetical ordering with framework prioritization, and more...
 
 ## Contributing
 
