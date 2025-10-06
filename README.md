@@ -18,6 +18,13 @@
 
 This package includes **ESLint 9** and uses the new **flat configuration format** : [ESLint 9 Migration Guide](https://eslint.org/docs/latest/use/configure/migration-guide).
 
+## Features
+
+- 🅰️ **Angular**: Standalone components, lifecycle enforcement, component standards, and more...
+- 📘 **TypeScript**: Strict typing, member ordering, modern patterns, and more...
+- 🎨 **Style**: Airbnb compliance, max length, import organization, and more...
+- 🦄 **Quality**: Modern JavaScript, anti-patterns prevention, performance optimization, and more...
+
 ## What's Included
 
 #### ✨ **No additional ESLint installation needed!** Everything is bundled.
@@ -27,6 +34,7 @@ This package includes **ESLint 9** and uses the new **flat configuration format*
 - <img src="https://eslint.org/icon-512.png" width="16" height="16"> [**ESLint 9**](https://github.com/eslint/eslint)
 - <img src="https://avatars.githubusercontent.com/u/144717797?s=48&" width="16" height="16"> [**Stylistic**](https://github.com/eslint-stylistic/eslint-stylistic)
 - <img src="https://avatars.githubusercontent.com/u/46634674?s=48&" width="16" height="16"> [**TypeScript ESLint**](https://github.com/typescript-eslint/typescript-eslint)
+- 🦄 [**Unicorn**](https://github.com/sindresorhus/eslint-plugin-unicorn)
 
 ## Requirements
 
@@ -92,26 +100,6 @@ Make sure your `tsconfig.json` is properly configured:
   }
 }
 ```
-
-## Features
-
-### <img src="https://avatars.githubusercontent.com/u/139426?s=48&" width="20" height="20"> Angular Rules
-
-- 🏗️ **Best practices**: Standalone components, view encapsulation, and more...
-- 🎯 **Component standards**: Class suffixes, kebab-case selectors, and more...
-- 🔄 **Lifecycle enforcement**: Interface usage, method ordering, and more...
-
-### <img src="https://avatars.githubusercontent.com/u/46634674?s=48&" width="20" height="20"> TypeScript Rules
-
-- 📦 **Code organization**: Import/export management, type definitions, and more...
-- ⚡ **Modern patterns**: Optional chaining, destructuring, async/await, and more...
-- 🛡️ **Strict typing**: Member ordering, type safety, no explicit any, and more...
-
-### 🎨 Style & Formatting
-
-- 📋 **Airbnb compliance**: more than 500 rules from eslint-config-airbnb-extended
-- 📏 **Code structure**: Max line length, proper spacing, and more...
-- 🔤 **Import organization**: Alphabetical ordering with framework prioritization, and more...
 
 ## Contributing
 

@@ -1,6 +1,7 @@
 import angular from '@angular-eslint/eslint-plugin';
 import angularTemplate from '@angular-eslint/eslint-plugin-template';
 import angularTemplateParser from '@angular-eslint/template-parser';
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import importX from 'eslint-plugin-import-x';
 import stylistic from '@stylistic/eslint-plugin';
 import tsEslint from '@typescript-eslint/eslint-plugin';
@@ -8,7 +9,6 @@ import tsParser from '@typescript-eslint/parser';
 import { configs, rules } from 'eslint-config-airbnb-extended';
 
 export default [
-  // Global plugins configuration for all files
   {
     ignores: ['dist/**', 'node_modules/**'],
     plugins: {
@@ -19,8 +19,8 @@ export default [
     },
   },
 
-  // Airbnb strict rules
   ...configs.base.all,
+  eslintPluginUnicorn.configs.all,
   rules.base.importsStrict,
   rules.typescript.typescriptEslintStrict,
   {
@@ -62,32 +62,15 @@ export default [
       '@angular-eslint/use-lifecycle-interface': 'error',
       '@angular-eslint/use-pipe-transform-interface': 'error',
 
-      // TypeScript ESLint rules
-      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
-      '@typescript-eslint/member-ordering': 'error',
-      '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
-      '@typescript-eslint/no-non-null-assertion': 'off',
-      '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
-      '@typescript-eslint/sort-type-constituents': 'error',
-      '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
-
-      // Stylistic rules
-      '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
-      '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
-      '@stylistic/max-len': ['error', { code: 170, tabWidth: 2 }],
-      '@stylistic/object-curly-newline': [
-        'error',
-        {
-          ExportDeclaration: { consistent: true, minProperties: 10, multiline: true },
-          ImportDeclaration: { consistent: true, minProperties: 10, multiline: true },
-          ObjectExpression: { consistent: true, minProperties: 4, multiline: true },
-          ObjectPattern: { consistent: true, minProperties: 4, multiline: true },
-          TSEnumBody: { consistent: true, minProperties: 4, multiline: true },
-          TSInterfaceBody: { consistent: true, minProperties: 4, multiline: true },
-          TSTypeLiteral: { consistent: true, minProperties: 4, multiline: true },
-        },
-      ],
-      '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
+      // ESLint rules
+      'class-methods-use-this': 'off',
+      'max-lines': ['error', { max: 400, skipBlankLines: true, skipComments: true }],
+      'no-param-reassign': ['error', { props: false }],
+      'no-plusplus': 'off',
+      'no-return-assign': 'off',
+      'no-underscore-dangle': ['error', { allowAfterThis: true }],
+      'radix': ['error', 'as-needed'],
+      'sort-keys': ['error', 'asc', { allowLineSeparatedGroups: true, natural: true }],
 
       // Import rules
       'import-x/no-anonymous-default-export': 'error',
@@ -113,15 +96,36 @@ export default [
       ],
       'import-x/prefer-default-export': 'off',
 
-      // General rules
-      'class-methods-use-this': 'off',
-      'max-lines': ['error', { max: 400, skipBlankLines: true, skipComments: true }],
-      'no-param-reassign': ['error', { props: false }],
-      'no-plusplus': 'off',
-      'no-return-assign': 'off',
-      'no-underscore-dangle': ['error', { allowAfterThis: true }],
-      'radix': ['error', 'as-needed'],
-      'sort-keys': ['error', 'asc', { allowLineSeparatedGroups: true, natural: true }],
+      // Stylistic rules
+      '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+      '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+      '@stylistic/max-len': ['error', { code: 170, tabWidth: 2 }],
+      '@stylistic/object-curly-newline': [
+        'error',
+        {
+          ExportDeclaration: { consistent: true, minProperties: 10, multiline: true },
+          ImportDeclaration: { consistent: true, minProperties: 10, multiline: true },
+          ObjectExpression: { consistent: true, minProperties: 4, multiline: true },
+          ObjectPattern: { consistent: true, minProperties: 4, multiline: true },
+          TSEnumBody: { consistent: true, minProperties: 4, multiline: true },
+          TSInterfaceBody: { consistent: true, minProperties: 4, multiline: true },
+          TSTypeLiteral: { consistent: true, minProperties: 4, multiline: true },
+        },
+      ],
+      '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
+
+      // TypeScript ESLint rules
+      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
+      '@typescript-eslint/member-ordering': 'error',
+      '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
+      '@typescript-eslint/sort-type-constituents': 'error',
+      '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
+
+      // Unicorn rules
+      'unicorn/no-array-for-each': 'off',
+      'unicorn/switch-case-braces': 'off',
     },
   },
 
