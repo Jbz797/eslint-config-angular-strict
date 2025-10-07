@@ -128,6 +128,7 @@ export default [
       'unicorn/new-for-builtins': 'off',
       'unicorn/no-abusive-eslint-disable': 'off',
       'unicorn/no-array-for-each': 'off',
+      'unicorn/no-null': 'off',
       'unicorn/no-useless-promise-resolve-reject': 'off',
       'unicorn/switch-case-braces': 'off',
     },
