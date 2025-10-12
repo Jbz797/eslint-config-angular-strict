@@ -100,6 +100,7 @@ export default [
       '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
       '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
       '@stylistic/max-len': ['error', { code: 170, tabWidth: 2 }],
+      '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 5 }],
       '@stylistic/object-curly-newline': [
         'error',
         {
@@ -155,6 +156,7 @@ export default [
       '@angular-eslint/template/no-interpolation-in-attributes': 'error',
       '@angular-eslint/template/no-negated-async': 'error',
       '@angular-eslint/template/no-positive-tabindex': 'error',
+      '@angular-eslint/template/prefer-at-else': 'error',
       '@angular-eslint/template/prefer-self-closing-tags': 'error',
       '@angular-eslint/template/role-has-required-aria': 'error',
       '@angular-eslint/template/table-scope': 'error',
