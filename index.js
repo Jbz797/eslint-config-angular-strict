@@ -131,6 +131,7 @@ export default [
       'unicorn/no-array-for-each': 'off',
       'unicorn/no-null': 'off',
       'unicorn/no-useless-promise-resolve-reject': 'off',
+      'unicorn/prefer-top-level-await': 'off',
       'unicorn/switch-case-braces': 'off',
     },
   },
