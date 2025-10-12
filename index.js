@@ -126,6 +126,7 @@ export default [
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
       // Unicorn rules
+      'unicorn/consistent-function-scoping': 'off',
       'unicorn/new-for-builtins': 'off',
       'unicorn/no-abusive-eslint-disable': 'off',
       'unicorn/no-array-for-each': 'off',
