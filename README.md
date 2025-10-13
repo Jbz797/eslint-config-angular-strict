@@ -87,10 +87,10 @@ Make sure your `tsconfig.json` is properly configured:
 {
   "compilerOptions": {
     (...),
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
+    "allowUnusedLabels": false,
     "noImplicitOverride": true,
     "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "strict": true,
   },
   "angularCompilerOptions": {
