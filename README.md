@@ -16,7 +16,7 @@
 
 ## ⚠️ V2 - Flat Config
 
-This package includes **ESLint 9** and uses the new **flat configuration format** : [ESLint 9 Migration Guide](https://eslint.org/docs/latest/use/configure/migration-guide).
+This package includes **ESLint 9** and uses the new **flat configuration format** ([ESLint 9 Migration Guide](https://eslint.org/docs/latest/use/configure/migration-guide)). Requires **Angular 18+** and **Node.js 18+**.
 
 ## Features
 
@@ -35,12 +35,6 @@ This package includes **ESLint 9** and uses the new **flat configuration format*
 - <img src="https://avatars.githubusercontent.com/u/144717797?s=48&" width="16" height="16"> [**Stylistic**](https://github.com/eslint-stylistic/eslint-stylistic)
 - <img src="https://avatars.githubusercontent.com/u/46634674?s=48&" width="16" height="16"> [**TypeScript ESLint**](https://github.com/typescript-eslint/typescript-eslint)
 - 🦄 [**Unicorn**](https://github.com/sindresorhus/eslint-plugin-unicorn)
-
-## Requirements
-
-- **Angular 18+**
-- **Node.js 18+**
-- **TypeScript 5+**
 
 ## Installation
 
