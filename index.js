@@ -165,6 +165,7 @@ export default [
       '@angular-eslint/template/no-positive-tabindex': 'error',
       '@angular-eslint/template/prefer-at-else': 'error',
       '@angular-eslint/template/prefer-at-empty': 'error',
+      '@angular-eslint/template/prefer-contextual-for-variables': 'error',
       '@angular-eslint/template/prefer-self-closing-tags': 'error',
       '@angular-eslint/template/role-has-required-aria': 'error',
       '@angular-eslint/template/table-scope': 'error',
