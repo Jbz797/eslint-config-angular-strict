@@ -161,6 +161,7 @@ export default [
       '@angular-eslint/template/no-empty-control-flow': 'error',
       '@angular-eslint/template/no-interpolation-in-attributes': 'error',
       '@angular-eslint/template/no-negated-async': 'error',
+      '@angular-eslint/template/no-nested-tags': 'error',
       '@angular-eslint/template/no-positive-tabindex': 'error',
       '@angular-eslint/template/prefer-at-else': 'error',
       '@angular-eslint/template/prefer-self-closing-tags': 'error',
