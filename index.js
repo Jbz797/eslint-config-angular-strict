@@ -54,6 +54,7 @@ export default [
       '@angular-eslint/no-outputs-metadata-property': 'error',
       '@angular-eslint/no-pipe-impure': 'error',
       '@angular-eslint/no-queries-metadata-property': 'error',
+      '@angular-eslint/no-uncalled-signals': 'error',
       '@angular-eslint/prefer-output-readonly': 'error',
       '@angular-eslint/prefer-standalone': 'error',
       '@angular-eslint/relative-url-prefix': 'error',
