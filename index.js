@@ -58,6 +58,7 @@ export default [
       '@angular-eslint/prefer-output-readonly': 'error',
       '@angular-eslint/prefer-standalone': 'error',
       '@angular-eslint/relative-url-prefix': 'error',
+      '@angular-eslint/require-lifecycle-on-prototype': 'error',
       '@angular-eslint/sort-lifecycle-methods': 'error',
       '@angular-eslint/use-component-view-encapsulation': 'error',
       '@angular-eslint/use-injectable-provided-in': 'error',
