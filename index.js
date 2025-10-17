@@ -41,6 +41,7 @@ export default [
       '@angular-eslint/no-async-lifecycle-method': 'error',
       '@angular-eslint/no-attribute-decorator': 'error',
       '@angular-eslint/no-conflicting-lifecycle': 'error',
+      '@angular-eslint/no-duplicates-in-metadata-arrays': 'error',
       '@angular-eslint/no-empty-lifecycle-method': 'error',
       '@angular-eslint/no-forward-ref': 'error',
       '@angular-eslint/no-input-prefix': ['error', { prefixes: ['on'] }],
@@ -116,7 +117,7 @@ export default [
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
 
       // TypeScript ESLint rules
-      "@typescript-eslint/no-unnecessary-type-conversion": "error",
+      '@typescript-eslint/no-unnecessary-type-conversion': 'error',
       '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
       '@typescript-eslint/member-ordering': 'error',
       '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
