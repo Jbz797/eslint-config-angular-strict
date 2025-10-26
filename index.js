@@ -69,6 +69,7 @@ export default [
       // ESLint rules
       'class-methods-use-this': 'off',
       'max-lines': ['error', { max: 400, skipBlankLines: true, skipComments: true }],
+      'no-fallthrough': 'off',
       'no-param-reassign': ['error', { props: false }],
       'no-plusplus': 'off',
       'no-return-assign': 'off',
@@ -130,14 +131,14 @@ export default [
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
       // Unicorn rules
-      'unicorn/consistent-function-scoping': 'off',
+      'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
       'unicorn/new-for-builtins': 'off',
       'unicorn/no-abusive-eslint-disable': 'off',
       'unicorn/no-array-for-each': 'off',
       'unicorn/no-null': 'off',
       'unicorn/no-useless-promise-resolve-reject': 'off',
       'unicorn/prefer-top-level-await': 'off',
-      'unicorn/switch-case-braces': 'off',
+      'unicorn/switch-case-braces': ['error', 'avoid'],
     },
   },
 
