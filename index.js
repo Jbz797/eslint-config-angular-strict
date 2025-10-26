@@ -23,8 +23,9 @@ export default [
   eslintPluginUnicorn.configs.all,
   rules.base.importsStrict,
   rules.typescript.typescriptEslintStrict,
+
+  // TypeScript files configuration
   {
-    // TypeScript files configuration
     files: ['**/*.ts'],
     languageOptions: { parser: tsParser, parserOptions: { project: './tsconfig.json' } },
     plugins: { '@angular-eslint': angular },
@@ -140,11 +141,12 @@ export default [
     },
   },
 
+  // HTML Template files configuration
   {
-    // HTML Template files configuration
     files: ['**/*.html'],
     languageOptions: { parser: angularTemplateParser },
     rules: {
+      // Angular ESLint rules
       '@angular-eslint/template/attributes-order': ['error', { alphabetical: true }],
       '@angular-eslint/template/banana-in-box': 'error',
       '@angular-eslint/template/conditional-complexity': 'error',
@@ -176,6 +178,7 @@ export default [
       '@angular-eslint/template/valid-aria': 'error',
 
       // Unicorn rules
+      'unicorn/prefer-string-raw': 'off',
       'unicorn/template-indent': 'off',
     },
   },
