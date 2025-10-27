@@ -1,34 +1,34 @@
-import angular from '@angular-eslint/eslint-plugin';
-import angularTemplate from '@angular-eslint/eslint-plugin-template';
+import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 import angularTemplateParser from '@angular-eslint/template-parser';
-import eslintPluginUnicorn from 'eslint-plugin-unicorn';
-import importX from 'eslint-plugin-import-x';
+import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
+import importXPlugin from 'eslint-plugin-import-x';
 import stylistic from '@stylistic/eslint-plugin';
-import tsEslint from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
+import tsEslintParser from '@typescript-eslint/parser';
+import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
+import unicornPlugin from 'eslint-plugin-unicorn';
 import { configs, rules } from 'eslint-config-airbnb-extended';
 
 export default [
   {
     ignores: ['dist/**', 'node_modules/**'],
     plugins: {
-      '@angular-eslint/template': angularTemplate,
+      '@angular-eslint/template': angularTemplatePlugin,
       '@stylistic': stylistic,
-      '@typescript-eslint': tsEslint,
-      'import-x': importX,
+      '@typescript-eslint': tsEslintPlugin,
+      'import-x': importXPlugin,
     },
   },
 
   ...configs.base.all,
-  eslintPluginUnicorn.configs.all,
+  unicornPlugin.configs.all,
   rules.base.importsStrict,
   rules.typescript.typescriptEslintStrict,
 
   // TypeScript files configuration
   {
     files: ['**/*.ts'],
-    languageOptions: { parser: tsParser, parserOptions: { project: './tsconfig.json' } },
-    plugins: { '@angular-eslint': angular },
+    languageOptions: { parser: tsEslintParser, parserOptions: { project: './tsconfig.json' } },
+    plugins: { '@angular-eslint': angularEslintPlugin },
     rules: {
       // Angular ESLint rules
       '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Modal', 'Page'] }],
@@ -56,6 +56,7 @@ export default [
       '@angular-eslint/no-pipe-impure': 'error',
       '@angular-eslint/no-queries-metadata-property': 'error',
       '@angular-eslint/no-uncalled-signals': 'error',
+      '@angular-eslint/prefer-host-metadata-property': 'error',
       '@angular-eslint/prefer-output-readonly': 'error',
       '@angular-eslint/prefer-standalone': 'error',
       '@angular-eslint/relative-url-prefix': 'error',
@@ -168,6 +169,7 @@ export default [
       '@angular-eslint/template/no-positive-tabindex': 'error',
       '@angular-eslint/template/prefer-at-else': 'error',
       '@angular-eslint/template/prefer-at-empty': 'error',
+      '@angular-eslint/template/prefer-built-in-pipes': 'error',
       '@angular-eslint/template/prefer-contextual-for-variables': 'error',
       '@angular-eslint/template/prefer-control-flow': 'error',
       '@angular-eslint/template/prefer-self-closing-tags': 'error',
