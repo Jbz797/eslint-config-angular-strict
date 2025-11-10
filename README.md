@@ -7,9 +7,9 @@
 <p align="center">Modern ESLint configuration with strict rules for <strong>Angular</strong> development</p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://img.shields.io/npm/v/eslint-config-angular-strict/latest.svg" alt="NPM Version" /></a>
-    <a href="https://github.com/Jbz797/eslint-config-angular-strict/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/eslint-config-angular-strict.svg" alt="GitHub license" /></a>
-    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://img.shields.io/npm/dm/eslint-config-angular-strict.svg" alt="NPM Downloads" /></a>
+    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://badgen.net/npm/v/eslint-config-angular-strict" alt="NPM Version" /></a>
+    <a href="https://github.com/Jbz797/eslint-config-angular-strict/blob/master/LICENSE"><img src="https://badgen.net/npm/license/eslint-config-angular-strict" alt="GitHub license" /></a>
+    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://badgen.net/npm/dm/eslint-config-angular-strict" alt="NPM Downloads" /></a>
 </p>
 
 <br>
@@ -24,11 +24,11 @@ A production-ready, opinionated ESLint configuration that enforces best practice
 
 ## Features
 
-- **🅰️ Angular**: 35+ rules for standalone components, lifecycle methods, component standards, and modern control flow syntax, and more...
-- **📘 TypeScript**: Strict typing, member ordering, promise handling, type safety enforcement, and more...
-- **✨ Code Quality**: Complexity limits, file length control, import cycle detection, anti-patterns prevention, and more...
-- **🎨 Style**: Airbnb extended compliance, consistent formatting, organized imports, and more...
-- **🔍 Templates**: 25+ HTML template rules including alphabetical attributes, complexity limits checks, trackBy enforcement, and more...
+🅰️ **Angular**: 30+ rules for standalone, lifecycle, components/directives standards, metadata, signals, pipes,...<br>
+📘 **TypeScript**: Member ordering, promise-async, type imports, strict typing, type safety, extraneous classes,...<br>
+✨ **Code Quality**: Complexity max, file length control, import cycles detection, 100+ Unicorn best practices,...<br>
+🎨 **Style**: Airbnb extended, max line length, arrow parens, object/class newlines, sorted keys/imports,...<br>
+🔍 **Templates**: 30+ rules with alphabetical attrs, complexity max, control flow, trackBy, a11y, no-any,...
 
 ## What's Included
 
