@@ -33,12 +33,10 @@ export default [
       // Angular ESLint rules
       '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Modal', 'Page'] }],
       '@angular-eslint/component-max-inline-declarations': 'error',
-      '@angular-eslint/component-selector': ['error', { type: 'element', style: 'kebab-case' }],
       '@angular-eslint/consistent-component-styles': 'error',
       '@angular-eslint/contextual-decorator': 'error',
       '@angular-eslint/contextual-lifecycle': 'error',
       '@angular-eslint/directive-class-suffix': 'error',
-      '@angular-eslint/directive-selector': ['error', { type: 'attribute', style: 'camelCase' }],
       '@angular-eslint/no-async-lifecycle-method': 'error',
       '@angular-eslint/no-attribute-decorator': 'error',
       '@angular-eslint/no-conflicting-lifecycle': 'error',

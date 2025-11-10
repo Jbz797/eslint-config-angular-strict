@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "2.2.70",
+  "version": "2.2.71",
   "description": "Modern ESLint configuration with strict rules for Angular development.",
   "keywords": [
     "angular",
@@ -35,10 +35,10 @@
     "test": "cd tests && yarn install && eslint . --format=stylish"
   },
   "dependencies": {
-    "@angular-eslint/builder": "20.5.1",
-    "@angular-eslint/eslint-plugin": "20.5.1",
-    "@angular-eslint/eslint-plugin-template": "20.5.1",
-    "@angular-eslint/template-parser": "20.5.1",
+    "@angular-eslint/builder": "20.6.0",
+    "@angular-eslint/eslint-plugin": "20.6.0",
+    "@angular-eslint/eslint-plugin-template": "20.6.0",
+    "@angular-eslint/template-parser": "20.6.0",
     "@stylistic/eslint-plugin": "5.5.0",
     "@typescript-eslint/eslint-plugin": "8.46.3",
     "@typescript-eslint/parser": "8.46.3",
