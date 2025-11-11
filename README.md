@@ -7,9 +7,9 @@
 <p align="center">Modern ESLint configuration with strict rules for <strong>Angular</strong> development</p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://badgen.net/npm/v/eslint-config-angular-strict" alt="NPM Version" /></a>
-    <a href="https://github.com/Jbz797/eslint-config-angular-strict/blob/master/LICENSE"><img src="https://badgen.net/npm/license/eslint-config-angular-strict" alt="GitHub license" /></a>
-    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://badgen.net/npm/dm/eslint-config-angular-strict" alt="NPM Downloads" /></a>
+    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://img.shields.io/npm/v/eslint-config-angular-strict" alt="NPM Version" /></a>
+    <a href="https://github.com/Jbz797/eslint-config-angular-strict/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/eslint-config-angular-strict" alt="GitHub license" /></a>
+    <a href="https://www.npmjs.com/package/eslint-config-angular-strict"><img src="https://img.shields.io/npm/dm/eslint-config-angular-strict" alt="NPM Downloads" /></a>
 </p>
 
 <br>
