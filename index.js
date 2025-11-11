@@ -27,7 +27,7 @@ export default [
   // TypeScript files configuration
   {
     files: ['**/*.ts'],
-    languageOptions: { parser: tsEslintParser, parserOptions: { project: './tsconfig.json' } },
+    languageOptions: { parser: tsEslintParser },
     plugins: { '@angular-eslint': angularEslintPlugin },
     rules: {
       // Angular ESLint rules
