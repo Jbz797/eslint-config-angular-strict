@@ -92,6 +92,7 @@ Make sure your `tsconfig.json` is properly configured:
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true
