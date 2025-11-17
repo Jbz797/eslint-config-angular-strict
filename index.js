@@ -121,7 +121,7 @@ export default [
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
 
       // TypeScript ESLint rules
-      '@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'never' }],
+      '@typescript-eslint/consistent-type-assertions': ['error', { arrayLiteralTypeAssertions: 'never', assertionStyle: 'as', objectLiteralTypeAssertions: 'never' }],
       '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
       '@typescript-eslint/member-ordering': 'error',
       '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
