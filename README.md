@@ -14,10 +14,6 @@
 
 <br>
 
-## ⚠️ V2 - Flat Config
-
-This package includes **ESLint 9** and uses the new **flat configuration format** ([ESLint 9 Migration Guide](https://eslint.org/docs/latest/use/configure/migration-guide)). Requires **Angular 18+** and **Node.js 18+**.
-
 ## Overview
 
 A production-ready, opinionated ESLint configuration that enforces best practices for Angular applications. Combines rules from industry-leading plugins into a single package with zero additional configuration required.
