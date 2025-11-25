@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "2.2.78",
+  "version": "2.2.79",
   "description": "Modern ESLint configuration with strict rules for Angular development.",
   "keywords": [
     "angular",
@@ -35,21 +35,21 @@
     "test": "cd tests && yarn install && eslint . --format=stylish"
   },
   "dependencies": {
-    "@angular-eslint/builder": "20.6.0",
-    "@angular-eslint/eslint-plugin": "20.6.0",
-    "@angular-eslint/eslint-plugin-template": "20.6.0",
-    "@angular-eslint/template-parser": "20.6.0",
+    "@angular-eslint/builder": "21.0.1",
+    "@angular-eslint/eslint-plugin": "21.0.1",
+    "@angular-eslint/eslint-plugin-template": "21.0.1",
+    "@angular-eslint/template-parser": "21.0.1",
     "@stylistic/eslint-plugin": "5.6.1",
-    "@typescript-eslint/eslint-plugin": "8.47.0",
-    "@typescript-eslint/parser": "8.47.0",
-    "@typescript-eslint/types": "8.47.0",
-    "@typescript-eslint/utils": "8.47.0",
+    "@typescript-eslint/eslint-plugin": "8.48.0",
+    "@typescript-eslint/parser": "8.48.0",
+    "@typescript-eslint/types": "8.48.0",
+    "@typescript-eslint/utils": "8.48.0",
     "eslint": "9.39.1",
     "eslint-config-airbnb-extended": "2.3.2",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import-x": "4.16.1",
     "eslint-plugin-unicorn": "62.0.0",
-    "typescript-eslint": "8.47.0"
+    "typescript-eslint": "8.48.0"
   },
   "devDependencies": {
     "typescript": "5.9.3"
