@@ -1,38 +1,3 @@
-<!-- Angular template with intentional violations to test ESLint rules -->
 <div class="sample-container">
   <h2>Sample Test Component</h2>
-
-  <!-- Missing trackBy function in ngFor -->
-  <ul>
-    <li *ngFor="let item of _items">
-      {{ item }}
-    </li>
-  </ul>
-
-  <!-- Attributes not in alphabetical order -->
-  <input
-    type="text"
-    placeholder="Enter name"
-    id="name-field"
-    class="form-control"
-    [(ngModel)]="name">
-
-  <!-- Missing label for accessibility -->
-  <input type="checkbox" id="option1" name="options" value="1">
-  Option 1
-
-  <!-- Positive tabindex (accessibility violation) -->
-  <button tabindex="2" (click)="processItems()">Process</button>
-
-  <!-- Non-self-closing tags -->
-  <br>
-  <hr>
-
-  <!-- Using any type in template -->
-  <div>{{ config.anyProperty }}</div>
-
-  <!-- Missing key events for mouse events -->
-  <div (click)="loadData()" class="clickable">
-    Click to load data
-  </div>
 </div>
