@@ -55,6 +55,7 @@ export default [
       '@angular-eslint/no-uncalled-signals': 'error',
       '@angular-eslint/prefer-host-metadata-property': 'error',
       '@angular-eslint/prefer-output-readonly': 'error',
+      '@angular-eslint/prefer-signal-model': 'error',
       '@angular-eslint/prefer-standalone': 'error',
       '@angular-eslint/relative-url-prefix': 'error',
       '@angular-eslint/require-lifecycle-on-prototype': 'error',
