@@ -1,5 +1,7 @@
 *.log
+.DS_Store
 .claude
 .nx
-node_modules
+.yarn
+node_modules/
 yarn.lock
