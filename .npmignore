@@ -1,4 +1,5 @@
 *.log
 .claude/
 .nx/
+.yarnrc.yml
 tests/
