@@ -127,6 +127,7 @@ export default [
       '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-unnecessary-type-conversion': 'error',
+      '@typescript-eslint/no-useless-default-assignment': 'error',
       '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
       '@typescript-eslint/sort-type-constituents': 'error',
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
