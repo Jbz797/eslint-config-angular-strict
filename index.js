@@ -124,6 +124,7 @@ export default [
       '@typescript-eslint/consistent-type-assertions': ['error', { arrayLiteralTypeAssertions: 'never', assertionStyle: 'as', objectLiteralTypeAssertions: 'never' }],
       '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
       '@typescript-eslint/member-ordering': 'error',
+      '@typescript-eslint/no-dynamic-delete': 'error',
       '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-unnecessary-type-conversion': 'error',
