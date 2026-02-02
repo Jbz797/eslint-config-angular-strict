@@ -42,7 +42,7 @@ export default [
       '@angular-eslint/no-duplicates-in-metadata-arrays': 'error',
       '@angular-eslint/no-empty-lifecycle-method': 'error',
       '@angular-eslint/no-forward-ref': 'error',
-      '@angular-eslint/no-implicit-takeuntil-destroyed': 'error',
+      '@angular-eslint/no-implicit-take-until-destroyed': 'error',
       '@angular-eslint/no-input-prefix': ['error', { prefixes: ['on'] }],
       '@angular-eslint/no-input-rename': 'error',
       '@angular-eslint/no-inputs-metadata-property': 'error',
