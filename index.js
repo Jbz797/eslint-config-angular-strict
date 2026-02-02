@@ -42,6 +42,7 @@ export default [
       '@angular-eslint/no-duplicates-in-metadata-arrays': 'error',
       '@angular-eslint/no-empty-lifecycle-method': 'error',
       '@angular-eslint/no-forward-ref': 'error',
+      '@angular-eslint/no-implicit-takeuntil-destroyed': 'error',
       '@angular-eslint/no-input-prefix': ['error', { prefixes: ['on'] }],
       '@angular-eslint/no-input-rename': 'error',
       '@angular-eslint/no-inputs-metadata-property': 'error',
@@ -182,6 +183,7 @@ export default [
       '@angular-eslint/template/table-scope': 'error',
       '@angular-eslint/template/use-track-by-function': ['error', { alias: ['ngForTrackByIndex', 'ngForTrackByProperty'] }],
       '@angular-eslint/template/valid-aria': 'error',
+      '@angular-eslint/template/prefer-class-binding': 'error',
 
       // Unicorn rules
       'unicorn/prefer-string-raw': 'off',
