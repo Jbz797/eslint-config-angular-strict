@@ -137,7 +137,7 @@ export default [
         { selector: 'objectLiteralProperty', format: null },
         { selector: 'parameter', format: ['camelCase'], trailingUnderscore: 'allowSingleOrDouble' },
         { selector: 'typeLike', format: ['PascalCase'] },
-        { selector: 'typeProperty', format: ['camelCase'] },
+        { selector: 'typeProperty', format: ['camelCase', 'snake_case'] },
         { selector: 'variable', format: ['UPPER_CASE'], modifiers: ['const', 'exported'] },
         { selector: 'variable', format: ['PascalCase'], filter: { regex: '[Tt]oken', match: true } },
         { selector: 'variable', format: ['camelCase'] },
