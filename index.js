@@ -176,7 +176,6 @@ export default [
       '@angular-eslint/template/cyclomatic-complexity': ['error', { maxComplexity: 10 }],
       '@angular-eslint/template/elements-content': 'error',
       '@angular-eslint/template/eqeqeq': 'error',
-      '@angular-eslint/template/label-has-associated-control': 'error',
       '@angular-eslint/template/mouse-events-have-key-events': 'error',
       '@angular-eslint/template/no-any': 'error',
       '@angular-eslint/template/no-autofocus': 'error',
