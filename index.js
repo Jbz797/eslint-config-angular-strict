@@ -107,12 +107,7 @@ export default [
       '@stylistic/max-len': ['error', { code: 165, tabWidth: 2 }],
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 5 }],
       '@stylistic/no-confusing-arrow': 'off',
-      '@stylistic/no-extra-parens': ['error', 'all', {
-        ignoredNodes: ['ConditionalExpression'],
-        nestedBinaryExpressions: false,
-        returnAssign: false,
-        ternaryOperandBinaryExpressions: false
-      }],
+      '@stylistic/no-extra-parens': ['error', 'all', { ignoredNodes: ['ConditionalExpression'], nestedBinaryExpressions: false, returnAssign: false }],
       '@stylistic/object-curly-newline': [
         'error',
         {
