@@ -128,6 +128,13 @@ export default [
         { arrayLiteralTypeAssertions: 'never', assertionStyle: 'as', objectLiteralTypeAssertions: 'never' },
       ],
       '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
+      '@typescript-eslint/explicit-member-accessibility': [
+        'error',
+        {
+          accessibility: 'explicit',
+          overrides: { accessors: 'explicit', constructors: 'no-public', methods: 'explicit', properties: 'explicit', parameterProperties: 'explicit' },
+        },
+      ],
       '@typescript-eslint/member-ordering': ['error', { default: { order: 'natural-case-insensitive' } }],
       '@typescript-eslint/naming-convention': [
         'error',
