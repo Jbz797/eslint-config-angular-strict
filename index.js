@@ -35,6 +35,7 @@ export default [
       // Angular ESLint rules
       '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Modal', 'Page'] }],
       '@angular-eslint/component-max-inline-declarations': 'error',
+      '@angular-eslint/computed-must-return': 'error',
       '@angular-eslint/consistent-component-styles': 'error',
       '@angular-eslint/contextual-decorator': 'error',
       '@angular-eslint/contextual-lifecycle': 'error',
@@ -200,6 +201,7 @@ export default [
       '@angular-eslint/template/no-interpolation-in-attributes': 'error',
       '@angular-eslint/template/no-negated-async': 'error',
       '@angular-eslint/template/no-nested-tags': 'error',
+      '@angular-eslint/template/no-non-null-assertion': 'error',
       '@angular-eslint/template/no-positive-tabindex': 'error',
       '@angular-eslint/template/prefer-at-else': 'error',
       '@angular-eslint/template/prefer-at-empty': 'error',
