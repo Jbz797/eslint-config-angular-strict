@@ -127,6 +127,12 @@ export default [
         },
       ],
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
+      '@stylistic/padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: { selector: '*', lineMode: 'multiline' }, next: { selector: '*', lineMode: 'multiline' } },
+        { blankLine: 'never', prev: '*', next: 'case' },
+        { blankLine: 'never', prev: '*', next: 'default' },
+      ],
 
       // TypeScript ESLint rules
       '@typescript-eslint/consistent-type-assertions': [
