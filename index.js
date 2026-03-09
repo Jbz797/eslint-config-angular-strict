@@ -130,6 +130,7 @@ export default [
       '@stylistic/padding-line-between-statements': [
         'error',
         { blankLine: 'always', prev: { selector: '*', lineMode: 'multiline' }, next: { selector: '*', lineMode: 'multiline' } },
+        { blankLine: 'any', prev: 'import', next: 'import' },
         { blankLine: 'never', prev: '*', next: 'case' },
         { blankLine: 'never', prev: '*', next: 'default' },
       ],
