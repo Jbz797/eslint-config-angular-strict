@@ -56,7 +56,7 @@ yarn add eslint-config-angular-strict --dev
 
 ### 2. Configure ESLint
 
-Create an `eslint.config.js` file (ESLint 9 flat config format):
+Create an `eslint.config.js` file (flat config format):
 
 ```javascript
 import angularStrict from 'eslint-config-angular-strict';
