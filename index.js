@@ -33,7 +33,7 @@ export default [
     plugins: { '@angular-eslint': angularEslintPlugin },
     rules: {
       // Angular ESLint rules
-      '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Modal', 'Page'] }],
+      '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Drawer', 'Modal', 'Page'] }],
       '@angular-eslint/component-max-inline-declarations': 'error',
       '@angular-eslint/computed-must-return': 'error',
       '@angular-eslint/consistent-component-styles': 'error',
