@@ -23,7 +23,7 @@ A production-ready, opinionated ESLint configuration that enforces best practice
 🅰️ **Angular**: 30+ rules for standalone, lifecycle, components/directives standards, metadata, signals, pipes,...<br>
 📘 **TypeScript**: Member ordering, promise-async, type imports, strict typing, type safety, extraneous classes,...<br>
 ✨ **Code Quality**: Complexity max, file length control, import cycles detection, 100+ Unicorn best practices,...<br>
-🎨 **Style**: Airbnb extended, max line length, arrow parens, object/class newlines, sorted keys/imports,...<br>
+🎨 **Style**: Airbnb extended, max line length, arrow parens, object/class newlines, sorted keys/imports, sorted decorator arrays,...<br>
 🔍 **Templates**: 30+ rules with alphabetical attrs, complexity max, control flow, trackBy, a11y, no-any,...
 
 ## What's Included
@@ -34,6 +34,7 @@ A production-ready, opinionated ESLint configuration that enforces best practice
 - <img src="https://avatars.githubusercontent.com/u/53234240?s=48&" width="16" height="16"> [**Angular ESLint**](https://github.com/angular-eslint/angular-eslint) - Angular-specific rules
 - <img src="https://eslint.org/icon-512.png" width="16" height="16"> [**ESLint**](https://github.com/eslint/eslint) - Core linting engine
 - 📦 [**Import-X**](https://github.com/un-ts/eslint-plugin-import-x) - Import/export validation
+- 🔤 [**NgModule Sort**](https://github.com/ducktordanny/eslint-plugin-ng-module-sort) - Sorted decorator arrays
 - <img src="https://avatars.githubusercontent.com/u/144717797?s=48&" width="16" height="16"> [**Stylistic**](https://github.com/eslint-stylistic/eslint-stylistic) - Code formatting rules
 - <img src="https://avatars.githubusercontent.com/u/46634674?s=48&" width="16" height="16"> [**TypeScript ESLint**](https://github.com/typescript-eslint/typescript-eslint) - TypeScript linting
 - 🦄 [**Unicorn**](https://github.com/sindresorhus/eslint-plugin-unicorn) - More than 100 powerful ESLint rules
