@@ -23,7 +23,7 @@ A production-ready, opinionated ESLint configuration that enforces best practice
 🅰️ **Angular**: 30+ rules for standalone, lifecycle, components/directives standards, metadata, signals, pipes,...<br>
 📘 **TypeScript**: Member ordering, promise-async, type imports, strict typing, type safety, extraneous classes,...<br>
 ✨ **Code Quality**: Complexity max, file length control, import cycles detection, 100+ Unicorn best practices,...<br>
-🎨 **Style**: Airbnb extended, max line length, arrow parens, object/class newlines, sorted keys/imports, sorted decorator arrays,...<br>
+🎨 **Style**: Airbnb extended, max line length, object/class newlines, sorted keys/imports/decorators,...<br>
 🔍 **Templates**: 30+ rules with alphabetical attrs, complexity max, control flow, trackBy, a11y, no-any,...
 
 ## What's Included
