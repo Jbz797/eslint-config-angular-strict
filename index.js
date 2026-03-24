@@ -108,24 +108,14 @@ export default [
       'ng-module-sort/decorator-array-items': 'error',
 
       // Stylistic rules
+      '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
       '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
       '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
       '@stylistic/max-len': ['error', { code: 165, tabWidth: 2 }],
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 5 }],
       '@stylistic/no-confusing-arrow': 'off',
       '@stylistic/no-extra-parens': ['error', 'all', { ignoredNodes: ['ConditionalExpression'], nestedBinaryExpressions: false, returnAssign: false }],
-      '@stylistic/object-curly-newline': [
-        'error',
-        {
-          ExportDeclaration: { consistent: true,  multiline: true },
-          ImportDeclaration: { consistent: true,  multiline: true },
-          ObjectExpression: { consistent: true,  multiline: true },
-          ObjectPattern: { consistent: true,  multiline: true },
-          TSEnumBody: { consistent: true,  multiline: true },
-          TSInterfaceBody: { consistent: true,  multiline: true },
-          TSTypeLiteral: { consistent: true,  multiline: true },
-        },
-      ],
+      '@stylistic/object-curly-newline': ['error', { consistent: true, multiline: true }],
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
       '@stylistic/padding-line-between-statements': [
         'error',
