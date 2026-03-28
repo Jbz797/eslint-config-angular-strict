@@ -168,8 +168,6 @@ export default [
       '@angular-eslint/template/label-has-associated-control': 'off',
       '@angular-eslint/template/no-call-expression':'off',
       '@angular-eslint/template/no-inline-styles': 'off',
-      '@angular-eslint/template/prefer-ngsrc': 'off',
-      '@angular-eslint/template/use-track-by-function': ['error', { alias: ['ngForTrackByIndex', 'ngForTrackByProperty'] }],
 
       // Unicorn rules
       'unicorn/prefer-string-raw': 'off',
