@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "2.3.40",
+  "version": "2.3.41",
   "description": "Modern ESLint configuration with strict rules for Angular development.",
   "keywords": [
     "angular",
@@ -48,7 +48,7 @@
     "eslint-config-airbnb-extended": "3.0.1",
     "eslint-plugin-import-x": "4.16.2",
     "eslint-plugin-ng-module-sort": "1.4.0",
-    "eslint-plugin-unicorn": "63.0.0"
+    "eslint-plugin-unicorn": "64.0.0"
   },
   "devDependencies": {
     "typescript": "5.9.3"
