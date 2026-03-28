@@ -38,7 +38,6 @@ export default [
       '@angular-eslint/component-selector': 'off',
       '@angular-eslint/directive-selector': 'off',
       '@angular-eslint/prefer-on-push-component-change-detection': 'off',
-      '@angular-eslint/prefer-signals': 'off',
       '@angular-eslint/require-localize-metadata': 'off',
       '@angular-eslint/runtime-localize': 'off',
       '@angular-eslint/sort-keys-in-type-decorator': 'off',
