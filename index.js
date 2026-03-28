@@ -1,13 +1,14 @@
+import { configs, rules } from 'eslint-config-airbnb-extended';
 import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 import angularTemplateParser from '@angular-eslint/template-parser';
 import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
 import importXPlugin from 'eslint-plugin-import-x';
 import ngModuleSortPlugin from 'eslint-plugin-ng-module-sort';
+import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import stylistic from '@stylistic/eslint-plugin';
 import tsEslintParser from '@typescript-eslint/parser';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import unicornPlugin from 'eslint-plugin-unicorn';
-import { configs, rules } from 'eslint-config-airbnb-extended';
 
 export default [
   {
@@ -19,12 +20,14 @@ export default [
       'import-x': importXPlugin,
       'ng-module-sort': ngModuleSortPlugin,
     },
+    settings: { perfectionist: { type: 'natural' } },
   },
 
   ...configs.base.all,
-  unicornPlugin.configs.all,
+  perfectionistPlugin.configs['recommended-natural'],
   rules.base.importsStrict,
   rules.typescript.typescriptEslintStrict,
+  unicornPlugin.configs.all,
 
   // TypeScript files configuration
   {
@@ -37,8 +40,6 @@ export default [
       '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Drawer', 'Modal', 'Page'] }],
       '@angular-eslint/component-selector': 'off',
       '@angular-eslint/prefer-on-push-component-change-detection': 'off',
-      '@angular-eslint/sort-keys-in-type-decorator': 'off',
-      '@angular-eslint/sort-lifecycle-methods': 'off',
       '@angular-eslint/use-component-selector': 'off',
 
       // ESLint rules
@@ -51,7 +52,6 @@ export default [
       'no-return-assign': 'off',
       'no-underscore-dangle': ['error', { allowAfterThis: true }],
       'radix': ['error', 'as-needed'],
-      'sort-keys': ['error', 'asc', { allowLineSeparatedGroups: true, natural: true }],
 
       // Import rules
       'import-x/no-anonymous-default-export': 'error',
@@ -59,22 +59,7 @@ export default [
       'import-x/no-cycle': ['error', { maxDepth: 2 }],
       'import-x/no-deprecated': 'error',
       'import-x/no-import-module-exports': 'off',
-      'import-x/order': [
-        'error',
-        {
-          alphabetize: { order: 'asc', caseInsensitive: true },
-          named: true,
-          'newlines-between': 'always',
-          pathGroups: [
-            { pattern: '@angular/**', group: 'external', position: 'before' },
-            { pattern: '@nestjs/**', group: 'external', position: 'before' },
-            { pattern: 'firebase*/**', group: 'external', position: 'before', patternOptions: { partial: true } },
-            { pattern: 'ng-zorro-antd/**', group: 'external', position: 'before' },
-          ],
-          pathGroupsExcludedImportTypes: [],
-          warnOnUnassignedImports: true,
-        },
-      ],
+      'import-x/order': 'off',
       'import-x/prefer-default-export': 'off',
 
       // NgModule sort rules
@@ -108,10 +93,13 @@ export default [
         'error',
         {
           accessibility: 'explicit',
+          ignoredMethodNames: [
+            'ngAfterContentChecked', 'ngAfterContentInit', 'ngAfterViewChecked', 'ngAfterViewInit',
+            'ngDoCheck', 'ngOnChanges', 'ngOnDestroy', 'ngOnInit',
+          ],
           overrides: { accessors: 'explicit', constructors: 'no-public', methods: 'explicit', properties: 'explicit', parameterProperties: 'explicit' },
         },
       ],
-      '@typescript-eslint/member-ordering': ['error', { default: { order: 'natural-case-insensitive' } }],
       '@typescript-eslint/naming-convention': [
         'error',
         { selector: 'function', format: ['camelCase'] },
@@ -136,8 +124,73 @@ export default [
       '@typescript-eslint/no-useless-default-assignment': 'error',
       '@typescript-eslint/prefer-readonly': 'error',
       '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
-      '@typescript-eslint/sort-type-constituents': 'error',
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
+
+      // Perfectionist rules
+      'perfectionist/sort-classes': [
+        'error',
+        {
+          customGroups: [
+            { groupName: 'decorated-public', modifiers: ['decorated', 'public'], selector: 'property' },
+            { groupName: 'decorated-private', modifiers: ['decorated', 'private'], selector: 'property' },
+            { elementNamePattern: '^ng(OnChanges|OnInit|DoCheck|AfterContentInit|AfterContentChecked|AfterViewInit|AfterViewChecked|OnDestroy)$', groupName: 'lifecycle', selector: 'method' },
+          ],
+          groups: [
+            'decorated-public',
+            'decorated-private',
+            ['property', 'accessor-property'],
+            ['private-property', 'private-accessor-property'],
+            'constructor',
+            { group: 'lifecycle', type: 'unsorted' },
+            ['get-method', 'set-method'],
+            ['method', 'function-property'],
+            ['private-method', 'private-function-property'],
+            'unknown',
+          ],
+          newlinesBetween: 1,
+          newlinesInside: 'ignore',
+        },
+      ],
+      'perfectionist/sort-imports': [
+        'error',
+        {
+          customGroups: [
+            { elementNamePattern: '^@angular/', groupName: 'angular' },
+            { elementNamePattern: '^@nestjs/', groupName: 'nestjs' },
+            { elementNamePattern: '^firebase', groupName: 'firebase' },
+            { elementNamePattern: '^ng-zorro-antd/', groupName: 'ng-zorro' },
+          ],
+          groups: [
+            'angular',
+            'nestjs',
+            'firebase',
+            'ng-zorro',
+            'type-import',
+            'value-builtin',
+            'value-external',
+            'type-internal',
+            'value-internal',
+            'type-parent',
+            'type-sibling',
+            'type-index',
+            'value-parent',
+            'value-sibling',
+            'value-index',
+            'ts-equals-import',
+            'unknown',
+          ],
+        },
+      ],
+      'perfectionist/sort-intersection-types': ['error', { groups: ['unknown', 'nullish'] }],
+      'perfectionist/sort-objects': [
+        'error',
+        {
+          type: 'unsorted',
+          useConfigurationIf: { callingFunctionNamePattern: '^(Component|Directive|NgModule|Pipe)$' },
+        },
+        {},
+      ],
+      'perfectionist/sort-union-types': ['error', { groups: ['unknown', 'nullish'] }],
 
       // Unicorn rules
       'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
