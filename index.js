@@ -145,7 +145,6 @@ export default [
       'unicorn/no-abusive-eslint-disable': 'off',
       'unicorn/no-array-for-each': 'off',
       'unicorn/no-null': 'off',
-      'unicorn/no-useless-promise-resolve-reject': 'off',
       'unicorn/prefer-top-level-await': 'off',
       'unicorn/switch-case-braces': ['error', 'avoid'],
     },
@@ -168,6 +167,7 @@ export default [
       '@angular-eslint/template/label-has-associated-control': 'off',
       '@angular-eslint/template/no-call-expression':'off',
       '@angular-eslint/template/no-inline-styles': 'off',
+      '@angular-eslint/template/prefer-ngsrc': 'off',
 
       // Unicorn rules
       'unicorn/prefer-string-raw': 'off',
