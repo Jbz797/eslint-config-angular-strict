@@ -139,6 +139,7 @@ export default [
           customGroups: [
             { groupName: 'decorated-public', modifiers: ['decorated', 'public'] },
             { groupName: 'decorated-private', modifiers: ['decorated', 'private'] },
+            { groupName: 'ctor', selector: 'constructor' },
             {
               elementNamePattern: '^ng(OnChanges|OnInit|DoCheck|AfterContentInit|AfterContentChecked|AfterViewInit|AfterViewChecked|OnDestroy)$',
               groupName: 'lifecycle',
@@ -165,7 +166,7 @@ export default [
             'decorated-private',
             ['property', 'accessor-property', 'static-property', 'static-accessor-property'],
             ['private-property', 'private-accessor-property', 'private-static-property', 'private-static-accessor-property'],
-            'constructor',
+            'ctor',
             'static-block',
             { group: 'lifecycle', newlinesInside: 1, type: 'unsorted' },
             { group: 'public-accessors', newlinesInside: 1 },
