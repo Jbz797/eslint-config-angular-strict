@@ -144,8 +144,6 @@ export default [
               elementNamePattern: '^(init|ng(OnChanges|OnInit|DoCheck|AfterContentInit|AfterContentChecked|AfterViewInit|AfterViewChecked|OnDestroy))$',
               groupName: 'lifecycle',
             },
-            { anyOf: [{ selector: 'get-method' }, { selector: 'set-method' }], groupName: 'public-accessors' },
-            { anyOf: [{ selector: 'method' }, { selector: 'function-property' }], groupName: 'public-methods' },
             {
               anyOf: [
                 { modifiers: ['private'], selector: 'get-method' },
@@ -160,6 +158,8 @@ export default [
               ],
               groupName: 'private-methods',
             },
+            { anyOf: [{ selector: 'get-method' }, { selector: 'set-method' }], groupName: 'public-accessors' },
+            { anyOf: [{ selector: 'method' }, { selector: 'function-property' }], groupName: 'public-methods' },
           ],
           groups: [
             'decorated-public',
