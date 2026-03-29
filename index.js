@@ -141,7 +141,7 @@ export default [
             { groupName: 'decorated-private', modifiers: ['decorated', 'private'] },
             { groupName: 'ctor', selector: 'constructor' },
             {
-              elementNamePattern: '^ng(OnChanges|OnInit|DoCheck|AfterContentInit|AfterContentChecked|AfterViewInit|AfterViewChecked|OnDestroy)$',
+              elementNamePattern: '^(init|ng(OnChanges|OnInit|DoCheck|AfterContentInit|AfterContentChecked|AfterViewInit|AfterViewChecked|OnDestroy))$',
               groupName: 'lifecycle',
             },
             { anyOf: [{ selector: 'get-method' }, { selector: 'set-method' }], groupName: 'public-accessors' },
