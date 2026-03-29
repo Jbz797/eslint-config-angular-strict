@@ -68,6 +68,7 @@ export default [
       // Stylistic rules
       '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
       '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+      '@stylistic/lines-between-class-members': 'off',
       '@stylistic/max-len': ['error', { code: 165, tabWidth: 2 }],
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 5 }],
       '@stylistic/no-confusing-arrow': 'off',
