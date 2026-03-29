@@ -45,16 +45,10 @@ A production-ready, opinionated ESLint configuration that enforces best practice
 ### 1. Install Package
 
 ```sh
-npm install eslint-config-angular-strict --save-dev
-```
-
-or
-
-```sh
 yarn add eslint-config-angular-strict --dev
 ```
 
-**⚠️ Important**: Remove any existing `eslint` dependency from your project - it's included!
+> **⚠️ Important**: Remove any existing `eslint` dependency from your project - it's included!
 
 ### 2. Configure ESLint
 
@@ -73,8 +67,9 @@ export default [
 
 Add the following to your `package.json`:
 
-```json
+```jsonc
 {
+  // ...
   "type": "module"
 }
 ```
@@ -83,10 +78,10 @@ Add the following to your `package.json`:
 
 Make sure your `tsconfig.json` is properly configured:
 
-```javascript
+```jsonc
 {
   "compilerOptions": {
-    (...),
+    // ...
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
@@ -102,6 +97,54 @@ Make sure your `tsconfig.json` is properly configured:
   }
 }
 ```
+
+## Prettier
+
+This config handles **TypeScript formatting via ESLint**. Prettier should only be used for **HTML templates**.
+
+### Recommended `.prettierrc`
+
+```json
+{
+  "printWidth": 165,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": { "parser": "angular" }
+    }
+  ]
+}
+```
+
+### Recommended lint scripts (`package.json`)
+
+```jsonc
+{
+  "scripts": {
+    // ...
+    "lint": "ng lint && prettier --check \"src/**/*.html\"",
+    "lint:fix": "ng lint --fix && prettier --write \"src/**/*.html\""
+  }
+}
+```
+
+> **⚠️ Important**: Only target `*.html` files with Prettier. Running Prettier on `.ts` files will conflict with ESLint Stylistic rules.
+
+### Recommended VS Code settings
+
+```jsonc
+{
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "eslint.format.enable": true,
+  "eslint.validate": [ /*...*/, "html", "typescript"],
+}
+```
+
+This ensures ESLint handles `.ts` formatting on save, while Prettier handles `.html` templates.
 
 ## Contributing
 
