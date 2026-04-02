@@ -3,7 +3,6 @@ import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 import angularTemplateParser from '@angular-eslint/template-parser';
 import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
 import importXPlugin from 'eslint-plugin-import-x';
-import ngModuleSortPlugin from 'eslint-plugin-ng-module-sort';
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import stylistic from '@stylistic/eslint-plugin';
 import tsEslintParser from '@typescript-eslint/parser';
@@ -18,7 +17,6 @@ export default [
       '@stylistic': stylistic,
       '@typescript-eslint': tsEslintPlugin,
       'import-x': importXPlugin,
-      'ng-module-sort': ngModuleSortPlugin,
     },
     settings: { perfectionist: { type: 'natural' } },
   },
@@ -62,8 +60,6 @@ export default [
       'import-x/order': 'off',
       'import-x/prefer-default-export': 'off',
 
-      // NgModule sort rules
-      'ng-module-sort/decorator-array-items': 'error',
 
       // Stylistic rules
       '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
@@ -201,6 +197,14 @@ export default [
             'value-index',
             'unknown',
           ],
+        },
+      ],
+      'perfectionist/sort-arrays': [
+        'error',
+        {
+          useConfigurationIf: {
+            matchesAstSelector: 'Property[key.name=/^(hostDirectives|imports|providers)$/] > ArrayExpression',
+          },
         },
       ],
       'perfectionist/sort-intersection-types': ['error', { groups: ['unknown', 'nullish'] }],
