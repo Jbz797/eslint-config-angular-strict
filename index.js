@@ -43,7 +43,7 @@ export default [
       // ESLint rules
       'class-methods-use-this': 'off',
       'complexity': ['error', { max: 25 }],
-      'max-lines': ['error', { max: 400, skipBlankLines: true, skipComments: true }],
+      'max-lines': ['error', { max: 425, skipBlankLines: true, skipComments: true }],
       'no-fallthrough': 'off',
       'no-param-reassign': ['error', { props: false }],
       'no-plusplus': 'off',
