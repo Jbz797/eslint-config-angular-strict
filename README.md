@@ -30,13 +30,13 @@ A production-ready, opinionated ESLint configuration that enforces best practice
 
 #### ✨ **No additional ESLint installation needed!** Everything is bundled.
 
-- <img src="https://eslint-airbnb-extended.nishargshah.dev/logo.png" width="16" height="16"> [**Airbnb Extended**](https://github.com/nishargshah/eslint-config-airbnb-extended) - Airbnb style guide
-- <img src="https://avatars.githubusercontent.com/u/53234240?s=48&" width="16" height="16"> [**Angular ESLint**](https://github.com/angular-eslint/angular-eslint) - Angular-specific rules
-- <img src="https://eslint.org/icon-512.png" width="16" height="16"> [**ESLint**](https://github.com/eslint/eslint) - Core linting engine
+- 🎩 [**Airbnb Extended**](https://github.com/nishargshah/eslint-config-airbnb-extended) - Airbnb style guide
+- 🅰️ [**Angular ESLint**](https://github.com/angular-eslint/angular-eslint) - Angular-specific rules
+- ⚙️ [**ESLint**](https://github.com/eslint/eslint) - Core linting engine
 - 📦 [**Import-X**](https://github.com/un-ts/eslint-plugin-import-x) - Import/export validation and cycle detection
-- <img src="https://raw.githubusercontent.com/azat-io/eslint-plugin-perfectionist/main/docs/public/logo.svg" width="16" height="16"> [**Perfectionist**](https://github.com/azat-io/eslint-plugin-perfectionist) - Take Your Code to a Beauty Salon
-- <img src="https://avatars.githubusercontent.com/u/144717797?s=48&" width="16" height="16"> [**Stylistic**](https://github.com/eslint-stylistic/eslint-stylistic) - Code formatting rules
-- <img src="https://avatars.githubusercontent.com/u/46634674?s=48&" width="16" height="16"> [**TypeScript ESLint**](https://github.com/typescript-eslint/typescript-eslint) - TypeScript linting
+- 💅 [**Perfectionist**](https://github.com/azat-io/eslint-plugin-perfectionist) - Take Your Code to a Beauty Salon
+- 🎨 [**Stylistic**](https://github.com/eslint-stylistic/eslint-stylistic) - Code formatting rules
+- 📘 [**TypeScript ESLint**](https://github.com/typescript-eslint/typescript-eslint) - TypeScript linting
 - 🦄 [**Unicorn**](https://github.com/sindresorhus/eslint-plugin-unicorn) - More than 100 powerful ESLint rules
 
 ## Installation
