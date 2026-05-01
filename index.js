@@ -35,7 +35,7 @@ export default [
     rules: {
       // Angular ESLint rules (all preset + overrides)
       ...angularEslintPlugin.configs.all.rules,
-      '@angular-eslint/component-class-suffix': ['error', { suffixes: ['Component', 'Drawer', 'Modal', 'Page'] }],
+      '@angular-eslint/component-class-suffix': ['error', { suffixes: ['App', 'Component', 'Drawer', 'Modal', 'Page'] }],
       '@angular-eslint/component-selector': 'off',
       '@angular-eslint/prefer-on-push-component-change-detection': 'off',
       '@angular-eslint/use-component-selector': 'off',
