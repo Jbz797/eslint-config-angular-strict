@@ -60,7 +60,6 @@ export default [
       'import-x/order': 'off',
       'import-x/prefer-default-export': 'off',
 
-
       // Stylistic rules
       '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
       '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
@@ -118,6 +117,7 @@ export default [
         { selector: 'variable', format: ['camelCase'] },
       ],
       '@typescript-eslint/no-base-to-string': 'error',
+      '@typescript-eslint/no-deprecated': 'error',
       '@typescript-eslint/no-dynamic-delete': 'error',
       '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
       '@typescript-eslint/no-non-null-assertion': 'off',
