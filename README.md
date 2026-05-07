@@ -90,9 +90,12 @@ Make sure your `tsconfig.json` is properly configured:
     "strict": true
   },
   "angularCompilerOptions": {
+    // ...
+    "extendedDiagnostics": { "defaultCategory": "error" },
     "strictInjectionParameters": true,
     "strictStandalone": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "typeCheckHostBindings": true
   }
 }
 ```
@@ -134,6 +137,7 @@ This config handles **TypeScript formatting via ESLint**. Prettier should only b
 
 ```jsonc
 {
+  // ...
   "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
