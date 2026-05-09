@@ -170,13 +170,37 @@ export default [
             },
             { anyOf: [{ selector: 'get-method' }, { selector: 'set-method' }], groupName: 'public-accessors' },
             { anyOf: [{ selector: 'method' }, { selector: 'function-property' }], groupName: 'public-methods' },
+            {
+              anyOf: [
+                { modifiers: ['public', 'readonly'], selector: 'property' },
+                { modifiers: ['public', 'readonly'], selector: 'accessor-property' },
+              ],
+              groupName: 'public-readonly-fields',
+            },
+            {
+              anyOf: [
+                { modifiers: ['protected', 'readonly'], selector: 'property' },
+                { modifiers: ['protected', 'readonly'], selector: 'accessor-property' },
+              ],
+              groupName: 'protected-readonly-fields',
+            },
+            {
+              anyOf: [
+                { modifiers: ['private', 'readonly'], selector: 'property' },
+                { modifiers: ['private', 'readonly'], selector: 'accessor-property' },
+              ],
+              groupName: 'private-readonly-fields',
+            },
           ],
           groups: [
             'decorated-public',
             'decorated-private',
             ['property', 'accessor-property', 'static-property', 'static-accessor-property'],
+            'public-readonly-fields',
             ['protected-property', 'protected-accessor-property', 'protected-static-property', 'protected-static-accessor-property'],
+            'protected-readonly-fields',
             ['private-property', 'private-accessor-property', 'private-static-property', 'private-static-accessor-property'],
+            'private-readonly-fields',
             'ctor',
             'static-block',
             { group: 'lifecycle', newlinesInside: 1, type: 'unsorted' },
