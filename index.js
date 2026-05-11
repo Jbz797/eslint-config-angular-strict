@@ -49,9 +49,9 @@ export default [
       'no-plusplus': 'off',
       'no-restricted-syntax': [
         'error',
-        { selector: 'TSEnumDeclaration', message: 'Enums must live in enums.ts or *.enum.ts files' },
-        { selector: 'TSInterfaceDeclaration', message: 'Interfaces must live in *.interface.ts files' },
-        { selector: 'TSTypeAliasDeclaration', message: 'Types must live in types.ts or *.type.ts files' },
+        { selector: 'TSEnumDeclaration:not(TSModuleBlock > TSEnumDeclaration)', message: 'Enums must live in enums.ts or *.enum.ts files' },
+        { selector: 'TSInterfaceDeclaration:not(TSModuleBlock > TSInterfaceDeclaration)', message: 'Interfaces must live in *.interface.ts files' },
+        { selector: 'TSTypeAliasDeclaration:not(TSModuleBlock > TSTypeAliasDeclaration)', message: 'Types must live in types.ts or *.type.ts files' },
       ],
       'no-return-assign': 'off',
       'no-underscore-dangle': ['error', { allowAfterThis: true }],
