@@ -47,6 +47,12 @@ export default [
       'no-fallthrough': 'off',
       'no-param-reassign': ['error', { props: false }],
       'no-plusplus': 'off',
+      'no-restricted-syntax': [
+        'error',
+        { selector: 'TSEnumDeclaration', message: 'Enums must live in *.enums.ts files' },
+        { selector: 'TSInterfaceDeclaration', message: 'Interfaces must live in *.interface.ts files' },
+        { selector: 'TSTypeAliasDeclaration', message: 'Types must live in *.types.ts files' },
+      ],
       'no-return-assign': 'off',
       'no-underscore-dangle': ['error', { allowAfterThis: true }],
       'radix': ['error', 'as-needed'],
@@ -292,6 +298,48 @@ export default [
       // Unicorn rules
       'unicorn/prefer-string-raw': 'off',
       'unicorn/template-indent': 'off',
+    },
+  },
+
+  // *.interface.ts: only interfaces allowed
+  {
+    files: ['**/*.interface.ts'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'Program > :not(ImportDeclaration, TSInterfaceDeclaration, ExportNamedDeclaration:has(> TSInterfaceDeclaration))',
+          message: 'Only interfaces allowed in *.interface.ts',
+        },
+      ],
+    },
+  },
+
+  // *.enums.ts: only enums allowed
+  {
+    files: ['**/*.enums.ts'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'Program > :not(ImportDeclaration, TSEnumDeclaration, ExportNamedDeclaration:has(> TSEnumDeclaration))',
+          message: 'Only enums allowed in *.enums.ts',
+        },
+      ],
+    },
+  },
+
+  // *.types.ts: only type aliases allowed
+  {
+    files: ['**/*.types.ts'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'Program > :not(ImportDeclaration, TSTypeAliasDeclaration, ExportNamedDeclaration:has(> TSTypeAliasDeclaration))',
+          message: 'Only type aliases allowed in *.types.ts',
+        },
+      ],
     },
   },
 ];
