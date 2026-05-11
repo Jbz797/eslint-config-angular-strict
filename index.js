@@ -49,9 +49,9 @@ export default [
       'no-plusplus': 'off',
       'no-restricted-syntax': [
         'error',
-        { selector: 'TSEnumDeclaration', message: 'Enums must live in *.enums.ts files' },
+        { selector: 'TSEnumDeclaration', message: 'Enums must live in enums.ts or *.enum.ts files' },
         { selector: 'TSInterfaceDeclaration', message: 'Interfaces must live in *.interface.ts files' },
-        { selector: 'TSTypeAliasDeclaration', message: 'Types must live in *.types.ts files' },
+        { selector: 'TSTypeAliasDeclaration', message: 'Types must live in types.ts or *.type.ts files' },
       ],
       'no-return-assign': 'off',
       'no-underscore-dangle': ['error', { allowAfterThis: true }],
@@ -315,29 +315,29 @@ export default [
     },
   },
 
-  // *.enums.ts: only enums allowed
+  // enums.ts / *.enum.ts: only enums allowed
   {
-    files: ['**/*.enums.ts'],
+    files: ['**/enums.ts', '**/*.enum.ts'],
     rules: {
       'no-restricted-syntax': [
         'error',
         {
           selector: 'Program > :not(ImportDeclaration, TSEnumDeclaration, ExportNamedDeclaration:has(> TSEnumDeclaration))',
-          message: 'Only enums allowed in *.enums.ts',
+          message: 'Only enums allowed in enums.ts / *.enum.ts',
         },
       ],
     },
   },
 
-  // *.types.ts: only type aliases allowed
+  // types.ts / *.type.ts: only type aliases allowed
   {
-    files: ['**/*.types.ts'],
+    files: ['**/types.ts', '**/*.type.ts'],
     rules: {
       'no-restricted-syntax': [
         'error',
         {
           selector: 'Program > :not(ImportDeclaration, TSTypeAliasDeclaration, ExportNamedDeclaration:has(> TSTypeAliasDeclaration))',
-          message: 'Only type aliases allowed in *.types.ts',
+          message: 'Only type aliases allowed in types.ts / *.type.ts',
         },
       ],
     },
