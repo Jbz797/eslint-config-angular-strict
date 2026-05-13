@@ -86,6 +86,7 @@ export default [
         'error',
         { arrayLiteralTypeAssertions: 'never', assertionStyle: 'as', objectLiteralTypeAssertions: 'never' },
       ],
+      '@typescript-eslint/consistent-type-exports': 'off',
       '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
       '@typescript-eslint/explicit-member-accessibility': [
         'error',
