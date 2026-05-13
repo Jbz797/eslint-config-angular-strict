@@ -4,10 +4,10 @@ const classSuffixRestriction = (suffix, location) => ({
   message: `Classes in ${location} must end with "${suffix}"`,
 });
 
-// Files containing only imports + export const should be named *.constant.ts
+// Files containing only imports + export const (literal values, not functions) should be named *.constant.ts
 const constantsFileRestriction = {
   selector:
-    'Program:has(ExportNamedDeclaration VariableDeclaration[kind="const"]):not(:has(:matches(ClassDeclaration, FunctionDeclaration, TSInterfaceDeclaration, TSEnumDeclaration, TSTypeAliasDeclaration)))',
+    'Program:has(ExportNamedDeclaration VariableDeclaration[kind="const"]):not(:has(:matches(ClassDeclaration, FunctionDeclaration, TSInterfaceDeclaration, TSEnumDeclaration, TSTypeAliasDeclaration))):not(:has(VariableDeclarator > :matches(ArrowFunctionExpression, FunctionExpression, CallExpression)))',
   message: 'Files containing only constants must be named constants/*.constant.ts',
 };
 
