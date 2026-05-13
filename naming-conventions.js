@@ -252,9 +252,9 @@ export const namingConventionOverrides = [
     },
   },
 
-  // *.routes.ts: only imports + export const allowed (route definitions, any folder)
+  // routes.ts / *.routes.ts: only imports + export const allowed (route definitions, any folder)
   {
-    files: ['**/*.routes.ts'],
+    files: ['**/routes.ts', '**/*.routes.ts'],
     rules: {
       'no-restricted-syntax': [
         'error',
