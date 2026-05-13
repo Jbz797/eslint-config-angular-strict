@@ -1,8 +1,20 @@
-// Class suffix enforcement (regex matched against class name)
-const classSuffixRestriction = (suffix, location) => ({
-  selector: `ClassDeclaration[id.name!=/${suffix}$/]`,
-  message: `Classes in ${location} must end with "${suffix}"`,
-});
+// Class suffix enforcement based on Angular decorator
+const decoratorClassSuffixRestrictions = [
+  {
+    selector: 'ClassDeclaration:has(> Decorator[expression.callee.name="Injectable"]):not([id.name=/Service$/])',
+    message: '@Injectable classes must end with "Service"',
+  },
+  {
+    selector: 'ClassDeclaration:has(> Decorator[expression.callee.name="Pipe"]):not([id.name=/Pipe$/])',
+    message: '@Pipe classes must end with "Pipe"',
+  },
+];
+
+// Class suffix enforcement for files (used in helpers override since undecorated)
+const helpersClassSuffixRestriction = {
+  selector: 'ClassDeclaration[id.name!=/Helpers$/]',
+  message: 'Classes in *.helpers.ts must end with "Helpers"',
+};
 
 // Files containing only imports + export const (literal values, not functions) should be named *.constant.ts
 const constantsFileRestriction = {
@@ -26,7 +38,7 @@ const decoratorFileRestrictions = {
   Component: {
     selector: 'Decorator[expression.callee.name="Component"]',
     message:
-      '@Component classes must live in app.ts / components/**/*.component.ts / components/drawers/*.drawer.ts / components/modals/*.modal.ts / pages/**/*.page.ts',
+      '@Component classes must live in app.ts / components/**/*.component.ts / pages/**/*.component.ts / components/drawers/*.drawer.ts / components/modals/*.modal.ts / pages/**/*.page.ts',
   },
   Directive: { selector: 'Decorator[expression.callee.name="Directive"]', message: '@Directive classes must live in directives/*.directive.ts' },
   Injectable: { selector: 'Decorator[expression.callee.name="Injectable"]', message: '@Injectable classes must live in services/*.service.ts' },
@@ -47,6 +59,7 @@ export const noRestrictedSyntaxRule = [
   decoratorFileRestrictions.Directive,
   decoratorFileRestrictions.Injectable,
   decoratorFileRestrictions.Pipe,
+  ...decoratorClassSuffixRestrictions,
   helperFileRestriction,
   ...declarationFileRestrictions,
 ];
@@ -55,13 +68,21 @@ export const noRestrictedSyntaxRule = [
 export const namingConventionOverrides = [
   // app.ts / components/**/*.component.ts / components/drawers/*.drawer.ts / components/modals/*.modal.ts / pages/**/*.page.ts: @Component allowed
   {
-    files: ['**/app.ts', '**/components/**/*.component.ts', '**/components/drawers/**/*.drawer.ts', '**/components/modals/**/*.modal.ts', '**/pages/**/*.page.ts'],
+    files: [
+      '**/app.ts',
+      '**/components/**/*.component.ts',
+      '**/pages/**/*.component.ts',
+      '**/components/drawers/**/*.drawer.ts',
+      '**/components/modals/**/*.modal.ts',
+      '**/pages/**/*.page.ts',
+    ],
     rules: {
       'no-restricted-syntax': [
         'error',
         decoratorFileRestrictions.Directive,
         decoratorFileRestrictions.Injectable,
         decoratorFileRestrictions.Pipe,
+        ...decoratorClassSuffixRestrictions,
         helperFileRestriction,
         ...declarationFileRestrictions,
       ],
@@ -77,38 +98,39 @@ export const namingConventionOverrides = [
         decoratorFileRestrictions.Component,
         decoratorFileRestrictions.Injectable,
         decoratorFileRestrictions.Pipe,
+        ...decoratorClassSuffixRestrictions,
         helperFileRestriction,
         ...declarationFileRestrictions,
       ],
     },
   },
 
-  // pipes/*.pipe.ts: @Pipe allowed, class must end with "Pipe"
+  // pipes/*.pipe.ts: @Pipe allowed
   {
     files: ['**/pipes/**/*.pipe.ts'],
     rules: {
       'no-restricted-syntax': [
         'error',
-        classSuffixRestriction('Pipe', '*.pipe.ts'),
         decoratorFileRestrictions.Component,
         decoratorFileRestrictions.Directive,
         decoratorFileRestrictions.Injectable,
+        ...decoratorClassSuffixRestrictions,
         helperFileRestriction,
         ...declarationFileRestrictions,
       ],
     },
   },
 
-  // services/*.service.ts: @Injectable allowed, class must end with "Service"
+  // services/*.service.ts: @Injectable allowed
   {
     files: ['**/services/**/*.service.ts'],
     rules: {
       'no-restricted-syntax': [
         'error',
-        classSuffixRestriction('Service', '*.service.ts'),
         decoratorFileRestrictions.Component,
         decoratorFileRestrictions.Directive,
         decoratorFileRestrictions.Pipe,
+        ...decoratorClassSuffixRestrictions,
         helperFileRestriction,
         ...declarationFileRestrictions,
       ],
@@ -121,11 +143,12 @@ export const namingConventionOverrides = [
     rules: {
       'no-restricted-syntax': [
         'error',
-        classSuffixRestriction('Helpers', '*.helpers.ts'),
+        helpersClassSuffixRestriction,
         decoratorFileRestrictions.Component,
         decoratorFileRestrictions.Directive,
         decoratorFileRestrictions.Injectable,
         decoratorFileRestrictions.Pipe,
+        ...decoratorClassSuffixRestrictions,
         ...declarationFileRestrictions,
       ],
     },
@@ -238,6 +261,20 @@ export const namingConventionOverrides = [
         {
           selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
           message: 'Only imports and export const allowed in *.routes.ts',
+        },
+      ],
+    },
+  },
+
+  // environments/*.ts: Angular environment files (only imports + export const allowed, no naming enforcement)
+  {
+    files: ['**/environments/*.ts'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
+          message: 'Only imports and export const allowed in environments files',
         },
       ],
     },
