@@ -9,6 +9,8 @@ import tsEslintParser from '@typescript-eslint/parser';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import unicornPlugin from 'eslint-plugin-unicorn';
 
+import { namingConventionOverrides, noRestrictedSyntaxRule } from './naming-conventions.js';
+
 export default [
   {
     ignores: ['dist/**', 'node_modules/**'],
@@ -47,12 +49,7 @@ export default [
       'no-fallthrough': 'off',
       'no-param-reassign': ['error', { props: false }],
       'no-plusplus': 'off',
-      'no-restricted-syntax': [
-        'error',
-        { selector: 'TSEnumDeclaration:not(TSModuleBlock > TSEnumDeclaration)', message: 'Enums must live in enums.ts or *.enum.ts files' },
-        { selector: 'TSInterfaceDeclaration:not(TSModuleBlock > TSInterfaceDeclaration)', message: 'Interfaces must live in *.interface.ts files' },
-        { selector: 'TSTypeAliasDeclaration:not(TSModuleBlock > TSTypeAliasDeclaration)', message: 'Types must live in types.ts or *.type.ts files' },
-      ],
+      'no-restricted-syntax': noRestrictedSyntaxRule,
       'no-return-assign': 'off',
       'no-underscore-dangle': ['error', { allowAfterThis: true }],
       'radix': ['error', 'as-needed'],
@@ -301,45 +298,5 @@ export default [
     },
   },
 
-  // *.interface.ts: only interfaces allowed
-  {
-    files: ['**/*.interface.ts'],
-    rules: {
-      'no-restricted-syntax': [
-        'error',
-        {
-          selector: 'Program > :not(ImportDeclaration, TSInterfaceDeclaration, ExportNamedDeclaration:has(> TSInterfaceDeclaration))',
-          message: 'Only interfaces allowed in *.interface.ts',
-        },
-      ],
-    },
-  },
-
-  // enums.ts / *.enum.ts: only enums allowed
-  {
-    files: ['**/enums.ts', '**/*.enum.ts'],
-    rules: {
-      'no-restricted-syntax': [
-        'error',
-        {
-          selector: 'Program > :not(ImportDeclaration, TSEnumDeclaration, ExportNamedDeclaration:has(> TSEnumDeclaration))',
-          message: 'Only enums allowed in enums.ts / *.enum.ts',
-        },
-      ],
-    },
-  },
-
-  // types.ts / *.type.ts: only type aliases allowed
-  {
-    files: ['**/types.ts', '**/*.type.ts'],
-    rules: {
-      'no-restricted-syntax': [
-        'error',
-        {
-          selector: 'Program > :not(ImportDeclaration, TSTypeAliasDeclaration, ExportNamedDeclaration:has(> TSTypeAliasDeclaration))',
-          message: 'Only type aliases allowed in types.ts / *.type.ts',
-        },
-      ],
-    },
-  },
+  ...namingConventionOverrides,
 ];
