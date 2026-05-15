@@ -285,7 +285,7 @@ export default [
       '@angular-eslint/template/attributes-order': ['error', { alphabetical: true }],
       '@angular-eslint/template/button-has-type': 'off',
       '@angular-eslint/template/click-events-have-key-events': 'off',
-      '@angular-eslint/template/cyclomatic-complexity': ['error', { maxComplexity: 10 }],
+      '@angular-eslint/template/cyclomatic-complexity': ['error', { maxComplexity: 8, variant: 'modified' }],
       '@angular-eslint/template/i18n': 'off',
       '@angular-eslint/template/interactive-supports-focus': 'off',
       '@angular-eslint/template/label-has-associated-control': 'off',
