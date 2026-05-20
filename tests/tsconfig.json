@@ -14,7 +14,6 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "strict": true,
     "target": "es2024"
