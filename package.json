@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "2.3.92",
+  "version": "2.3.93",
   "description": "Modern ESLint configuration with strict rules for Angular development.",
   "keywords": [
     "angular",
