@@ -51,6 +51,12 @@ const helperFileRestriction = {
   message: 'Undecorated classes must live in helpers/*.helpers.ts',
 };
 
+// Angular inputs must be public (they are part of the component's external API)
+const inputVisibilityRestriction = {
+  selector: ':matches(PropertyDefinition[accessibility="protected"], PropertyDefinition[accessibility="private"]):has(CallExpression Identifier[name="input"])',
+  message: 'Angular inputs must be public',
+};
+
 // Global no-restricted-syntax rule (used in the main TypeScript files block)
 export const noRestrictedSyntaxRule = [
   'error',
@@ -61,6 +67,7 @@ export const noRestrictedSyntaxRule = [
   decoratorFileRestrictions.Pipe,
   ...decoratorClassSuffixRestrictions,
   helperFileRestriction,
+  inputVisibilityRestriction,
   ...declarationFileRestrictions,
 ];
 
@@ -84,6 +91,7 @@ export const namingConventionOverrides = [
         decoratorFileRestrictions.Pipe,
         ...decoratorClassSuffixRestrictions,
         helperFileRestriction,
+        inputVisibilityRestriction,
         ...declarationFileRestrictions,
       ],
     },
@@ -100,6 +108,7 @@ export const namingConventionOverrides = [
         decoratorFileRestrictions.Pipe,
         ...decoratorClassSuffixRestrictions,
         helperFileRestriction,
+        inputVisibilityRestriction,
         ...declarationFileRestrictions,
       ],
     },
