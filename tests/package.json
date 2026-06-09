@@ -4,6 +4,6 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@angular/core": "^21.2.13"
+    "@angular/core": "^22.0.0"
   }
 }
