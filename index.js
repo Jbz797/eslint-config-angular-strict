@@ -275,8 +275,11 @@ export default [
       'unicorn/no-abusive-eslint-disable': 'off',
       'unicorn/no-array-for-each': 'off',
       'unicorn/no-null': 'off',
+      'unicorn/prefer-includes-over-repeated-comparisons': ['error', { minimumComparisons: 6 }],
+      'unicorn/prefer-split-limit': 'off',
       'unicorn/prefer-top-level-await': 'off',
       'unicorn/switch-case-braces': ['error', 'avoid'],
+      'unicorn/try-complexity': ['error', { max: 5 }],
     },
   },
 
