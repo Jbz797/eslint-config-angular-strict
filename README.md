@@ -70,7 +70,7 @@ Add the following to your `package.json`:
 ```jsonc
 {
   // ...
-  "type": "module"
+  "type": "module",
 }
 ```
 
@@ -88,7 +88,6 @@ Make sure your `tsconfig.json` is properly configured:
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strict": true
   },
   "angularCompilerOptions": {
     // ...
@@ -96,8 +95,7 @@ Make sure your `tsconfig.json` is properly configured:
     "strictInjectionParameters": true,
     "strictStandalone": true,
     "strictTemplates": true,
-    "typeCheckHostBindings": true
-  }
+  },
 }
 ```
 
@@ -127,8 +125,8 @@ This config handles **TypeScript formatting via ESLint**. Prettier should only b
   "scripts": {
     // ...
     "lint": "ng lint && prettier --check \"src/**/*.html\"",
-    "lint:fix": "ng lint --fix && prettier --write \"src/**/*.html\""
-  }
+    "lint:fix": "ng lint --fix && prettier --write \"src/**/*.html\"",
+  },
 }
 ```
 
@@ -144,7 +142,7 @@ This config handles **TypeScript formatting via ESLint**. Prettier should only b
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "eslint.format.enable": true,
-  "eslint.validate": [ /*...*/, "html", "typescript"],
+  "eslint.validate": [, /*...*/ "html", "typescript"],
 }
 ```
 
