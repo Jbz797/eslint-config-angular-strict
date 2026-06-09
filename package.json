@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "2.3.96",
+  "version": "2.3.97",
   "description": "Modern ESLint configuration with strict rules for Angular development.",
   "keywords": [
     "angular",
@@ -35,15 +35,15 @@
     "test": "cd tests && yarn install && eslint . --format=stylish"
   },
   "dependencies": {
-    "@angular-eslint/builder": "21.4.0",
-    "@angular-eslint/eslint-plugin": "21.4.0",
-    "@angular-eslint/eslint-plugin-template": "21.4.0",
-    "@angular-eslint/template-parser": "21.4.0",
+    "@angular-eslint/builder": "22.0.0",
+    "@angular-eslint/eslint-plugin": "22.0.0",
+    "@angular-eslint/eslint-plugin-template": "22.0.0",
+    "@angular-eslint/template-parser": "22.0.0",
     "@stylistic/eslint-plugin": "5.10.0",
-    "@typescript-eslint/eslint-plugin": "8.60.1",
-    "@typescript-eslint/parser": "8.60.1",
-    "@typescript-eslint/types": "8.60.1",
-    "@typescript-eslint/utils": "8.60.1",
+    "@typescript-eslint/eslint-plugin": "8.61.0",
+    "@typescript-eslint/parser": "8.61.0",
+    "@typescript-eslint/types": "8.61.0",
+    "@typescript-eslint/utils": "8.61.0",
     "eslint": "9.39.4",
     "eslint-config-airbnb-extended": "3.1.0",
     "eslint-plugin-import-x": "4.16.2",

@@ -11,6 +11,9 @@ import unicornPlugin from 'eslint-plugin-unicorn';
 
 import { namingConventionOverrides, noRestrictedSyntaxRule } from './naming-conventions.js';
 
+// @angular-eslint v22 dropped the `configs` export — manually enable all rules instead
+const enableAllRules = (plugin, prefix) => Object.fromEntries(Object.keys(plugin.rules).map(k => [`${prefix}/${k}`, 'error']));
+
 export default [
   {
     ignores: ['dist/**', 'node_modules/**'],
@@ -36,7 +39,7 @@ export default [
     plugins: { '@angular-eslint': angularEslintPlugin },
     rules: {
       // Angular ESLint rules (all preset + overrides)
-      ...angularEslintPlugin.configs.all.rules,
+      ...enableAllRules(angularEslintPlugin, '@angular-eslint'),
       '@angular-eslint/component-class-suffix': ['error', { suffixes: ['App', 'Component', 'Drawer', 'Modal', 'Page'] }],
       '@angular-eslint/component-selector': 'off',
       '@angular-eslint/prefer-on-push-component-change-detection': 'off',
@@ -289,7 +292,7 @@ export default [
     languageOptions: { parser: angularTemplateParser },
     rules: {
       // Angular ESLint template rules (all preset + overrides)
-      ...angularTemplatePlugin.configs.all.rules,
+      ...enableAllRules(angularTemplatePlugin, '@angular-eslint/template'),
       '@angular-eslint/template/alt-text': 'off',
       '@angular-eslint/template/attributes-order': ['error', { alphabetical: true }],
       '@angular-eslint/template/button-has-type': 'off',
