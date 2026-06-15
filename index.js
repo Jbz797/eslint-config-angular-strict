@@ -277,7 +277,7 @@ export default [
       'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
       'unicorn/new-for-builtins': 'off',
       'unicorn/no-abusive-eslint-disable': 'off',
-      'unicorn/no-array-for-each': 'off',
+      'unicorn/no-for-each': 'off',
       'unicorn/no-null': 'off',
       'unicorn/no-this-outside-of-class': 'off',
       'unicorn/prefer-includes-over-repeated-comparisons': ['error', { minimumComparisons: 6 }],
@@ -308,6 +308,7 @@ export default [
       '@angular-eslint/template/prefer-ngsrc': 'off',
 
       // Unicorn rules
+      'unicorn/no-empty-file': 'off',
       'unicorn/prefer-string-raw': 'off',
       'unicorn/template-indent': 'off',
     },
