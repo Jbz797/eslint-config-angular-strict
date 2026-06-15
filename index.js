@@ -309,6 +309,7 @@ export default [
 
       // Unicorn rules
       'unicorn/no-empty-file': 'off',
+      'unicorn/no-useless-template-literals': 'off',
       'unicorn/prefer-string-raw': 'off',
       'unicorn/template-indent': 'off',
     },
