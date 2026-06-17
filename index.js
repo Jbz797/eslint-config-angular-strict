@@ -279,7 +279,6 @@ export default [
       'unicorn/new-for-builtins': 'off',
       'unicorn/no-abusive-eslint-disable': 'off',
       'unicorn/no-for-each': 'off',
-      'unicorn/no-non-function-verb-prefix': 'off',
       'unicorn/no-null': 'off',
       'unicorn/no-this-outside-of-class': 'off',
       'unicorn/prefer-await': 'off',
