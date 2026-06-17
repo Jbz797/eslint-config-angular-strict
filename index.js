@@ -279,6 +279,7 @@ export default [
       'unicorn/new-for-builtins': 'off',
       'unicorn/no-abusive-eslint-disable': 'off',
       'unicorn/no-for-each': 'off',
+      'unicorn/no-non-function-verb-prefix': 'off',
       'unicorn/no-null': 'off',
       'unicorn/no-this-outside-of-class': 'off',
       'unicorn/prefer-await': 'off',
@@ -311,6 +312,7 @@ export default [
       '@angular-eslint/template/prefer-ngsrc': 'off',
 
       // Unicorn rules
+      'unicorn/no-empty-file': 'off',
       'unicorn/no-useless-template-literals': 'off',
       'unicorn/prefer-string-raw': 'off',
       'unicorn/template-indent': 'off',
