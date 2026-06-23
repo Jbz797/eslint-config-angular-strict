@@ -278,6 +278,7 @@ export default [
       'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
       'unicorn/new-for-builtins': 'off',
       'unicorn/no-abusive-eslint-disable': 'off',
+      'unicorn/no-array-front-mutation': 'off',
       'unicorn/no-for-each': 'off',
       'unicorn/no-null': 'off',
       'unicorn/no-this-outside-of-class': 'off',
