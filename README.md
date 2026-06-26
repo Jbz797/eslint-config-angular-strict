@@ -88,6 +88,7 @@ Make sure your `tsconfig.json` is properly configured:
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "target": "esnext",
   },
   "angularCompilerOptions": {
     // ...
@@ -98,6 +99,8 @@ Make sure your `tsconfig.json` is properly configured:
   },
 }
 ```
+
+> **ℹ️ Note**: `target: "esnext"` auto-includes the latest standard lib (esnext + DOM), which several Unicorn rules require. Without it, some rules may suggest APIs that TypeScript doesn't recognize as built-in. No need to set `lib` explicitly — TypeScript infers it from `target`.
 
 ## Prettier
 
