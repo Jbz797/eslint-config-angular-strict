@@ -142,6 +142,7 @@ export default [
         'error',
         {
           customGroups: [
+            { elementValuePattern: '^inject\\(', groupName: 'inject-calls' },
             { groupName: 'decorated-public', modifiers: ['decorated', 'public'] },
             { groupName: 'decorated-private', modifiers: ['decorated', 'private'] },
             { groupName: 'ctor', selector: 'constructor' },
@@ -205,6 +206,7 @@ export default [
             },
           ],
           groups: [
+            'inject-calls',
             'public-constant-aliases',
             'protected-constant-aliases',
             'private-constant-aliases',
