@@ -261,15 +261,15 @@ export const namingConventionOverrides = [
     },
   },
 
-  // routes.ts / *.routes.ts: only imports + export const allowed (route definitions, any folder)
+  // routes.ts / *.routes.ts: only imports + const declarations allowed (routes + colocated resolvers/guards as local const)
   {
     files: ['**/routes.ts', '**/*.routes.ts'],
     rules: {
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
-          message: 'Only imports and export const allowed in *.routes.ts',
+          selector: 'Program > :not(ImportDeclaration, VariableDeclaration[kind="const"], ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
+          message: 'Only imports and const declarations allowed in *.routes.ts',
         },
       ],
     },
