@@ -144,7 +144,7 @@ export default [
         'error',
         {
           customGroups: [
-            { elementValuePattern: '^inject\\(', groupName: 'inject-calls' },
+            { elementValuePattern: '^inject(<[^>]+>)?\\(', groupName: 'inject-calls' },
             { groupName: 'decorated-public', modifiers: ['decorated', 'public'] },
             { groupName: 'decorated-private', modifiers: ['decorated', 'private'] },
             { groupName: 'ctor', selector: 'constructor' },
