@@ -61,8 +61,8 @@ const helpersFileRestrictions = [
     message: 'Only imports and the class allowed in *.helpers.ts — use static properties for constants and static methods for logic',
   },
   {
-    selector: 'PropertyDefinition > :matches(ArrowFunctionExpression, FunctionExpression)',
-    message: 'Logic in *.helpers.ts must be declared as a static method, not a function property',
+    selector: 'PropertyDefinition > FunctionExpression',
+    message: 'Use a static method or an arrow property in *.helpers.ts, not a function expression',
   },
 ];
 
