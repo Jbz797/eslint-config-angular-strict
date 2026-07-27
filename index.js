@@ -9,7 +9,7 @@ import tsEslintParser from '@typescript-eslint/parser';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import unicornPlugin from 'eslint-plugin-unicorn';
 
-import { namingConventionOverrides, noRestrictedSyntaxRule } from './naming-conventions.js';
+import { noRestrictedSyntaxOverrides, noRestrictedSyntaxRule } from './file-conventions.js';
 
 // @angular-eslint v22 dropped the `configs` export — manually enable all rules instead
 const enableAllRules = (plugin, prefix) => Object.fromEntries(Object.keys(plugin.rules).map(k => [`${prefix}/${k}`, 'error']));
@@ -325,5 +325,5 @@ export default [
     },
   },
 
-  ...namingConventionOverrides,
+  ...noRestrictedSyntaxOverrides,
 ];
