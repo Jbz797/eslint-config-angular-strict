@@ -1,4 +1,5 @@
 .claude/
+.githooks/
 .yarn/
 .yarnrc.yml
 *.log

@@ -1,0 +1,33 @@
+#!/bin/sh
+# Refuse a commit whose staged package.json carries an invalid semver version.
+# Leading zeros (22.1.09) publish silently but break `ng update` in consumers.
+# Bypass with `git commit --no-verify` if ever needed.
+
+git diff --cached --name-only | grep -qx 'package.json' || exit 0
+
+git show :package.json | node -e '
+const SEMVER = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/;
+
+let pkg;
+try {
+  pkg = JSON.parse(require("fs").readFileSync(0, "utf8"));
+} catch {
+  console.error("\x1b[31m✖ Commit rejected: staged package.json is not valid JSON\x1b[0m");
+  process.exit(1);
+}
+
+const version = pkg.version;
+if (SEMVER.test(version)) process.exit(0);
+
+const fixed = String(version).replace(/(\d+)\.(\d+)\.0+(\d+)/, "$1.$2.$3");
+console.error("\x1b[31m✖ Commit rejected: invalid version in package.json\x1b[0m");
+console.error("");
+console.error(`  staged   : \x1b[31m${version}\x1b[0m`);
+if (fixed !== String(version)) console.error(`  expected : \x1b[32m${fixed}\x1b[0m  (no leading zero)`);
+console.error("");
+console.error("  npm accepts this on publish but ships the file as-is,");
+console.error("  which breaks `ng update` in consuming projects.");
+console.error("");
+console.error("  Use \x1b[36myarn version patch\x1b[0m to compute the number correctly.");
+process.exit(1);
+'
