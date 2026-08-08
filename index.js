@@ -134,6 +134,7 @@ export default [
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-unnecessary-condition': 'error',
       '@typescript-eslint/no-unnecessary-type-conversion': 'error',
+      '@typescript-eslint/no-unnecessary-type-parameters': 'error',
       '@typescript-eslint/no-useless-default-assignment': 'error',
       '@typescript-eslint/prefer-readonly': 'error',
       '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
