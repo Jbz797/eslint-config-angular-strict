@@ -280,6 +280,7 @@ export default [
       'perfectionist/sort-union-types': ['error', { groups: ['unknown', 'nullish'] }],
 
       // Unicorn rules
+      'unicorn/consistent-arrow-return-style': 'off',
       'unicorn/consistent-class-member-order': 'off',
       'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
       'unicorn/new-for-builtins': 'off',
