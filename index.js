@@ -58,6 +58,7 @@ export default [
       'no-restricted-syntax': noRestrictedSyntaxRule,
       'no-return-assign': 'off',
       'no-underscore-dangle': ['error', { allowAfterThis: true }],
+      'no-unmodified-loop-condition': ['error', { checkConditionalExpressions: true }],
       'radix': ['error', 'as-needed'],
 
       // Import rules
