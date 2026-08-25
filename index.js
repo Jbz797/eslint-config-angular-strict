@@ -131,6 +131,7 @@ export default [
       '@typescript-eslint/no-deprecated': 'error',
       '@typescript-eslint/no-dynamic-delete': 'error',
       '@typescript-eslint/no-extraneous-class': ['error', { allowEmpty: true, allowStaticOnly: true }],
+      '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/no-loop-func': 'off',
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-unnecessary-condition': 'error',
