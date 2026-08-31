@@ -9,7 +9,7 @@ import tsEslintParser from '@typescript-eslint/parser';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import unicornPlugin from 'eslint-plugin-unicorn';
 
-import { noRestrictedSyntaxOverrides, noRestrictedSyntaxRule } from './file-conventions.js';
+import { noRestrictedSyntaxOverrides, noRestrictedSyntaxRule } from './rules/file-conventions.js';
 
 // @angular-eslint v22 dropped the `configs` export — manually enable all rules instead
 const enableAllRules = (plugin, prefix) => Object.fromEntries(Object.keys(plugin.rules).map(k => [`${prefix}/${k}`, 'error']));
@@ -282,7 +282,7 @@ export default [
       'perfectionist/sort-union-types': ['error', { groups: ['unknown', 'nullish'] }],
 
       // Unicorn rules
-      'unicorn/consistent-arrow-return-style': 'off',
+      'unicorn/consistent-arrow-return-style': 'off', // conflicts with airbnb's `arrow-body-style: as-needed`, the two fixers fight
       'unicorn/consistent-class-member-order': 'off',
       'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
       'unicorn/new-for-builtins': 'off',
