@@ -71,6 +71,7 @@ export default [
       'import-x/prefer-default-export': 'off',
 
       // Stylistic rules
+      '@stylistic/array-bracket-newline': ['error', 'consistent'],
       '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
       '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
       '@stylistic/lines-between-class-members': 'off',
