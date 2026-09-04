@@ -124,6 +124,7 @@ export default [
         { selector: 'parameter', format: ['camelCase'], trailingUnderscore: 'allowSingleOrDouble' },
         { selector: 'typeLike', format: ['PascalCase'] },
         { selector: 'typeProperty', format: ['camelCase', 'snake_case'] },
+        { selector: 'typeProperty', format: null, modifiers: ['requiresQuotes'] },
         { selector: 'variable', format: ['UPPER_CASE'], modifiers: ['const', 'exported'] },
         { selector: 'variable', format: ['PascalCase'], filter: { regex: '[Tt]oken', match: true } },
         { selector: 'variable', format: ['camelCase'] },
