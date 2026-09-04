@@ -295,6 +295,7 @@ export default [
       'unicorn/no-this-outside-of-class': 'off',
       'unicorn/prefer-await': 'off',
       'unicorn/prefer-includes-over-repeated-comparisons': ['error', { minimumComparisons: 6 }],
+      'unicorn/prefer-number-coercion': 'off', // `Number()` reads a CSS length like `30.8px` as NaN, and Typed OM gives the declared ratio, not the used pixels
       'unicorn/prefer-split-limit': 'off',
       'unicorn/prefer-temporal': 'off',
       'unicorn/prefer-top-level-await': 'off',
