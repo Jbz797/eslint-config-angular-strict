@@ -82,6 +82,7 @@ Make sure your `tsconfig.json` is properly configured:
 {
   "compilerOptions": {
     // ...
+    "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
