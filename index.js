@@ -51,6 +51,7 @@ export default [
       'max-depth': 'error',
       'max-lines': ['error', { max: 425, skipBlankLines: true, skipComments: true }],
       'max-nested-callbacks': 'error',
+      'no-continue': 'off', // conflicts with unicorn/prefer-continue, which requires the early continue this rule forbids
       'no-fallthrough': 'off',
       'no-loop-func': 'error',
       'no-param-reassign': ['error', { props: false }],
@@ -296,10 +297,13 @@ export default [
       'unicorn/no-null': 'off',
       'unicorn/no-this-outside-of-class': 'off',
       'unicorn/prefer-await': 'off',
+      'unicorn/prefer-continue': ['error', { maximumStatements: 2 }], // two coupled statements read better wrapped than behind an inverted guard
+      'unicorn/prefer-early-return': ['error', { maximumStatements: 2 }], // same threshold as prefer-continue, so loops and functions follow one rule
       'unicorn/prefer-includes-over-repeated-comparisons': ['error', { minimumComparisons: 6 }],
       'unicorn/prefer-number-coercion': 'off', // `Number()` reads a CSS length like `30.8px` as NaN, and Typed OM gives the declared ratio, not the used pixels
       'unicorn/prefer-split-limit': 'off',
       'unicorn/prefer-temporal': 'off',
+      'unicorn/prefer-ternary': ['error', 'only-single-line'], // a guard followed by a multi-line return reads better as if/return
       'unicorn/prefer-top-level-await': 'off',
       'unicorn/switch-case-braces': ['error', 'avoid'],
       'unicorn/try-complexity': ['error', { max: 5 }],
