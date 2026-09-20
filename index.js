@@ -297,6 +297,7 @@ export default [
       'unicorn/no-null': 'off',
       'unicorn/no-this-outside-of-class': 'off',
       'unicorn/prefer-await': 'off',
+      'unicorn/prefer-combined-guards': ['error', { checkCompoundConditions: true }], // the base rule already merges simple consecutive guards, stay consistent
       'unicorn/prefer-continue': ['error', { maximumStatements: 2 }], // two coupled statements read better wrapped than behind an inverted guard
       'unicorn/prefer-early-return': ['error', { maximumStatements: 2 }], // same threshold as prefer-continue, so loops and functions follow one rule
       'unicorn/prefer-includes-over-repeated-comparisons': ['error', { minimumComparisons: 6 }],
