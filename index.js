@@ -145,7 +145,7 @@ export default [
       '@typescript-eslint/no-useless-default-assignment': 'error',
       '@typescript-eslint/prefer-readonly': 'error',
       '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
-      '@typescript-eslint/switch-exhaustiveness-check': 'error', // default-case forces a default, so TS can no longer flag a missing union member
+      '@typescript-eslint/switch-exhaustiveness-check': ['error', { considerDefaultExhaustiveForUnions: true }], // only `// no default` switches need every case
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
       // Perfectionist rules
