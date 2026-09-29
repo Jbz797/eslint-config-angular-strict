@@ -141,9 +141,11 @@ export default [
       '@typescript-eslint/no-unnecessary-condition': 'error',
       '@typescript-eslint/no-unnecessary-type-conversion': 'error',
       '@typescript-eslint/no-unnecessary-type-parameters': 'error',
+      '@typescript-eslint/no-unsafe-enum-assignment': 'error',
       '@typescript-eslint/no-useless-default-assignment': 'error',
       '@typescript-eslint/prefer-readonly': 'error',
       '@typescript-eslint/promise-function-async': ['error', { checkArrowFunctions: false }],
+      '@typescript-eslint/switch-exhaustiveness-check': 'error', // default-case forces a default, so TS can no longer flag a missing union member
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
       // Perfectionist rules
