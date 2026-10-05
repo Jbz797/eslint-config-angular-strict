@@ -299,6 +299,7 @@ export default [
       'unicorn/no-for-each': 'off',
       'unicorn/no-null': 'off',
       'unicorn/no-this-outside-of-class': 'off',
+      'unicorn/no-unnecessary-array-flat-map': 'off', // `cond ? [x] : []` is the usual zero-or-one idiom, unwrapping it mixes objects and arrays
       'unicorn/prefer-await': 'off',
       'unicorn/prefer-combined-guards': ['error', { checkCompoundConditions: true }], // the base rule already merges simple consecutive guards, stay consistent
       'unicorn/prefer-continue': ['error', { maximumStatements: 2 }], // two coupled statements read better wrapped than behind an inverted guard
@@ -334,6 +335,7 @@ export default [
       '@angular-eslint/template/prefer-ngsrc': 'off',
 
       // Unicorn rules
+      'unicorn/empty-brace-spaces': 'off', // crashes on template object literals: the Angular parser names them `Object`, like the JSON nodes it targets
       'unicorn/no-empty-file': 'off',
       'unicorn/no-incorrect-template-string-interpolation': 'off',
       'unicorn/no-useless-template-literals': 'off',
