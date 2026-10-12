@@ -30,7 +30,7 @@ export default [
   perfectionistPlugin.configs['recommended-natural'],
   rules.base.importsStrict,
   rules.typescript.typescriptEslintStrict,
-  unicornPlugin.configs.all,
+  { ...unicornPlugin.configs.all, ignores: ['**/*.html'] }, // not built for Angular templates: nothing useful to report there, and several rules crash on their AST
 
   // TypeScript files configuration
   {
@@ -43,6 +43,7 @@ export default [
       '@angular-eslint/component-class-suffix': ['error', { suffixes: ['App', 'Component', 'Drawer', 'Modal', 'Page'] }],
       '@angular-eslint/component-selector': 'off',
       '@angular-eslint/prefer-on-push-component-change-detection': 'off',
+      '@angular-eslint/prefer-standalone': ['error', { allowExplicitStandalone: false }], // standalone is the default, an explicit `true` is noise
       '@angular-eslint/use-component-selector': 'off',
 
       // ESLint rules
@@ -333,15 +334,6 @@ export default [
       '@angular-eslint/template/no-call-expression': 'off',
       '@angular-eslint/template/no-inline-styles': 'off',
       '@angular-eslint/template/prefer-ngsrc': 'off',
-
-      // Unicorn rules
-      'unicorn/empty-brace-spaces': 'off', // crashes on template object literals: the Angular parser names them `Object`, like the JSON nodes it targets
-      'unicorn/no-empty-file': 'off',
-      'unicorn/no-incorrect-template-string-interpolation': 'off',
-      'unicorn/no-useless-template-literals': 'off',
-      'unicorn/prefer-string-raw': 'off',
-      'unicorn/single-line-block-comment-style': 'off',
-      'unicorn/template-indent': 'off',
     },
   },
 
