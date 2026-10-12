@@ -3,6 +3,8 @@ import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 import angularTemplateParser from '@angular-eslint/template-parser';
 import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
 import importXPlugin from 'eslint-plugin-import-x';
+import jsonPlugin from '@eslint/json';
+import markdownPlugin from '@eslint/markdown';
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import stylistic from '@stylistic/eslint-plugin';
 import tomlPlugin from 'eslint-plugin-toml';
@@ -19,7 +21,8 @@ const enableAllRules = (plugin, prefix) => Object.fromEntries(Object.keys(plugin
 // The language plugins ship their presets as arrays whose rules carry no `files` — merge them so they stay scoped to our own blocks
 const presetRules = preset => Object.assign({}, ...preset.map(config => config.rules));
 
-const dataFiles = ['**/*.toml', '**/*.yaml', '**/*.yml']; // Data files get their own language blocks below: the JavaScript presets must not reach them
+// Data files get their own language blocks below: the JavaScript presets must not reach them
+const dataFiles = ['**/*.json', '**/*.json5', '**/*.jsonc', '**/*.md', '**/*.toml', '**/*.yaml', '**/*.yml'];
 
 export default [
   { ignores: ['dist/**', 'node_modules/**'] }, // Alone in its object, `ignores` is global: mixed with other keys it only applies to that block
@@ -342,6 +345,28 @@ export default [
       '@angular-eslint/template/no-call-expression': 'off',
       '@angular-eslint/template/no-inline-styles': 'off',
       '@angular-eslint/template/prefer-ngsrc': 'off',
+    },
+  },
+
+  // JSON files configuration
+  {
+    files: ['**/*.json', '**/*.json5', '**/*.jsonc'],
+    plugins: { json: jsonPlugin, unicorn: unicornPlugin },
+    rules: { ...jsonPlugin.configs.recommended.rules, ...unicornPlugin.configs['recommended-json'].rules },
+  },
+  { files: ['**/*.json'], language: 'json/json' },
+  { files: ['**/*.json5'], language: 'json/json5' },
+  { files: ['**/*.jsonc', '**/.vscode/*.json', '**/tsconfig*.json'], language: 'json/jsonc' }, // these tolerate comments, and this block wins over the `.json` one
+
+  // Markdown files configuration
+  {
+    files: ['**/*.md'],
+    language: 'markdown/gfm',
+    plugins: { markdown: markdownPlugin, unicorn: unicornPlugin },
+    rules: {
+      ...presetRules(markdownPlugin.configs.recommended),
+      ...unicornPlugin.configs['recommended-markdown'].rules,
+      'unicorn/filename-case': ['error', { ignore: ['^[A-Z_]+\\.md$'] }], // README.md, CHANGELOG.md, CLAUDE.md... are uppercase by convention
     },
   },
 

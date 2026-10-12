@@ -35,6 +35,8 @@ A production-ready, opinionated ESLint configuration that enforces best practice
 - 🅰️ [**Angular ESLint**](https://github.com/angular-eslint/angular-eslint) - Angular-specific rules
 - ⚙️ [**ESLint**](https://github.com/eslint/eslint) - Core linting engine
 - 📦 [**Import-X**](https://github.com/un-ts/eslint-plugin-import-x) - Import/export validation and cycle detection
+- 🗂️ [**JSON**](https://github.com/eslint/json) - JSON files parsing and linting
+- 📝 [**Markdown**](https://github.com/eslint/markdown) - Markdown files parsing and linting
 - 💅 [**Perfectionist**](https://github.com/azat-io/eslint-plugin-perfectionist) - Take Your Code to a Beauty Salon
 - 🎨 [**Stylistic**](https://github.com/eslint-stylistic/eslint-stylistic) - Code formatting rules
 - 🧾 [**TOML**](https://github.com/ota-meshi/eslint-plugin-toml) - TOML files parsing and linting
@@ -76,9 +78,9 @@ Add the following to your `package.json`:
 }
 ```
 
-### 4. Lint YAML and TOML files (optional)
+### 4. Lint JSON, Markdown, TOML and YAML files (optional)
 
-YAML and TOML files are checked against the `standard` preset of their plugin and the Unicorn rules recommended for them, but `ng lint` only looks at the patterns declared in `angular.json`. Add them there:
+JSON, Markdown, TOML and YAML files are checked against the preset of their plugin (`recommended` for JSON and Markdown, `standard` for TOML and YAML) and the Unicorn rules recommended for them, but `ng lint` only looks at the patterns declared in `angular.json`. Add the ones you need there:
 
 ```jsonc
 {
@@ -86,7 +88,7 @@ YAML and TOML files are checked against the `standard` preset of their plugin an
   "lint": {
     "builder": "@angular-eslint/builder:lint",
     "options": {
-      "lintFilePatterns": ["src/**/*.ts", "src/**/*.html", "**/*.toml", "**/*.yaml", "**/*.yml"],
+      "lintFilePatterns": ["src/**/*.ts", "src/**/*.html", "**/*.json", "**/*.md", "**/*.toml", "**/*.yaml", "**/*.yml"],
     },
   },
 }
