@@ -78,7 +78,7 @@ Add the following to your `package.json`:
 
 ### 4. Lint YAML and TOML files (optional)
 
-YAML and TOML files are checked for syntax errors and every Unicorn rule that supports them, but `ng lint` only looks at the patterns declared in `angular.json`. Add them there:
+YAML and TOML files are checked against the `standard` preset of their plugin and the Unicorn rules recommended for them, but `ng lint` only looks at the patterns declared in `angular.json`. Add them there:
 
 ```jsonc
 {

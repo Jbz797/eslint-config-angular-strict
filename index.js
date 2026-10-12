@@ -16,11 +16,8 @@ import { noRestrictedSyntaxOverrides, noRestrictedSyntaxRule } from './rules/fil
 // @angular-eslint v22 dropped the `configs` export — manually enable all rules instead
 const enableAllRules = (plugin, prefix) => Object.fromEntries(Object.keys(plugin.rules).map(k => [`${prefix}/${k}`, 'error']));
 
-// Unicorn has no `all` preset per language — enable every maintained rule that declares support for it
-const enableUnicornRules = (language) => {
-  const isSupported = rule => !rule.meta.deprecated && (rule.meta.languages || []).some(supported => supported === '*' || supported === language);
-  return Object.fromEntries(Object.entries(unicornPlugin.rules).filter(([, rule]) => isSupported(rule)).map(([name]) => [`unicorn/${name}`, 'error']));
-};
+// The language plugins ship their presets as arrays whose rules carry no `files` — merge them so they stay scoped to our own blocks
+const presetRules = preset => Object.assign({}, ...preset.map(config => config.rules));
 
 const dataFiles = ['**/*.toml', '**/*.yaml', '**/*.yml']; // Data files get their own language blocks below: the JavaScript presets must not reach them
 
@@ -353,10 +350,7 @@ export default [
     files: ['**/*.toml'],
     language: 'toml/toml',
     plugins: { toml: tomlPlugin, unicorn: unicornPlugin },
-    rules: {
-      ...enableUnicornRules('toml/toml'),
-      'unicorn/key-name-casing': 'off', // keys are dictated by the tool that reads the file (Ruff, Yarn...)
-    },
+    rules: { ...presetRules(tomlPlugin.configs['flat/standard']), ...unicornPlugin.configs['recommended-toml'].rules },
   },
 
   // YAML files configuration
@@ -364,10 +358,7 @@ export default [
     files: ['**/*.yaml', '**/*.yml'],
     language: 'yml/yaml',
     plugins: { unicorn: unicornPlugin, yml: ymlPlugin },
-    rules: {
-      ...enableUnicornRules('yml/yaml'),
-      'unicorn/key-name-casing': 'off', // keys are dictated by the tool that reads the file (Dependabot, GitHub Actions...)
-    },
+    rules: { ...presetRules(ymlPlugin.configs['flat/standard']), ...unicornPlugin.configs['recommended-yaml'].rules },
   },
 
   ...noRestrictedSyntaxOverrides,
