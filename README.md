@@ -80,7 +80,7 @@ Add the following to your `package.json`:
 
 ### 4. Lint JSON, Markdown, TOML and YAML files (optional)
 
-JSON, Markdown, TOML and YAML files are checked against the preset of their plugin (`recommended` for JSON and Markdown, `standard` for TOML and YAML) and the Unicorn rules recommended for them, but `ng lint` only looks at the patterns declared in `angular.json`. Add the ones you need there:
+JSON, Markdown, TOML and YAML files are checked against the preset of their plugin (`recommended` for JSON and Markdown, `standard` for TOML and YAML) and the Unicorn rules recommended for them, but `ng lint` only looks at the patterns declared in `angular.json`. Add the ones you need there — files ignored by git are skipped:
 
 ```jsonc
 {

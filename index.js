@@ -2,6 +2,7 @@ import { configs, rules } from 'eslint-config-airbnb-extended';
 import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 import angularTemplateParser from '@angular-eslint/template-parser';
 import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
+import gitignore from 'eslint-config-flat-gitignore';
 import importXPlugin from 'eslint-plugin-import-x';
 import jsonPlugin from '@eslint/json';
 import markdownPlugin from '@eslint/markdown';
@@ -26,6 +27,7 @@ const dataFiles = ['**/*.json', '**/*.json5', '**/*.jsonc', '**/*.md', '**/*.tom
 
 export default [
   { ignores: ['dist/**', 'node_modules/**'] }, // Alone in its object, `ignores` is global: mixed with other keys it only applies to that block
+  gitignore({ strict: false }), // What git ignores is not linted either: the nearest `.gitignore` is read from the working directory up, if there is one
 
   {
     plugins: {
