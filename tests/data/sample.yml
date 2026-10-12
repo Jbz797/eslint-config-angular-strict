@@ -1,0 +1,5 @@
+name: sample
+homepage: https://example.com
+steps:
+  - run: yarn install
+  - run: yarn test

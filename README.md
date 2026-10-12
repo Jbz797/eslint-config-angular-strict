@@ -37,8 +37,10 @@ A production-ready, opinionated ESLint configuration that enforces best practice
 - 📦 [**Import-X**](https://github.com/un-ts/eslint-plugin-import-x) - Import/export validation and cycle detection
 - 💅 [**Perfectionist**](https://github.com/azat-io/eslint-plugin-perfectionist) - Take Your Code to a Beauty Salon
 - 🎨 [**Stylistic**](https://github.com/eslint-stylistic/eslint-stylistic) - Code formatting rules
+- 🧾 [**TOML**](https://github.com/ota-meshi/eslint-plugin-toml) - TOML files parsing and linting
 - 📘 [**TypeScript ESLint**](https://github.com/typescript-eslint/typescript-eslint) - TypeScript linting
 - 🦄 [**Unicorn**](https://github.com/sindresorhus/eslint-plugin-unicorn) - More than 100 powerful ESLint rules
+- 📄 [**YAML**](https://github.com/ota-meshi/eslint-plugin-yml) - YAML files parsing and linting
 
 ## Installation
 
@@ -71,6 +73,22 @@ Add the following to your `package.json`:
 {
   // ...
   "type": "module",
+}
+```
+
+### 4. Lint YAML and TOML files (optional)
+
+YAML and TOML files are checked for syntax errors and every Unicorn rule that supports them, but `ng lint` only looks at the patterns declared in `angular.json`. Add them there:
+
+```jsonc
+{
+  // ...
+  "lint": {
+    "builder": "@angular-eslint/builder:lint",
+    "options": {
+      "lintFilePatterns": ["src/**/*.ts", "src/**/*.html", "**/*.toml", "**/*.yaml", "**/*.yml"],
+    },
+  },
 }
 ```
 

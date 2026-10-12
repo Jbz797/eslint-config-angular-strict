@@ -5,18 +5,29 @@ import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
 import importXPlugin from 'eslint-plugin-import-x';
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import stylistic from '@stylistic/eslint-plugin';
+import tomlPlugin from 'eslint-plugin-toml';
 import tsEslintParser from '@typescript-eslint/parser';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import unicornPlugin from 'eslint-plugin-unicorn';
+import ymlPlugin from 'eslint-plugin-yml';
 
 import { noRestrictedSyntaxOverrides, noRestrictedSyntaxRule } from './rules/file-conventions.js';
 
 // @angular-eslint v22 dropped the `configs` export — manually enable all rules instead
 const enableAllRules = (plugin, prefix) => Object.fromEntries(Object.keys(plugin.rules).map(k => [`${prefix}/${k}`, 'error']));
 
+// Unicorn has no `all` preset per language — enable every maintained rule that declares support for it
+const enableUnicornRules = (language) => {
+  const isSupported = rule => !rule.meta.deprecated && (rule.meta.languages || []).some(supported => supported === '*' || supported === language);
+  return Object.fromEntries(Object.entries(unicornPlugin.rules).filter(([, rule]) => isSupported(rule)).map(([name]) => [`unicorn/${name}`, 'error']));
+};
+
+const dataFiles = ['**/*.toml', '**/*.yaml', '**/*.yml']; // Data files get their own language blocks below: the JavaScript presets must not reach them
+
 export default [
+  { ignores: ['dist/**', 'node_modules/**'] }, // Alone in its object, `ignores` is global: mixed with other keys it only applies to that block
+
   {
-    ignores: ['dist/**', 'node_modules/**'],
     plugins: {
       '@angular-eslint/template': angularTemplatePlugin,
       '@stylistic': stylistic,
@@ -27,10 +38,10 @@ export default [
   },
 
   ...configs.base.all,
-  perfectionistPlugin.configs['recommended-natural'],
+  { ...perfectionistPlugin.configs['recommended-natural'], ignores: dataFiles },
   rules.base.importsStrict,
   rules.typescript.typescriptEslintStrict,
-  { ...unicornPlugin.configs.all, ignores: ['**/*.html'] }, // not built for Angular templates: nothing useful to report there, and several rules crash on their AST
+  { ...unicornPlugin.configs.all, ignores: ['**/*.html', ...dataFiles] }, // Unicorn is not built for Angular templates: nothing to report, and several rules crash
 
   // TypeScript files configuration
   {
@@ -334,6 +345,28 @@ export default [
       '@angular-eslint/template/no-call-expression': 'off',
       '@angular-eslint/template/no-inline-styles': 'off',
       '@angular-eslint/template/prefer-ngsrc': 'off',
+    },
+  },
+
+  // TOML files configuration
+  {
+    files: ['**/*.toml'],
+    language: 'toml/toml',
+    plugins: { toml: tomlPlugin, unicorn: unicornPlugin },
+    rules: {
+      ...enableUnicornRules('toml/toml'),
+      'unicorn/key-name-casing': 'off', // keys are dictated by the tool that reads the file (Ruff, Yarn...)
+    },
+  },
+
+  // YAML files configuration
+  {
+    files: ['**/*.yaml', '**/*.yml'],
+    language: 'yml/yaml',
+    plugins: { unicorn: unicornPlugin, yml: ymlPlugin },
+    rules: {
+      ...enableUnicornRules('yml/yaml'),
+      'unicorn/key-name-casing': 'off', // keys are dictated by the tool that reads the file (Dependabot, GitHub Actions...)
     },
   },
 

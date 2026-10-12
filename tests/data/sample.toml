@@ -1,0 +1,6 @@
+title = "sample"
+homepage = "https://example.com"
+
+[owner]
+name = "sample"
+ratio = 0.5
