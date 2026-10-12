@@ -350,7 +350,12 @@ export default [
     files: ['**/*.toml'],
     language: 'toml/toml',
     plugins: { toml: tomlPlugin, unicorn: unicornPlugin },
-    rules: { ...presetRules(tomlPlugin.configs['flat/standard']), ...unicornPlugin.configs['recommended-toml'].rules },
+    rules: {
+      ...presetRules(tomlPlugin.configs['flat/standard']),
+      ...unicornPlugin.configs['recommended-toml'].rules,
+      'toml/array-bracket-spacing': ['error', 'never'], // same as `@stylistic/array-bracket-spacing` on the TypeScript side
+      'toml/array-element-newline': ['error', 'consistent'], // one element per line is not forced, only mixing both layouts is reported
+    },
   },
 
   // YAML files configuration
