@@ -7,9 +7,7 @@ import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import { readFileSync } from 'node:fs';
 
-// ESLint never reports an unknown rule name, so a rule renamed or dropped upstream leaves its entry here
-// as a silent no-op: the 'off' stops applying while the rule itself returns under its new name, enabled
-// by the `all` presets. Deprecations are the early warning; a missing name means it already happened.
+// ESLint ignores unknown rule names: a rule renamed upstream voids our 'off' and returns enabled by `all`. Deprecation warns first, a missing name is too late
 const PLUGINS = {
   '@angular-eslint': angularEslintPlugin,
   '@angular-eslint/template': angularTemplatePlugin,
@@ -20,15 +18,19 @@ const PLUGINS = {
   unicorn: unicornPlugin,
 };
 
+const GREEN = '[32m';
+const RED = '[31m';
+const RESET = '[0m';
 const ROOT = new URL('../', import.meta.url);
 const SOURCES = ['index.js', 'rules/file-conventions.js'];
-const RED = '[31m';
 const YELLOW = '[33m';
-const GREEN = '[32m';
-const RESET = '[0m';
 
-// Collect every quoted 'prefix/rule' used as an object key, i.e. followed by a colon
-const collectRuleKeys = source => [...new Set([...source.matchAll(/'([^']*\/[^']*)'\s*:/g)].map(match => match[1]))];
+// Collect every quoted 'prefix/rule' used as an object key, i.e. followed by a colon, and whether any of its entries enables it
+const collectRuleKeys = source => {
+  const keys = new Map();
+  for (const [, key, value] of source.matchAll(/'([^']*\/[^']*)'\s*:\s*(\S*)/g)) keys.set(key, keys.get(key) || !/^\[?'off'/.test(value));
+  return keys;
+};
 
 // Split on the last slash so nested prefixes like '@angular-eslint/template' resolve correctly
 const splitRuleKey = key => {
@@ -47,7 +49,7 @@ const deprecated = [];
 let checked = 0;
 
 for (const file of SOURCES) {
-  for (const key of collectRuleKeys(readFileSync(new URL(file, ROOT), 'utf8'))) {
+  for (const [key, isEnabled] of collectRuleKeys(readFileSync(new URL(file, ROOT), 'utf8'))) {
     if (key in PLUGINS) continue; // plugin registration, not a rule
     const { prefix, rule } = splitRuleKey(key);
     const plugin = PLUGINS[prefix];
@@ -57,7 +59,7 @@ for (const file of SOURCES) {
     if (!definition) missing.push({ file, key });
     else {
       const message = deprecationMessage(definition.meta);
-      if (message) deprecated.push({ file, key, message });
+      if (message && isEnabled) deprecated.push({ file, key, message });
     }
   }
 }
@@ -68,7 +70,7 @@ if (missing.length > 0) {
   console.error('');
 }
 
-// Warn only: a deprecated rule still works, and its entry may be load-bearing until the rule is dropped
+// Warn only, and only for rules we enable: a deprecated rule still works, and turning it off is the migration itself
 if (deprecated.length > 0) {
   console.warn(`${YELLOW}⚠ ${deprecated.length} rule name(s) deprecated upstream — plan the migration:${RESET}\n`);
   for (const { file, key, message } of deprecated) console.warn(`  ${file}  ${YELLOW}${key}${RESET}\n      ${message}`);
