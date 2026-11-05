@@ -22,6 +22,9 @@ const enableAllRules = (plugin, prefix) => Object.fromEntries(Object.keys(plugin
 // The language plugins ship their presets as arrays whose rules carry no `files` — merge them so they stay scoped to our own blocks
 const presetRules = preset => Object.assign({}, ...preset.map(config => config.rules));
 
+// Same line length for every file type that has a rule for it: JSON and Markdown have none
+const maxLen = ['error', { code: 165, tabWidth: 2 }];
+
 // Data files get their own language blocks below: the JavaScript presets must not reach them
 const dataFiles = ['**/*.json', '**/*.json5', '**/*.jsonc', '**/*.md', '**/*.toml', '**/*.yaml', '**/*.yml'];
 
@@ -91,7 +94,7 @@ export default [
       '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
       '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
       '@stylistic/lines-between-class-members': 'off',
-      '@stylistic/max-len': ['error', { code: 165, tabWidth: 2 }],
+      '@stylistic/max-len': maxLen,
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 5 }],
       '@stylistic/no-confusing-arrow': 'off',
       '@stylistic/no-extra-parens': ['error', 'all', { ignoredNodes: ['ConditionalExpression'], nestedBinaryExpressions: false, returnAssign: false }],
@@ -329,6 +332,9 @@ export default [
     },
   },
 
+  // JavaScript files configuration
+  { files: ['**/*.cjs', '**/*.js', '**/*.mjs'], rules: { '@stylistic/max-len': maxLen } },
+
   // HTML Template files configuration
   {
     files: ['**/*.html'],
@@ -347,6 +353,7 @@ export default [
       '@angular-eslint/template/no-call-expression': 'off',
       '@angular-eslint/template/no-inline-styles': 'off',
       '@angular-eslint/template/prefer-ngsrc': 'off',
+      '@stylistic/max-len': maxLen,
     },
   },
 
@@ -380,6 +387,7 @@ export default [
     rules: {
       ...presetRules(tomlPlugin.configs['flat/standard']),
       ...unicornPlugin.configs['recommended-toml'].rules,
+      '@stylistic/max-len': maxLen,
       'toml/array-bracket-spacing': ['error', 'never'], // same as `@stylistic/array-bracket-spacing` on the TypeScript side
       'toml/array-element-newline': ['error', 'consistent'], // one element per line is not forced, only mixing both layouts is reported
     },
@@ -390,7 +398,7 @@ export default [
     files: ['**/*.yaml', '**/*.yml'],
     language: 'yml/yaml',
     plugins: { unicorn: unicornPlugin, yml: ymlPlugin },
-    rules: { ...presetRules(ymlPlugin.configs['flat/standard']), ...unicornPlugin.configs['recommended-yaml'].rules },
+    rules: { ...presetRules(ymlPlugin.configs['flat/standard']), ...unicornPlugin.configs['recommended-yaml'].rules, 'yml/max-len': maxLen },
   },
 
   ...noRestrictedSyntaxOverrides,

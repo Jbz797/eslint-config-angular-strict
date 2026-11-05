@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-angular-strict",
-  "version": "22.6.12",
+  "version": "22.6.13",
   "description": "Modern ESLint configuration with strict rules for Angular development.",
   "keywords": [
     "angular",
@@ -51,7 +51,7 @@
     "eslint-plugin-perfectionist": "5.13.0",
     "eslint-plugin-toml": "1.5.0",
     "eslint-plugin-unicorn": "79.0.0",
-    "eslint-plugin-yml": "3.9.0"
+    "eslint-plugin-yml": "3.10.0"
   },
   "devDependencies": {
     "typescript": "6.0.3"
