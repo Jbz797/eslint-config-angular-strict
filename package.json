@@ -4,6 +4,7 @@
   "description": "Modern ESLint configuration with strict rules for Angular development.",
   "keywords": [
     "angular",
+    "angular-eslint",
     "eslint",
     "eslint-config",
     "eslint-plugin",
@@ -12,7 +13,8 @@
     "linting-rules",
     "strict-rules",
     "stylistic",
-    "typescript"
+    "typescript",
+    "typescript-eslint"
   ],
   "author": {
     "name": "Jean-benoit Gautier"
