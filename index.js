@@ -58,6 +58,7 @@ export default [
       ...enableAllRules(angularEslintPlugin, '@angular-eslint'),
       '@angular-eslint/component-class-suffix': ['error', { suffixes: ['App', 'Component', 'Drawer', 'Modal', 'Page'] }],
       '@angular-eslint/component-selector': 'off',
+      '@angular-eslint/no-input-prefix': ['error', { prefixes: ['can', 'has', 'is', 'should'] }], // HTML-like inputs: `[disabled]`, not `[isDisabled]`
       '@angular-eslint/prefer-on-push-component-change-detection': 'off',
       '@angular-eslint/prefer-standalone': ['error', { allowExplicitStandalone: false }], // standalone is the default, an explicit `true` is noise
       '@angular-eslint/use-component-selector': 'off',
@@ -359,6 +360,7 @@ export default [
       '@angular-eslint/template/no-call-expression': 'off',
       '@angular-eslint/template/no-inline-styles': 'off',
       '@angular-eslint/template/prefer-ngsrc': 'off',
+      '@angular-eslint/template/prefer-style-binding': ['error', { bindUnits: true }], // `[style.width.px]="30"` rather than the unit inside the value
       '@stylistic/max-len': maxLen,
     },
   },
