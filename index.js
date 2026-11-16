@@ -97,7 +97,12 @@ export default [
       '@stylistic/max-len': maxLen,
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 5 }],
       '@stylistic/no-confusing-arrow': 'off',
-      '@stylistic/no-extra-parens': ['error', 'all', { ignoredNodes: ['ConditionalExpression'], nestedBinaryExpressions: false, returnAssign: false }],
+      '@stylistic/no-extra-parens': [
+        'error',
+        'all',
+        // `SpreadElement`: unicorn/require-spread-parentheses wants `...(a && b)`, the two fixers would fight otherwise
+        { ignoredNodes: ['ConditionalExpression', 'SpreadElement'], nestedBinaryExpressions: false, returnAssign: false },
+      ],
       '@stylistic/object-curly-newline': ['error', { consistent: true, multiline: true }],
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
       '@stylistic/padding-line-between-statements': [
@@ -323,6 +328,7 @@ export default [
       'unicorn/prefer-early-return': ['error', { maximumStatements: 2 }], // same threshold as prefer-continue, so loops and functions follow one rule
       'unicorn/prefer-includes-over-repeated-comparisons': ['error', { minimumComparisons: 6 }],
       'unicorn/prefer-number-coercion': 'off', // `Number()` reads a CSS length like `30.8px` as NaN, and Typed OM gives the declared ratio, not the used pixels
+      'unicorn/prefer-regexp-exec': 'off', // @typescript-eslint/prefer-regexp-exec covers it with types, string patterns included; JavaScript keeps unicorn's
       'unicorn/prefer-split-limit': 'off',
       'unicorn/prefer-temporal': 'off',
       'unicorn/prefer-ternary': ['error', 'only-single-line'], // a guard followed by a multi-line return reads better as if/return
