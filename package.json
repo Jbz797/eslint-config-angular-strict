@@ -40,7 +40,7 @@
     "@angular-eslint/eslint-plugin-template": "22.7.0",
     "@angular-eslint/template-parser": "22.7.0",
     "@eslint/json": "2.1.1",
-    "@eslint/markdown": "8.0.3",
+    "@eslint/markdown": "9.0.0",
     "@stylistic/eslint-plugin": "5.10.0",
     "@typescript-eslint/eslint-plugin": "8.73.0",
     "@typescript-eslint/parser": "8.73.0",

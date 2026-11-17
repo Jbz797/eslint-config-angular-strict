@@ -383,6 +383,7 @@ export default [
     rules: {
       ...presetRules(markdownPlugin.configs.recommended),
       ...unicornPlugin.configs['recommended-markdown'].rules,
+      'markdown/table-column-count': 'error', // GFM only, so the CommonMark-based `recommended` dropped it in v9
       'unicorn/filename-case': ['error', { ignore: ['^[A-Z_]+\\.md$'] }], // README.md, CHANGELOG.md, CLAUDE.md... are uppercase by convention
     },
   },
