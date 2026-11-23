@@ -175,6 +175,21 @@ This config handles **TypeScript formatting via ESLint**. Prettier should only b
 
 This ensures ESLint handles `.ts` formatting on save, while Prettier handles `.html` templates.
 
+## Beyond Angular
+
+The config also works as-is in a TypeScript project without Angular, such as a Node backend or Cloud Functions: the Angular rules have nothing to report there, and everything else applies, file naming conventions included. The installation is the same; without `ng lint`, run ESLint directly on the files you want:
+
+```jsonc
+{
+  "scripts": {
+    // ...
+    "lint": "eslint \"**/*.{json,md,toml,ts,yaml,yml}\"",
+  },
+}
+```
+
+In `tsconfig.json`, leave out `angularCompilerOptions` and pick the `target` that matches your runtime. The Prettier section only concerns Angular templates.
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a PR.
