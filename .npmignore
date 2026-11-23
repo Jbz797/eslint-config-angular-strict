@@ -3,5 +3,6 @@
 .yarn/
 .yarnrc.yml
 *.log
+eslint.config.js
 scripts/
 tests/

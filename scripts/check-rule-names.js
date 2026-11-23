@@ -1,9 +1,9 @@
 import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
-import importXPlugin from 'eslint-plugin-import-x';
-import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import stylistic from '@stylistic/eslint-plugin';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
+import importXPlugin from 'eslint-plugin-import-x';
+import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import { readFileSync } from 'node:fs';
 
@@ -26,19 +26,19 @@ const SOURCES = ['index.js', 'rules/file-conventions.js'];
 const YELLOW = '[33m';
 
 // Collect every quoted 'prefix/rule' used as an object key, i.e. followed by a colon, and whether any of its entries enables it
-const collectRuleKeys = source => {
+const collectRuleKeys = (source) => {
   const keys = new Map();
   for (const [, key, value] of source.matchAll(/'([^']*\/[^']*)'\s*:\s*(\S*)/g)) keys.set(key, keys.get(key) || !/^\[?'off'/.test(value));
   return keys;
 };
 
 // Split on the last slash so nested prefixes like '@angular-eslint/template' resolve correctly
-const splitRuleKey = key => {
+const splitRuleKey = (key) => {
   const index = key.lastIndexOf('/');
   return { prefix: key.slice(0, index), rule: key.slice(index + 1) };
 };
 
-const deprecationMessage = meta => {
+const deprecationMessage = (meta) => {
   const info = meta?.deprecated;
   if (!info) return null;
   return typeof info === 'object' ? (info.message ?? 'deprecated') : 'deprecated';
@@ -49,17 +49,19 @@ const deprecated = [];
 let checked = 0;
 
 for (const file of SOURCES) {
-  for (const [key, isEnabled] of collectRuleKeys(readFileSync(new URL(file, ROOT), 'utf8'))) {
-    if (key in PLUGINS) continue; // plugin registration, not a rule
+  const ruleKeys = collectRuleKeys(readFileSync(new URL(file, ROOT), 'utf8'));
+  for (const [key, isEnabled] of ruleKeys) {
+    if (Object.hasOwn(PLUGINS, key)) continue; // plugin registration, not a rule
     const { prefix, rule } = splitRuleKey(key);
     const plugin = PLUGINS[prefix];
     if (!plugin) continue;
     checked += 1;
     const definition = plugin.rules[rule];
-    if (!definition) missing.push({ file, key });
-    else {
+    if (definition) {
       const message = deprecationMessage(definition.meta);
       if (message && isEnabled) deprecated.push({ file, key, message });
+    } else {
+      missing.push({ file, key });
     }
   }
 }
@@ -77,6 +79,5 @@ if (deprecated.length > 0) {
   console.warn('');
 }
 
-if (missing.length > 0) process.exit(1);
-
-console.log(`${GREEN}✔${RESET} ${checked} plugin rule names verified, none missing`);
+if (missing.length > 0) process.exitCode = 1;
+else console.log(`${GREEN}✔${RESET} ${checked} plugin rule names verified, none missing`);

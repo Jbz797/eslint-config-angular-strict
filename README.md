@@ -29,7 +29,7 @@ A production-ready, opinionated ESLint configuration that enforces best practice
 
 ## What's Included
 
-#### ✨ **No additional ESLint installation needed!** Everything is bundled.
+✨ **No additional ESLint installation needed!** Everything is bundled.
 
 - 🎩 [**Airbnb Extended**](https://github.com/nishargshah/eslint-config-airbnb-extended) - Airbnb style guide
 - 🅰️ [**Angular ESLint**](https://github.com/angular-eslint/angular-eslint) - Angular-specific rules

@@ -1,75 +1,80 @@
 // Files containing only imports + export const (literal values, not functions) should be named *.constant.ts
 const constantsFileRestriction = {
-  selector:
-    'Program:has(ExportNamedDeclaration VariableDeclaration[kind="const"]):not(:has(:matches(ClassDeclaration, FunctionDeclaration, TSInterfaceDeclaration, TSEnumDeclaration, TSTypeAliasDeclaration))):not(:has(VariableDeclarator > :matches(ArrowFunctionExpression, FunctionExpression, CallExpression)))',
   message: 'Files containing only constants must be named constants/*.constant.ts',
+  selector: [
+    'Program:has(ExportNamedDeclaration VariableDeclaration[kind="const"])',
+    ':not(:has(:matches(ClassDeclaration, FunctionDeclaration, TSInterfaceDeclaration, TSEnumDeclaration, TSTypeAliasDeclaration)))',
+    ':not(:has(VariableDeclarator > :matches(ArrowFunctionExpression, FunctionExpression, CallExpression)))',
+  ].join(''),
 };
 
 // Restrictions for interface/enum/type declarations (skipped inside `declare module` blocks)
 const declarationFileRestrictions = [
-  { selector: 'TSEnumDeclaration:not(TSModuleBlock > TSEnumDeclaration)', message: 'Enums must live in interfaces/enums.ts or interfaces/*.enum.ts files' },
-  { selector: 'TSInterfaceDeclaration:not(TSModuleBlock > TSInterfaceDeclaration)', message: 'Interfaces must live in interfaces/*.interface.ts files' },
+  { message: 'Enums must live in interfaces/enums.ts or interfaces/*.enum.ts files', selector: 'TSEnumDeclaration:not(TSModuleBlock > TSEnumDeclaration)' },
+  { message: 'Interfaces must live in interfaces/*.interface.ts files', selector: 'TSInterfaceDeclaration:not(TSModuleBlock > TSInterfaceDeclaration)' },
   {
-    selector: 'TSTypeAliasDeclaration:not(TSModuleBlock > TSTypeAliasDeclaration)',
     message: 'Types must live in interfaces/types.ts or interfaces/*.type.ts files',
+    selector: 'TSTypeAliasDeclaration:not(TSModuleBlock > TSTypeAliasDeclaration)',
   },
 ];
 
 // Class suffix enforcement based on Angular decorator (@Service is Angular 22's shorthand for @Injectable({ providedIn: 'root' }))
 const decoratorClassSuffixRestrictions = [
   {
-    selector: 'ClassDeclaration:has(> Decorator[expression.callee.name=/^(Injectable|Service)$/]):not([id.name=/Service$/])',
     message: '@Injectable / @Service classes must end with "Service"',
+    selector: 'ClassDeclaration:has(> Decorator[expression.callee.name=/^(Injectable|Service)$/]):not([id.name=/Service$/])',
   },
   {
-    selector: 'ClassDeclaration:has(> Decorator[expression.callee.name="Pipe"]):not([id.name=/Pipe$/])',
     message: '@Pipe classes must end with "Pipe"',
+    selector: 'ClassDeclaration:has(> Decorator[expression.callee.name="Pipe"]):not([id.name=/Pipe$/])',
   },
 ];
 
 // Restrictions for Angular class decorators (one decorator type per file)
 const decoratorFileRestrictions = {
   Component: {
+    message: [
+      '@Component classes must live in app.ts / components/**/*.component.ts / pages/**/*.component.ts',
+      'components/drawers/*.drawer.ts / components/modals/*.modal.ts / pages/**/*.page.ts',
+    ].join(' / '),
     selector: 'Decorator[expression.callee.name="Component"]',
-    message:
-      '@Component classes must live in app.ts / components/**/*.component.ts / pages/**/*.component.ts / components/drawers/*.drawer.ts / components/modals/*.modal.ts / pages/**/*.page.ts',
   },
-  Directive: { selector: 'Decorator[expression.callee.name="Directive"]', message: '@Directive classes must live in directives/*.directive.ts' },
+  Directive: { message: '@Directive classes must live in directives/*.directive.ts', selector: 'Decorator[expression.callee.name="Directive"]' },
   Injectable: {
-    selector: 'Decorator[expression.callee.name=/^(Injectable|Service)$/]',
     message: '@Injectable / @Service classes must live in services/*.service.ts',
+    selector: 'Decorator[expression.callee.name=/^(Injectable|Service)$/]',
   },
-  Pipe: { selector: 'Decorator[expression.callee.name="Pipe"]', message: '@Pipe classes must live in pipes/*.pipe.ts' },
+  Pipe: { message: '@Pipe classes must live in pipes/*.pipe.ts', selector: 'Decorator[expression.callee.name="Pipe"]' },
 };
 
 // Undecorated classes must live in helpers/*.helpers.ts
 const helperFileRestriction = {
-  selector: 'ClassDeclaration:not(:has(Decorator))',
   message: 'Undecorated classes must live in helpers/*.helpers.ts',
+  selector: 'ClassDeclaration:not(:has(Decorator))',
 };
 
 // Class suffix enforcement for files (used in helpers override since undecorated)
 const helpersClassSuffixRestriction = {
-  selector: 'ClassDeclaration[id.name!=/Helpers$/]',
   message: 'Classes in *.helpers.ts must end with "Helpers"',
+  selector: 'ClassDeclaration[id.name!=/Helpers$/]',
 };
 
 // Everything in *.helpers.ts belongs to the class — no module-level constants, functions or state
 const helpersFileRestrictions = [
   {
-    selector: 'Program > :not(ImportDeclaration, ClassDeclaration, ExportNamedDeclaration:has(> ClassDeclaration))',
     message: 'Only imports and the class allowed in *.helpers.ts — use static properties for constants and static methods for logic',
+    selector: 'Program > :not(ImportDeclaration, ClassDeclaration, ExportNamedDeclaration:has(> ClassDeclaration))',
   },
   {
-    selector: 'PropertyDefinition > FunctionExpression',
     message: 'Use a static method or an arrow property in *.helpers.ts, not a function expression',
+    selector: 'PropertyDefinition > FunctionExpression',
   },
 ];
 
 // Angular inputs must be public (they are part of the component's external API)
 const inputVisibilityRestriction = {
-  selector: ':matches(PropertyDefinition[accessibility="protected"], PropertyDefinition[accessibility="private"]):has(CallExpression Identifier[name="input"])',
   message: 'Angular inputs must be public',
+  selector: ':matches(PropertyDefinition[accessibility="protected"], PropertyDefinition[accessibility="private"]):has(CallExpression Identifier[name="input"])',
 };
 
 // Global no-restricted-syntax rule (used in the main TypeScript files block)
@@ -185,8 +190,8 @@ export const noRestrictedSyntaxOverrides = [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, TSInterfaceDeclaration, ExportNamedDeclaration:has(> TSInterfaceDeclaration))',
           message: 'Only interfaces allowed in interfaces/*.interface.ts',
+          selector: 'Program > :not(ImportDeclaration, TSInterfaceDeclaration, ExportNamedDeclaration:has(> TSInterfaceDeclaration))',
         },
       ],
     },
@@ -199,8 +204,8 @@ export const noRestrictedSyntaxOverrides = [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, TSEnumDeclaration, ExportNamedDeclaration:has(> TSEnumDeclaration))',
           message: 'Only enums allowed in interfaces/enums.ts / interfaces/*.enum.ts',
+          selector: 'Program > :not(ImportDeclaration, TSEnumDeclaration, ExportNamedDeclaration:has(> TSEnumDeclaration))',
         },
       ],
     },
@@ -213,8 +218,8 @@ export const noRestrictedSyntaxOverrides = [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, TSTypeAliasDeclaration, ExportNamedDeclaration:has(> TSTypeAliasDeclaration))',
           message: 'Only type aliases allowed in interfaces/types.ts / interfaces/*.type.ts',
+          selector: 'Program > :not(ImportDeclaration, TSTypeAliasDeclaration, ExportNamedDeclaration:has(> TSTypeAliasDeclaration))',
         },
       ],
     },
@@ -227,8 +232,8 @@ export const noRestrictedSyntaxOverrides = [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
           message: 'Only imports and export const allowed in constants/*.constant.ts',
+          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
         },
       ],
     },
@@ -241,8 +246,8 @@ export const noRestrictedSyntaxOverrides = [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
           message: 'Only imports and export const allowed in guards/*.guard.ts',
+          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
         },
       ],
     },
@@ -255,8 +260,8 @@ export const noRestrictedSyntaxOverrides = [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
           message: 'Only imports and export const allowed in interceptors/*.interceptor.ts',
+          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
         },
       ],
     },
@@ -269,8 +274,8 @@ export const noRestrictedSyntaxOverrides = [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
           message: 'Only imports and export const allowed in resolvers/*.resolver.ts',
+          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
         },
       ],
     },
@@ -283,8 +288,8 @@ export const noRestrictedSyntaxOverrides = [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, VariableDeclaration[kind="const"], ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
           message: 'Only imports and const declarations allowed in *.routes.ts',
+          selector: 'Program > :not(ImportDeclaration, VariableDeclaration[kind="const"], ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
         },
       ],
     },
@@ -297,8 +302,8 @@ export const noRestrictedSyntaxOverrides = [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
           message: 'Only imports and export const allowed in environments files',
+          selector: 'Program > :not(ImportDeclaration, ExportNamedDeclaration:has(> VariableDeclaration[kind="const"]))',
         },
       ],
     },

@@ -1,16 +1,16 @@
-import { configs, rules } from 'eslint-config-airbnb-extended';
 import angularEslintPlugin from '@angular-eslint/eslint-plugin';
-import angularTemplateParser from '@angular-eslint/template-parser';
 import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
-import gitignore from 'eslint-config-flat-gitignore';
-import importXPlugin from 'eslint-plugin-import-x';
+import angularTemplateParser from '@angular-eslint/template-parser';
 import jsonPlugin from '@eslint/json';
 import markdownPlugin from '@eslint/markdown';
-import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import stylistic from '@stylistic/eslint-plugin';
-import tomlPlugin from 'eslint-plugin-toml';
-import tsEslintParser from '@typescript-eslint/parser';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
+import tsEslintParser from '@typescript-eslint/parser';
+import { configs, rules } from 'eslint-config-airbnb-extended';
+import gitignore from 'eslint-config-flat-gitignore';
+import importXPlugin from 'eslint-plugin-import-x';
+import perfectionistPlugin from 'eslint-plugin-perfectionist';
+import tomlPlugin from 'eslint-plugin-toml';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import ymlPlugin from 'eslint-plugin-yml';
 
@@ -23,14 +23,14 @@ const enableAllRules = (plugin, prefix) => Object.fromEntries(Object.keys(plugin
 const presetRules = preset => Object.assign({}, ...preset.map(config => config.rules));
 
 // Same line length for every file type that has a rule for it: JSON and Markdown have none
-const maxLen = ['error', { code: 165, tabWidth: 2 }];
+const maxLength = ['error', { code: 165, tabWidth: 2 }];
 
 // Data files get their own language blocks below: the JavaScript presets must not reach them
 const dataFiles = ['**/*.json', '**/*.json5', '**/*.jsonc', '**/*.md', '**/*.toml', '**/*.yaml', '**/*.yml'];
 
 export default [
   { ignores: ['dist/**', 'node_modules/**'] }, // Alone in its object, `ignores` is global: mixed with other keys it only applies to that block
-  gitignore({ strict: false }), // What git ignores is not linted either: the nearest `.gitignore` is read from the working directory up, if there is one
+  gitignore({ strict: false }), // What Git ignores is not linted either: the nearest `.gitignore` is read from the working directory up, if there is one
 
   {
     plugins: {
@@ -65,7 +65,7 @@ export default [
 
       // ESLint rules
       'class-methods-use-this': 'off',
-      'complexity': ['error', { max: 25 }],
+      complexity: ['error', { max: 25 }],
       'max-depth': 'error',
       'max-lines': ['error', { max: 425, skipBlankLines: true, skipComments: true }],
       'max-lines-per-function': ['error', { IIFEs: true, max: 200, skipBlankLines: true, skipComments: true }], // extreme cases only, other limits bound the rest
@@ -79,7 +79,7 @@ export default [
       'no-return-assign': 'off',
       'no-underscore-dangle': ['error', { allowAfterThis: true }],
       'no-unmodified-loop-condition': ['error', { checkConditionalExpressions: true }],
-      'radix': ['error', 'as-needed'],
+      radix: ['error', 'as-needed'],
 
       // Import rules
       'import-x/no-anonymous-default-export': 'error',
@@ -95,7 +95,7 @@ export default [
       '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
       '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
       '@stylistic/lines-between-class-members': 'off',
-      '@stylistic/max-len': maxLen,
+      '@stylistic/max-len': maxLength,
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 5 }],
       '@stylistic/no-confusing-arrow': 'off',
       '@stylistic/no-extra-parens': [
@@ -108,10 +108,10 @@ export default [
       '@stylistic/padded-blocks': ['error', { blocks: 'never', classes: 'always', switches: 'never' }],
       '@stylistic/padding-line-between-statements': [
         'error',
-        { blankLine: 'always', prev: { selector: '*', lineMode: 'multiline' }, next: { selector: '*', lineMode: 'multiline' } },
-        { blankLine: 'any', prev: 'import', next: 'import' },
-        { blankLine: 'never', prev: '*', next: 'case' },
-        { blankLine: 'never', prev: '*', next: 'default' },
+        { blankLine: 'always', next: { lineMode: 'multiline', selector: '*' }, prev: { lineMode: 'multiline', selector: '*' } },
+        { blankLine: 'any', next: 'import', prev: 'import' },
+        { blankLine: 'never', next: 'case', prev: '*' },
+        { blankLine: 'never', next: 'default', prev: '*' },
       ],
 
       // TypeScript ESLint rules
@@ -135,24 +135,24 @@ export default [
             'ngOnDestroy',
             'ngOnInit',
           ],
-          overrides: { accessors: 'explicit', constructors: 'no-public', methods: 'explicit', properties: 'explicit', parameterProperties: 'explicit' },
+          overrides: { accessors: 'explicit', constructors: 'no-public', methods: 'explicit', parameterProperties: 'explicit', properties: 'explicit' },
         },
       ],
       '@typescript-eslint/naming-convention': [
         'error',
-        { selector: 'function', format: ['camelCase'] },
-        { selector: 'import', format: ['camelCase', 'PascalCase'] },
-        { selector: 'memberLike', format: ['camelCase'], leadingUnderscore: 'forbid', modifiers: ['protected'] },
-        { selector: 'memberLike', format: ['camelCase'], leadingUnderscore: 'forbid', modifiers: ['public'] },
-        { selector: 'memberLike', format: ['camelCase'], leadingUnderscore: 'require', modifiers: ['private'] },
-        { selector: 'objectLiteralProperty', format: null },
-        { selector: 'parameter', format: ['camelCase'], trailingUnderscore: 'allowSingleOrDouble' },
-        { selector: 'typeLike', format: ['PascalCase'] },
-        { selector: 'typeProperty', format: ['camelCase', 'snake_case'] },
-        { selector: 'typeProperty', format: null, modifiers: ['requiresQuotes'] },
-        { selector: 'variable', format: ['UPPER_CASE'], modifiers: ['const', 'exported'] },
-        { selector: 'variable', format: ['PascalCase'], filter: { regex: '[Tt]oken', match: true } },
-        { selector: 'variable', format: ['camelCase'] },
+        { format: ['camelCase'], selector: 'function' },
+        { format: ['camelCase', 'PascalCase'], selector: 'import' },
+        { format: ['camelCase'], leadingUnderscore: 'forbid', modifiers: ['protected'], selector: 'memberLike' },
+        { format: ['camelCase'], leadingUnderscore: 'forbid', modifiers: ['public'], selector: 'memberLike' },
+        { format: ['camelCase'], leadingUnderscore: 'require', modifiers: ['private'], selector: 'memberLike' },
+        { format: null, selector: 'objectLiteralProperty' },
+        { format: ['camelCase'], selector: 'parameter', trailingUnderscore: 'allowSingleOrDouble' },
+        { format: ['PascalCase'], selector: 'typeLike' },
+        { format: ['camelCase', 'snake_case'], selector: 'typeProperty' },
+        { format: null, modifiers: ['requiresQuotes'], selector: 'typeProperty' },
+        { format: ['UPPER_CASE'], modifiers: ['const', 'exported'], selector: 'variable' },
+        { filter: { match: true, regex: '[Tt]oken' }, format: ['PascalCase'], selector: 'variable' },
+        { format: ['camelCase'], selector: 'variable' },
       ],
       '@typescript-eslint/no-base-to-string': 'error',
       '@typescript-eslint/no-deprecated': 'error',
@@ -173,11 +173,19 @@ export default [
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
 
       // Perfectionist rules
+      'perfectionist/sort-arrays': [
+        'error',
+        {
+          useConfigurationIf: {
+            matchesAstSelector: 'Property[key.name=/^(hostDirectives|imports|providers)$/] > ArrayExpression',
+          },
+        },
+      ],
       'perfectionist/sort-classes': [
         'error',
         {
           customGroups: [
-            { elementValuePattern: '(?<![.\\w])inject\\s*(<[^>]+>)?\\(', groupName: 'inject-calls' },
+            { elementValuePattern: String.raw`(?<![.\w])inject\s*(<[^>]+>)?\(`, groupName: 'inject-calls' },
             { groupName: 'decorated-public', modifiers: ['decorated', 'public'] },
             { groupName: 'decorated-private', modifiers: ['decorated', 'private'] },
             { groupName: 'ctor', selector: 'constructor' },
@@ -292,14 +300,6 @@ export default [
           ],
         },
       ],
-      'perfectionist/sort-arrays': [
-        'error',
-        {
-          useConfigurationIf: {
-            matchesAstSelector: 'Property[key.name=/^(hostDirectives|imports|providers)$/] > ArrayExpression',
-          },
-        },
-      ],
       'perfectionist/sort-intersection-types': ['error', { groups: ['unknown', 'nullish'] }],
       'perfectionist/sort-objects': [
         'error',
@@ -344,10 +344,14 @@ export default [
     files: ['**/*.cjs', '**/*.js', '**/*.mjs'],
     languageOptions: { parserOptions: { ecmaVersion: 'latest' } }, // the airbnb base pins the parser to 2018, which predates `?.`, and `parserOptions` wins
     rules: {
-      '@stylistic/max-len': maxLen,
+      '@stylistic/lines-between-class-members': 'off', // as on the TypeScript side
+      '@stylistic/max-len': maxLength,
       '@stylistic/object-curly-newline': ['error', { consistent: true, multiline: true }], // as on the TypeScript side: what fits a line stays on it
       'import-x/order': 'off', // perfectionist orders the imports, as on the TypeScript side: no layout satisfies both
+      'no-continue': 'off', // as on the TypeScript side: unicorn/prefer-continue requires the early continue this rule forbids
       'unicorn/consistent-class-member-order': 'off', // same with perfectionist/sort-classes
+      'unicorn/no-null': 'off', // as on the TypeScript side
+      'unicorn/prefer-temporal': 'off', // as on the TypeScript side
     },
   },
 
@@ -370,7 +374,7 @@ export default [
       '@angular-eslint/template/no-inline-styles': 'off',
       '@angular-eslint/template/prefer-ngsrc': 'off',
       '@angular-eslint/template/prefer-style-binding': ['error', { bindUnits: true }], // `[style.width.px]="30"` rather than the unit inside the value
-      '@stylistic/max-len': maxLen,
+      '@stylistic/max-len': maxLength,
     },
   },
 
@@ -393,7 +397,7 @@ export default [
       ...presetRules(markdownPlugin.configs.recommended),
       ...unicornPlugin.configs['recommended-markdown'].rules,
       'markdown/table-column-count': 'error', // GFM only, so the CommonMark-based `recommended` dropped it in v9
-      'unicorn/filename-case': ['error', { ignore: ['^[A-Z_]+\\.md$'] }], // README.md, CHANGELOG.md, CLAUDE.md... are uppercase by convention
+      'unicorn/filename-case': ['error', { ignore: [String.raw`^[A-Z_]+\.md$`] }], // README.md, CHANGELOG.md, CLAUDE.md... are uppercase by convention
     },
   },
 
@@ -405,7 +409,7 @@ export default [
     rules: {
       ...presetRules(tomlPlugin.configs['flat/standard']),
       ...unicornPlugin.configs['recommended-toml'].rules,
-      '@stylistic/max-len': maxLen,
+      '@stylistic/max-len': maxLength,
       'toml/array-bracket-spacing': ['error', 'never'], // same as `@stylistic/array-bracket-spacing` on the TypeScript side
       'toml/array-element-newline': ['error', 'consistent'], // one element per line is not forced, only mixing both layouts is reported
     },
@@ -416,7 +420,7 @@ export default [
     files: ['**/*.yaml', '**/*.yml'],
     language: 'yml/yaml',
     plugins: { unicorn: unicornPlugin, yml: ymlPlugin },
-    rules: { ...presetRules(ymlPlugin.configs['flat/standard']), ...unicornPlugin.configs['recommended-yaml'].rules, 'yml/max-len': maxLen },
+    rules: { ...presetRules(ymlPlugin.configs['flat/standard']), ...unicornPlugin.configs['recommended-yaml'].rules, 'yml/max-len': maxLength },
   },
 
   ...noRestrictedSyntaxOverrides,
