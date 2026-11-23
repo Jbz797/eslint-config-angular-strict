@@ -340,7 +340,16 @@ export default [
   },
 
   // JavaScript files configuration
-  { files: ['**/*.cjs', '**/*.js', '**/*.mjs'], rules: { '@stylistic/max-len': maxLen } },
+  {
+    files: ['**/*.cjs', '**/*.js', '**/*.mjs'],
+    languageOptions: { parserOptions: { ecmaVersion: 'latest' } }, // the airbnb base pins the parser to 2018, which predates `?.`, and `parserOptions` wins
+    rules: {
+      '@stylistic/max-len': maxLen,
+      '@stylistic/object-curly-newline': ['error', { consistent: true, multiline: true }], // as on the TypeScript side: what fits a line stays on it
+      'import-x/order': 'off', // perfectionist orders the imports, as on the TypeScript side: no layout satisfies both
+      'unicorn/consistent-class-member-order': 'off', // same with perfectionist/sort-classes
+    },
+  },
 
   // HTML Template files configuration
   {
