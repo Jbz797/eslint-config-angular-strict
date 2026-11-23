@@ -347,8 +347,11 @@ export default [
       '@stylistic/lines-between-class-members': 'off', // as on the TypeScript side
       '@stylistic/max-len': maxLength,
       '@stylistic/object-curly-newline': ['error', { consistent: true, multiline: true }], // as on the TypeScript side: what fits a line stays on it
+      'import-x/extensions': ['error', 'ignorePackages'], // Node only resolves a relative ESM import with its extension
+      'import-x/no-useless-path-segments': ['error', { commonjs: true, noUselessIndex: false }], // ESM has no directory import: `./index.js` cannot become `.`
       'import-x/order': 'off', // perfectionist orders the imports, as on the TypeScript side: no layout satisfies both
       'no-continue': 'off', // as on the TypeScript side: unicorn/prefer-continue requires the early continue this rule forbids
+      'no-restricted-syntax': 'off', // the airbnb base bans `for…of`; no-labels, no-with and guard-for-in still cover the rest of its list
       'unicorn/consistent-class-member-order': 'off', // same with perfectionist/sort-classes
       'unicorn/no-null': 'off', // as on the TypeScript side
       'unicorn/prefer-temporal': 'off', // as on the TypeScript side
