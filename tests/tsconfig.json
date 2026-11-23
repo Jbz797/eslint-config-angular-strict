@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "declaration": false,
     "exactOptionalPropertyTypes": true,
@@ -12,7 +13,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
-    "target": "es2025"
+    "target": "esnext"
   },
   "angularCompilerOptions": {
     "extendedDiagnostics": { "defaultCategory": "error" },
