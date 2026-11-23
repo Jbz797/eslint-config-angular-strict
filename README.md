@@ -131,16 +131,19 @@ This config handles **TypeScript formatting via ESLint**. Prettier should only b
 
 ```json
 {
-  "printWidth": 165,
-  "singleQuote": true,
+  "htmlWhitespaceSensitivity": "ignore",
   "overrides": [
     {
       "files": "*.html",
       "options": { "parser": "angular" }
     }
-  ]
+  ],
+  "printWidth": 165,
+  "singleQuote": true
 }
 ```
+
+> **ℹ️ Note**: `htmlWhitespaceSensitivity: "ignore"` lets Prettier break a template wherever it reads best, instead of leaving dangling `>` to avoid adding whitespace. Angular already drops whitespace-only text between two tags, so nothing changes there. Whitespace next to text is still rendered, though: Prettier may add a space between a tag and the text glued to it (`</i>{{ label }}`), and it trims the spaces at the edges of a tag (`<span> - </span>`). A space in the middle of text is safe (`{{ title }} - <span>…</span>`, `<small>{{ label }}: {{ value }}</small>`): keep it there rather than at the edge of a tag. Otherwise, never rely on a typed space for spacing: use CSS, wrap the text in its own tag, or, as a last resort, write the space as `&ngsp;`.
 
 ### Recommended lint scripts (`package.json`)
 
