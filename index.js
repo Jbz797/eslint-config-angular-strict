@@ -315,6 +315,7 @@ export default [
       'unicorn/consistent-arrow-return-style': 'off', // conflicts with airbnb's `arrow-body-style: as-needed`, the two fixers fight
       'unicorn/consistent-class-member-order': 'off',
       'unicorn/consistent-function-scoping': ['error', { checkArrowFunctions: false }],
+      'unicorn/name-replacements': ['error', { allowList: { Prop: true } }], // a scene prop, not a property
       'unicorn/new-for-builtins': 'off',
       'unicorn/no-abusive-eslint-disable': 'off',
       'unicorn/no-array-front-mutation': 'off',
