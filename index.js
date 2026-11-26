@@ -67,7 +67,7 @@ export default [
       'class-methods-use-this': 'off',
       complexity: ['error', { max: 25 }],
       'max-depth': 'error',
-      'max-lines': ['error', { max: 425, skipBlankLines: true, skipComments: true }],
+      'max-lines': ['error', { max: 500, skipBlankLines: true, skipComments: true }],
       'max-lines-per-function': ['error', { IIFEs: true, max: 200, skipBlankLines: true, skipComments: true }], // extreme cases only, other limits bound the rest
       'max-nested-callbacks': 'error',
       'no-continue': 'off', // conflicts with unicorn/prefer-continue, which requires the early continue this rule forbids
